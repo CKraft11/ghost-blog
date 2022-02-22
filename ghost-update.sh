@@ -1,10 +1,11 @@
 #!/bin/bash
 date=$(date)
-cd /home/radon_user/ghost/docs
-echo "debug.cadenkraft.com" > CNAME
-cd /home/radon_user/ghost
 git pull origin master 
-rm -r /home/radon_user/ghost/docs 
+rm -r docs 
+mkdir docs
+cd docs
+echo "debug.cadenkraft.com" > CNAME
+cd -
 gssg --sourceDomain http://localhost:2367 --productionDomain http://debug.cadenkraft.com --dest docs
 git add . 
 git commit -m "$date" 
