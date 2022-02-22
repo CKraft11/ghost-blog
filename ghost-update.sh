@@ -1,5 +1,10 @@
 #!/bin/bash
 date=$(date)
+if [[ ! -d .git ]]
+then
+    echo ".git folder doesn't exist, creating git repository."
+fi
+sleep 2
 git pull origin master 
 rm -r docs 
 mkdir docs
