@@ -7,6 +7,7 @@ sleep 2
 gssg --sourceDomain http://localhost:2367 --productionDomain http://debug.cadenkraft.com --dest docs
 sleep 2 
 git add . 
+git update-index --assume-unchanged CNAME
 sleep 2 
 git commit -m "$date" 
 git config --global credential.helper store
