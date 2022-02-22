@@ -10,5 +10,6 @@ sleep 2
 git add . 
 sleep 2 
 git commit -m "$date" 
+git config --global credential.helper store
 sleep 2
 git push -u origin master
