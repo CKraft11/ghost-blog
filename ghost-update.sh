@@ -1,6 +1,5 @@
 #!/bin/bash
 date=$(date)
-sleep 2
 git pull origin master
 rm -r docs
 mkdir docs
