@@ -9,9 +9,7 @@ cd -
 gssg --dest docs
 cd docs/
 docker cp ghost:/var/lib/ghost/content/images/. content/images
-FIND="http://10.0.0.42"
-REPLACE="https://debug.cadenkraft.com"
-grep -lR $FIND . | xargs sed -i 's/$FIND/$REPLACE/g'
+grep -lR "10.0.0.42:2368" . | xargs sed -i 's/10.0.0.42:2368/debug.cadenkraft.com/g'
 cd -
 git add .
 git commit -m "$date"
