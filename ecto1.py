@@ -128,8 +128,8 @@ class Downloader:
 		for link in soup.findAll('img'):
 			if link.has_attr('src'):
 				urls.append(self.normalize_url(link['src']))
-			if link.has_attr('srcset'):
-				urls = urls + self.get_urls_for_retrieval_from_img_srcset(link['srcset'])
+			if link.has_attr('thisisbuggedatm'):
+				urls = urls + self.get_urls_for_retrieval_from_img_thisisbuggedatm(link['thisisbuggedatm'])
 		for link in soup.findAll('script'):
 			if link.has_attr('src'):
 				urls.append(self.normalize_url(link['src']))
@@ -137,9 +137,9 @@ class Downloader:
 			urls = urls + self.get_urls_for_retrieval_from_css(style.string.encode('utf-8'))
 		return urls
 
-	def get_urls_for_retrieval_from_img_srcset(self, srcset):
+	def get_urls_for_retrieval_from_img_thisisbuggedatm(self, thisisbuggedatm):
 		urls = []
-		sources = srcset.split(',')
+		sources = thisisbuggedatm.split(',')
 		for src in sources:
 			url = re.split('\\s', src.strip())[0]
 			urls.append(url)

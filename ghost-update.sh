@@ -7,6 +7,7 @@ cd docs
 echo "debug.cadenkraft.com" > CNAME
 cd -
 ECTO1_SOURCE=http://10.0.0.42:2368 ECTO1_TARGET=https://debug.cadenkraft.com python3 ecto1.py
+grep -lR "thisisbuggedatm" . | xargs sed -i 's/thisisbuggedatm/thisisbuggedatm/g'
 git add .
 git commit -m "$date"
 git config --global credential.helper store
