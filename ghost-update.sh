@@ -1,14 +1,17 @@
 #!/bin/bash
 date=$(date)
 sleep 2
-git pull origin master 
-rm -r docs 
+git pull origin master
+rm -r docs
 mkdir docs
 cd docs
 echo "debug.cadenkraft.com" > CNAME
 cd -
-gssg --sourceDomain http://localhost:2367 --productionDomain http://debug.cadenkraft.com --dest docs
-git add . 
-git commit -m "$date" 
+gssg --dest docs
+cd docs/
+grep -lR "10.0.0.42:2368" . | xargs sed -i 's/10.0.0.42:2368/debug.cadenkraft.com/g'
+cd -
+git add .
+git commit -m "$date"
 git config --global credential.helper store
 git push -u origin master
