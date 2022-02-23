@@ -6,12 +6,7 @@ mkdir docs
 cd docs
 echo "debug.cadenkraft.com" > CNAME
 cd -
-gssg --dest docs
-cd docs/
-docker cp ghost:/var/lib/ghost/content/images/. content/images
-grep -lR "10.0.0.42:2368" . | xargs sed -i 's/10.0.0.42:2368/debug.cadenkraft.com/g'
-grep -lR "srcset" . | xargs sed -i 's/srcset/bugicantfix/g'
-cd -
+ECTO1_SOURCE=http://10.0.0.42:2368 ECTO1_TARGET=https://debug.cadenkraft.com python3 ecto1.py
 git add .
 git commit -m "$date"
 git config --global credential.helper store
