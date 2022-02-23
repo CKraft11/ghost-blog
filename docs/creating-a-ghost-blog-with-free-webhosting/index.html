@@ -25,7 +25,7 @@
     <meta property="og:url" content="http://debug.cadenkraft.com/creating-a-ghost-blog-with-free-webhosting/" />
     <meta property="og:image" content="http://debug.cadenkraft.com/content/images/2022/02/ghost-blog.png" />
     <meta property="article:published_time" content="2022-02-23T04:58:02.000Z" />
-    <meta property="article:modified_time" content="2022-02-23T05:50:00.000Z" />
+    <meta property="article:modified_time" content="2022-02-23T06:24:58.000Z" />
     <meta property="article:publisher" content="https://www.facebook.com/ghost" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Creating a Ghost Blog with Free Webhosting using Github Pages" />
@@ -70,7 +70,7 @@
     "headline": "Creating a Ghost Blog with Free Webhosting using Github Pages",
     "url": "http://debug.cadenkraft.com/creating-a-ghost-blog-with-free-webhosting/",
     "datePublished": "2022-02-23T04:58:02.000Z",
-    "dateModified": "2022-02-23T05:50:00.000Z",
+    "dateModified": "2022-02-23T06:24:58.000Z",
     "image": {
         "@type": "ImageObject",
         "url": "http://debug.cadenkraft.com/content/images/2022/02/ghost-blog.png",
@@ -295,7 +295,7 @@ services:
       database__connection__password: EXAMPLE
       database__connection__database: ghost
       # this url value is just an example, and is likely wrong for your environment!
-      url: http://YOUR-WAN-DOMAIN.com
+      url: http://serverip:2368
       # contrary to the default mentioned in the linked documentation, this image defaults to NODE_ENV=production (so development mode needs to be explicitly specified if desired)
       #NODE_ENV: development
 
@@ -303,7 +303,7 @@ services:
     image: mysql:5.7
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: EXAMPLE</code></pre><figcaption>docker-compose.yml</figcaption></figure><p>Press CTRL-X to exit and Y to save your changes. Before we start the container we also want to add your current user to the Docker group on your computer so you will be able to run all of these commands without sudo.</p><figure class="kg-card kg-code-card"><pre><code class="language-bash">sudo groupadd docker</code></pre><figcaption>Create the Docker group</figcaption></figure><figure class="kg-card kg-code-card"><pre><code class="language-bash">sudo usermod -aG docker $USER</code></pre><figcaption>Add the current user to the Docker group</figcaption></figure><p>You will likely have to logout and login for these changes to be put into effect.</p><p>Finally, we can get into actually starting up the Linux Ghost blog. If you are not running this on a server and are on a laptop or desktop I would recommend using VSCode + the Docker extension and running all these commands. The workflow is very nice for managing Docker containers and images.</p><figure class="kg-card kg-image-card"><img src="http://debug.cadenkraft.com/content/images/2022/02/docker-3.png" class="kg-image" alt loading="lazy"></figure><p>Firstly we need to load up the Docker container we created earlier. Navigate to the directory that you created the docker-compose.yml file in and run</p><pre><code class="language-bash">docker-compose up -d</code></pre><p>This should take a while as it has to download and set up the Ghost Docker image but after it says the website is finished loading you should be able to navigate in your browser to <code>http://localhost:2368</code> or <code>http://serverip:2368</code> depending on your setup. You should see a nice looking blog template with all the images loaded properly. Then you can add <code>/ghost</code> to the end of your URL to access the admin dashboard. </p><figure class="kg-card kg-image-card"><img src="http://debug.cadenkraft.com/content/images/2022/02/ghost-2.jpg" class="kg-image" alt loading="lazy" width="1280" height="640" srcset="http://debug.cadenkraft.com/content/images/size/w600/2022/02/ghost-2.jpg 600w, http://debug.cadenkraft.com/content/images/size/w1000/2022/02/ghost-2.jpg 1000w, http://debug.cadenkraft.com/content/images/2022/02/ghost-2.jpg 1280w" sizes="(min-width: 720px) 720px"></figure><p>Here it will prompt you to set up an account and parts of your blog. I'm not going to go too much more in-depth on that side of things as that is more up to the user but if you have everything up to here working we should be good to set up the GitHub pages integration.</p><p><strong>Setting up Github Pages</strong></p><p>Now that we have our local Ghost blog up and running we want to set the static site will be generated and sent to Github Pages. The tool we will be using is called <a href="https://github.com/Fried-Chicken/ghost-static-site-generator">Ghost-Static-Site-Generator</a>. A big thanks to the creator for making it as well as all of the useful documentation. To install it we just run </p><pre><code class="language-bash">npm install -g ghost-static-site-generator</code></pre><p>Next, we need to prepare our git repository on our personal machine. To start, create a folder you want the repository to be in and initialize it. </p><pre><code class="language-bash">mkdir ghost
+      MYSQL_ROOT_PASSWORD: EXAMPLE</code></pre><figcaption>docker-compose.yml</figcaption></figure><p>Press CTRL-X to exit and Y to save your changes. Before we start the container we also want to add your current user to the Docker group on your computer so you will be able to run all of these commands without sudo.</p><figure class="kg-card kg-code-card"><pre><code class="language-bash">sudo groupadd docker</code></pre><figcaption>Create the Docker group</figcaption></figure><figure class="kg-card kg-code-card"><pre><code class="language-bash">sudo usermod -aG docker $USER</code></pre><figcaption>Add the current user to the Docker group</figcaption></figure><p>You will likely have to logout and login for these changes to be put into effect.</p><p>Finally, we can get into actually starting up the Linux Ghost blog. If you are not running this on a server and are on a laptop or desktop I would recommend using VSCode + the Docker extension and running all these commands. The workflow is very nice for managing Docker containers and images.</p><figure class="kg-card kg-image-card"><img src="http://debug.cadenkraft.com/content/images/2022/02/docker-3.png" class="kg-image" alt loading="lazy"></figure><p>Firstly we need to load up the Docker container we created earlier. Navigate to the directory that you created the docker-compose.yml file in and run</p><pre><code class="language-bash">docker-compose up -d</code></pre><p>This should take a while as it has to download and set up the Ghost Docker image but after it says the website is finished loading you should be able to navigate in your browser to <code>http://localhost:2368</code> or <code>http://serverip:2368</code> depending on your setup. You should see a nice looking blog template with all the images loaded properly. Then you can add <code>/ghost</code> to the end of your URL to access the admin dashboard. </p><figure class="kg-card kg-image-card"><img src="http://debug.cadenkraft.com/content/images/2022/02/ghost-default.jpg" class="kg-image" alt loading="lazy" width="1400" height="1123" srcset="http://debug.cadenkraft.com/content/images/size/w600/2022/02/ghost-default.jpg 600w, http://debug.cadenkraft.com/content/images/size/w1000/2022/02/ghost-default.jpg 1000w, http://debug.cadenkraft.com/content/images/2022/02/ghost-default.jpg 1400w" sizes="(min-width: 720px) 720px"></figure><p>Here it will prompt you to set up an account and parts of your blog. I'm not going to go too much more in-depth on that side of things as that is more up to the user but if you have everything up to here working we should be good to set up the GitHub pages integration.</p><p><strong>Setting up Github Pages</strong></p><p>Now that we have our local Ghost blog up and running we want to set the static site will be generated and sent to Github Pages. The tool we will be using is called <a href="https://github.com/Fried-Chicken/ghost-static-site-generator">Ghost-Static-Site-Generator</a>. A big thanks to the creator for making it as well as all of the useful documentation. To install it we just run </p><pre><code class="language-bash">npm install -g ghost-static-site-generator</code></pre><p>Next, we need to prepare our git repository on our personal machine. To start, create a folder you want the repository to be in and initialize it. </p><pre><code class="language-bash">mkdir ghost
 cd ghost/
 git init </code></pre><p>Then we have to go online to Github and create a few things. Starting with the repository, create a repository with any name you like and copy the URL under the "code" dropdown.</p><figure class="kg-card kg-image-card"><img src="http://debug.cadenkraft.com/content/images/2022/02/image-13.png" class="kg-image" alt loading="lazy"></figure><p>Now we want to add this repository as a remote repository location for git to push the files too. We can do this by running </p><pre><code class="language-bash">git remote add origin https://github.com/yourlinkhere.git</code></pre><p>Now we need to go back to Github and generate a personal access token that the GSSG can use when creating the site to push files to your repo. Go to this <a href="https://github.com/settings/tokens">link here</a> and create a new token with a name of your choice and give it repo permissions. Copy this link and keep it somewhere safe (e.g. not in your git repository folder). Next, we can run the following commands to test that everything is working.</p><figure class="kg-card kg-code-card"><pre><code class="language-bash">touch test
 git add .
@@ -312,18 +312,22 @@ git push -u origin master
 git config --global credential.helper store
 </code></pre><figcaption>When prompted for a username and password use the token created earlier as your passcode.</figcaption></figure><p>If all has gone well you should see a test file in your Github repo and a commit message.</p><p><strong>Set up Ghost-Static-Site-Generator with Github</strong></p><p>Lastly, we need to actually set up a script to update Github with the latest version of the blog. Luckily, I have made a script for this which is set up below</p><figure class="kg-card kg-code-card"><pre><code class="language-bash">nano ghost-updater.sh</code></pre><figcaption>Create a script in your git directory</figcaption></figure><figure class="kg-card kg-code-card"><pre><code class="language-bash">#!/bin/bash
 date=$(date)
-sleep 2
-git pull origin master 
-rm -r docs 
+git pull origin master
+rm -r docs
 mkdir docs
 cd docs
-echo "www.yourdomain.com" &gt; CNAME
+echo "www.mydomain.com" &gt; CNAME
 cd -
-gssg --sourceDomain http://localhost:2367 --productionDomain http://www.yourdomain.com --dest docs
-git add . 
-git commit -m "$date" 
+gssg --dest docs
+cd docs/
+docker cp ghost:/var/lib/ghost/content/images/. content/images
+grep -lR "serverip:2368" . | xargs sed -i 's/serverip:2368/www.mydomain.com/g'
+cd -
+git add .
+git commit -m "$date"
 git config --global credential.helper store
-git push -u origin master</code></pre><figcaption>Paste the following code into nano and then save and exit</figcaption></figure><figure class="kg-card kg-code-card"><pre><code class="language-bash">sudo chmod +x ghost-updater.sh</code></pre><figcaption>Make the script executable</figcaption></figure><figure class="kg-card kg-code-card"><pre><code class="language-bash">./ghost-updater.sh</code></pre><figcaption>Run the script</figcaption></figure><p>If all of this went successfully you should have a ton of files in your Github repo now. To set up Github pages go to the Github pages tab in settings and select to use the master branch and <code>/docs</code> as your folder. You can set up a custom domain here as well just make sure it is the one you have been using in these scripts.</p><p>If all of this has worked up till now, congratulations you're done! I hope this guide was helpful in getting to that point.  </p>
+git push -u origin master
+</code></pre><figcaption>Paste the following code into nano and then save and exit</figcaption></figure><figure class="kg-card kg-code-card"><pre><code class="language-bash">sudo chmod +x ghost-updater.sh</code></pre><figcaption>Make the script executable</figcaption></figure><figure class="kg-card kg-code-card"><pre><code class="language-bash">./ghost-updater.sh</code></pre><figcaption>Run the script</figcaption></figure><p>If all of this went successfully you should have a ton of files in your Github repo now. To set up Github pages go to the Github pages tab in settings and select to use the master branch and <code>/docs</code> as your folder. You can set up a custom domain here as well just make sure it is the one you have been using in these scripts.</p><p>If all of this has worked up till now, congratulations you're done! I hope this guide was helpful in getting to that point.  </p>
     </div>
         <footer class="single-footer container medium">
             <div class="single-footer-left">
