@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Caden Kraft</title>
+    <title>Creating a Ghost Blog with Free Webhosting using Github Pages</title>
     <link rel="stylesheet" href="/assets/built/screen.css?v=f310f9ae8e">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,23 +14,26 @@
         var siteUrl = 'http://debug.cadenkraft.com';
     </script>
 
-    <meta name="description" content="Personal portfolio" />
     <link rel="icon" href="/favicon.png" type="image/png" />
-    <link rel="canonical" href="http://debug.cadenkraft.com/" />
+    <link rel="canonical" href="http://debug.cadenkraft.com/creating-a-ghost-blog-with-free-webhosting/" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
     
     <meta property="og:site_name" content="Caden Kraft" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Caden Kraft" />
-    <meta property="og:description" content="Personal portfolio" />
-    <meta property="og:url" content="http://debug.cadenkraft.com/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Creating a Ghost Blog with Free Webhosting using Github Pages" />
+    <meta property="og:description" content="When I began my search to find the best blog/CMS that I could host at home (or in my dorm room) myself on my server. I landed on Ghost pretty quickly with its slick UI and broad feature set including an admin panel, app integrations, and native Docker support." />
+    <meta property="og:url" content="http://debug.cadenkraft.com/creating-a-ghost-blog-with-free-webhosting/" />
     <meta property="og:image" content="https://static.ghost.org/v4.0.0/images/publication-cover.jpg" />
+    <meta property="article:published_time" content="2022-02-23T04:58:02.000Z" />
+    <meta property="article:modified_time" content="2022-02-23T04:58:02.000Z" />
     <meta property="article:publisher" content="https://www.facebook.com/ghost" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Caden Kraft" />
-    <meta name="twitter:description" content="Personal portfolio" />
-    <meta name="twitter:url" content="http://debug.cadenkraft.com/" />
+    <meta name="twitter:title" content="Creating a Ghost Blog with Free Webhosting using Github Pages" />
+    <meta name="twitter:description" content="When I began my search to find the best blog/CMS that I could host at home (or in my dorm room) myself on my server. I landed on Ghost pretty quickly with its slick UI and broad feature set including an admin panel, app integrations, and native Docker support." />
+    <meta name="twitter:url" content="http://debug.cadenkraft.com/creating-a-ghost-blog-with-free-webhosting/" />
     <meta name="twitter:image" content="https://static.ghost.org/v4.0.0/images/publication-cover.jpg" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Caden Kraft" />
     <meta name="twitter:site" content="@ghost" />
     <meta property="og:image:width" content="7183" />
     <meta property="og:image:height" content="2885" />
@@ -38,7 +41,7 @@
     <script type="application/ld+json">
 {
     "@context": "https://schema.org",
-    "@type": "WebSite",
+    "@type": "Article",
     "publisher": {
         "@type": "Organization",
         "name": "Caden Kraft",
@@ -50,18 +53,23 @@
             "height": 60
         }
     },
-    "url": "http://debug.cadenkraft.com/",
-    "image": {
-        "@type": "ImageObject",
-        "url": "https://static.ghost.org/v4.0.0/images/publication-cover.jpg",
-        "width": 7183,
-        "height": 2885
+    "author": {
+        "@type": "Person",
+        "name": "Caden Kraft",
+        "url": "http://debug.cadenkraft.com/author/caden/",
+        "sameAs": [
+            "http://linkedin.com/in/cadenkraft"
+        ]
     },
+    "headline": "Creating a Ghost Blog with Free Webhosting using Github Pages",
+    "url": "http://debug.cadenkraft.com/creating-a-ghost-blog-with-free-webhosting/",
+    "datePublished": "2022-02-23T04:58:02.000Z",
+    "dateModified": "2022-02-23T04:58:02.000Z",
+    "description": "When I began my search to find the best blog/CMS that I could host at home (or\nin my dorm room) myself on my server. I landed on Ghost pretty quickly with its\nslick UI and broad feature set including an admin panel, app integrations, and\nnative Docker support. \n\nMy problems arose when it came to hosting. Although I can host it on my personal\nserver I currently do not have access to any way to port forward traffic to my\nblog and it also introduces a pretty significant security risk.\n\nBring in Git",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "http://debug.cadenkraft.com/"
-    },
-    "description": "Personal portfolio"
+    }
 }
     </script>
 
@@ -74,7 +82,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/themes/prism.min.css" />
 </head>
 
-<body class="home-template">
+<body class="post-template">
     <svg width="0" height="0" style="display: none;">
     <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="arrow-left">
         <path d="M26.667 14.667v2.667h-16L18 24.667l-1.893 1.893L5.547 16l10.56-10.56L18 7.333l-7.333 7.333h16z"></path>
@@ -177,7 +185,7 @@
         </a>
     </div>
         <nav class="main-nav hidden-xs hidden-sm hidden-md">
-                <a class="menu-item menu-item-home menu-item-current"
+                <a class="menu-item menu-item-home"
         href="http://debug.cadenkraft.com/">Home</a>
     <a class="menu-item menu-item-posts"
         href="http://debug.cadenkraft.com/posts/">Posts</a>
@@ -194,7 +202,7 @@
         <div class="mobile-menu hidden-lg hidden-xl">
             <div class="container">
                 <nav class="mobile-nav">
-                        <a class="menu-item menu-item-home menu-item-current"
+                        <a class="menu-item menu-item-home"
         href="http://debug.cadenkraft.com/">Home</a>
     <a class="menu-item menu-item-posts"
         href="http://debug.cadenkraft.com/posts/">Posts</a>
@@ -212,58 +220,110 @@
     </div>
 </header>
 
-            <div class="cover container">
-    <div class="cover-content">
-            <div class="cover-icon">
-                <img class="cover-icon-image" src="http://debug.cadenkraft.com/content/images/2022/02/android-chrome-192x192.png" alt="Caden Kraft">
+        <header class="sticky">
+            <div class="sticky-title">Creating a Ghost Blog with Free Webhosting using Github Pages</div>
+            <button class="button-icon sticky-toc-button" aria-label="Table of Contents">
+                <svg class="icon">
+                    <use xlink:href="#table-of-contents"></use>
+                </svg>
+                <div class="sticky-toc"></div>
+            </button>
+            <div class="sticky-track">
+                <div class="sticky-progress"></div>
             </div>
-
-            <div class="cover-description">Interesting Projects</div>
-
-            <div class="cover-cta">
-                <button class="button members-subscribe" data-portal="signup">Subscribe now</button>
-                <button class="button button-secondary members-login" data-portal="signin">Login</button>
-            </div>
-    </div>
-</div>                        <div class="site-content">
+        </header>
+        <div class="site-content">
             
 <div class="content-area">
     <main class="site-main">
-        <div class="post-feed container medium">
-                <article class="feed post no-image">
-    <div class="feed-calendar">
-        <div class="feed-calendar-month">
-            Feb
-        </div>
-        <div class="feed-calendar-day">
-            22
-        </div>
-    </div>
-    <h2 class="feed-title">Creating a Ghost Blog with Free Webhosting using Github Pages</h2>
-    <div class="feed-right">
-        <svg class="icon feed-visibility feed-visibility-public">
-            <use xlink:href="#star"></use>
-        </svg>
-        <div class="feed-length">
-            6 min read
-        </div>
-    </div>
-    <svg class="icon feed-icon">
-        <use xlink:href="#chevron-right"></use>
-    </svg>
-    <a class="u-permalink" href="/creating-a-ghost-blog-with-free-webhosting/" aria-label="Creating a Ghost Blog with Free Webhosting using Github Pages"></a>
-</article>        </div>
-        <nav class="pagination">
-</nav>
-<div class="infinite-scroll-status">
-    <div class="infinite-scroll-request"></div>
-</div>
-<div class="infinite-scroll-action">
-    <button class="button button-secondary infinite-scroll-button">Load more</button>
-</div>
+            <article class="single post no-image">
+    <header class="single-header kg-canvas">
+            <div class="single-meta">
+                <span class="single-meta-item single-meta-date">
+                    <time datetime="2022-02-22">
+                        Feb 22, 2022
+                    </time>
+                </span>
+                <span class="single-meta-item single-meta-length">
+                    6 min read
+                </span>
+            </div>
+        <h1 class="single-title">Creating a Ghost Blog with Free Webhosting using Github Pages</h1>
+    </header>
+    <div class="single-content gh-content kg-canvas">
+        <p>When I began my search to find the best blog/CMS that I could host at home (or in my dorm room) myself on my server. I landed on Ghost pretty quickly with its slick UI and broad feature set including an admin panel, app integrations, and native Docker support. </p><p>My problems arose when it came to hosting. Although I can host it on my personal server I currently do not have access to any way to port forward traffic to my blog and it also introduces a pretty significant security risk.  </p><p>Bring in Github pages. Github pages are a great way to host websites completely for free with the one cavitate being that they have to be completely static. As Ghost doesn't natively support this to my knowledge, this is where the guide begins.</p><p><strong>Requirements</strong></p><ul><li>Server/Laptop/PC you have to host the server on for local editing</li><li>Free Github account</li><li>Basic Linux command line knowledge</li><li>Patience</li></ul><p><strong>Setting up Linux environment</strong></p><p>This guide should work natively on Linux and macOS(untested) but if you only have a Windows machine it should work using WSL2. </p><p>First, we need to install Docker and some other packages. Going forward I am going to be listing commands that would be used on Debian/Ubuntu-based systems as that is what I personally used but they should be similar for other platforms as well. To install Docker we can run these commands below.</p><figure class="kg-card kg-code-card"><pre><code class="language-bash">sudo apt-get install ca-certificates curl gnupg lsb-release nano git wget curl</code></pre><figcaption>Download apt packages</figcaption></figure><figure class="kg-card kg-code-card"><pre><code class="language-bash">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg</code></pre><figcaption>Add Docker GPG key</figcaption></figure><figure class="kg-card kg-code-card"><pre><code class="language-bash">echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</code></pre><figcaption>Set up stable repository</figcaption></figure><pre><code class="language-bash">sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli docker-compose containerd.io</code></pre><p>Next, we want to install all of the packages needed for the static site generator that we are going to be running outside of the Docker container on bare metal.</p><figure class="kg-card kg-code-card"><pre><code class="language-bash">curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -</code></pre><figcaption>Download Node.js install script from NodeSource (apt package is really old)</figcaption></figure><figure class="kg-card kg-code-card"><pre><code class="language-bash">sudo apt install nodejs</code></pre><figcaption>Install Node.js through apt now that the source is added (includes both nodejs and npm)</figcaption></figure><p><strong>Setting up the Ghost Docker container</strong></p><p>The method I'm going to be using to set up Ghost with Docker is through docker-compose. Firstly we need to create a docker-compose.yml file.</p><pre><code class="language-bash">nano docker-compose.yaml</code></pre><p> In nano paste the docker-compose install parameters below</p><figure class="kg-card kg-code-card"><pre><code class="language-docker">version: '3.1'
 
+services:
 
-    </main>
+  ghost:
+    image: ghost:4.36.3
+    restart: always
+    ports:
+      - 2368:2368
+    environment:
+      # see https://ghost.org/docs/config/#configuration-options
+      database__client: mysql
+      database__connection__host: db
+      database__connection__user: root
+      database__connection__password: EXAMPLE
+      database__connection__database: ghost
+      # this url value is just an example, and is likely wrong for your environment!
+      url: http://YOUR-WAN-DOMAIN.com
+      # contrary to the default mentioned in the linked documentation, this image defaults to NODE_ENV=production (so development mode needs to be explicitly specified if desired)
+      #NODE_ENV: development
+
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: EXAMPLE</code></pre><figcaption>docker-compose.yml</figcaption></figure><p>Press CTRL-X to exit and Y to save your changes. Before we start the container we also want to add your current user to the Docker group on your computer so you will be able to run all of these commands without sudo.</p><figure class="kg-card kg-code-card"><pre><code class="language-bash">sudo groupadd docker</code></pre><figcaption>Create the Docker group</figcaption></figure><figure class="kg-card kg-code-card"><pre><code class="language-bash">sudo usermod -aG docker $USER</code></pre><figcaption>Add the current user to the Docker group</figcaption></figure><p>You will likely have to logout and login for these changes to be put into effect.</p><p>Finally, we can get into actually starting up the Linux Ghost blog. If you are not running this on a server and are on a laptop or desktop I would recommend using VSCode + the Docker extension and running all these commands. The workflow is very nice for managing Docker containers and images.</p><figure class="kg-card kg-image-card kg-width-wide"><img src="http://debug.cadenkraft.com/content/images/2022/02/docker-1.png" class="kg-image" alt loading="lazy"></figure><p>Firstly we need to load up the Docker container we created earlier. Navigate to the directory that you created the docker-compose.yml file in and run</p><pre><code class="language-bash">docker-compose up -d</code></pre><p>This should take a while as it has to download and set up the Ghost Docker image but after it says the website is finished loading you should be able to navigate in your browser to <code>http://localhost:2368</code> or <code>http://serverip:2368</code> depending on your setup. You should see a nice looking blog template with all the images loaded properly. Then you can add <code>/ghost</code> to the end of your URL to access the admin dashboard. </p><figure class="kg-card kg-image-card"><img src="http://debug.cadenkraft.com/content/images/2022/02/ghost-2.jpg" class="kg-image" alt loading="lazy" width="1280" height="640" srcset="http://debug.cadenkraft.com/content/images/size/w600/2022/02/ghost-2.jpg 600w, http://debug.cadenkraft.com/content/images/size/w1000/2022/02/ghost-2.jpg 1000w, http://debug.cadenkraft.com/content/images/2022/02/ghost-2.jpg 1280w" sizes="(min-width: 720px) 720px"></figure><p>Here it will prompt you to set up an account and parts of your blog. I'm not going to go too much more in-depth on that side of things as that is more up to the user but if you have everything up to here working we should be good to set up the GitHub pages integration.</p><p><strong>Setting up Github Pages</strong></p><p>Now that we have our local Ghost blog up and running we want to set the static site will be generated and sent to Github Pages. The tool we will be using is called <a href="https://github.com/Fried-Chicken/ghost-static-site-generator">Ghost-Static-Site-Generator</a>. A big thanks to the creator for making it as well as all of the useful documentation. To install it we just run </p><pre><code class="language-bash">npm install -g ghost-static-site-generator</code></pre><p>Next, we need to prepare our git repository on our personal machine. To start, create a folder you want the repository to be in and initialize it. </p><pre><code class="language-bash">mkdir ghost
+cd ghost/
+git init </code></pre><p>Then we have to go online to Github and create a few things. Starting with the repository, create a repository with any name you like and copy the URL under the "code" dropdown.</p><figure class="kg-card kg-image-card"><img src="http://debug.cadenkraft.com/content/images/2022/02/image-13.png" class="kg-image" alt loading="lazy"></figure><p>Now we want to add this repository as a remote repository location for git to push the files too. We can do this by running </p><pre><code class="language-bash">git remote add origin https://github.com/yourlinkhere.git</code></pre><p>Now we need to go back to Github and generate a personal access token that the GSSG can use when creating the site to push files to your repo. Go to this <a href="https://github.com/settings/tokens">link here</a> and create a new token with a name of your choice and give it repo permissions. Copy this link and keep it somewhere safe (e.g. not in your git repository folder). Next, we can run the following commands to test that everything is working.</p><figure class="kg-card kg-code-card"><pre><code class="language-bash">touch test
+git add .
+git commit -m "first commit"
+git push -u origin master
+git config --global credential.helper store
+</code></pre><figcaption>When prompted for a username and password use the token created earlier as your passcode.</figcaption></figure><p>If all has gone well you should see a test file in your Github repo and a commit message.</p><p><strong>Set up Ghost-Static-Site-Generator with Github</strong></p><p>Lastly, we need to actually set up a script to update Github with the latest version of the blog. Luckily, I have made a script for this which is set up below</p><figure class="kg-card kg-code-card"><pre><code class="language-bash">nano ghost-updater.sh</code></pre><figcaption>Create a script in your git directory</figcaption></figure><figure class="kg-card kg-code-card"><pre><code class="language-bash">#!/bin/bash
+date=$(date)
+sleep 2
+git pull origin master 
+rm -r docs 
+mkdir docs
+cd docs
+echo "www.yourdomain.com" &gt; CNAME
+cd -
+gssg --sourceDomain http://localhost:2367 --productionDomain http://www.yourdomain.com --dest docs
+git add . 
+git commit -m "$date" 
+git config --global credential.helper store
+git push -u origin master</code></pre><figcaption>Paste the following code into nano and then save and exit</figcaption></figure><figure class="kg-card kg-code-card"><pre><code class="language-bash">sudo chmod +x ghost-updater.sh</code></pre><figcaption>Make the script executable</figcaption></figure><figure class="kg-card kg-code-card"><pre><code class="language-bash">./ghost-updater.sh</code></pre><figcaption>Run the script</figcaption></figure><p>If all of this went successfully you should have a ton of files in your Github repo now. To set up Github pages go to the Github pages tab in settings and select to use the master branch and <code>/docs</code> as your folder. You can set up a custom domain here as well just make sure it is the one you have been using in these scripts.</p><p>If all of this has worked up till now, congratulations you're done! I hope this guide was helpful in getting to that point.  </p>
+    </div>
+        <footer class="single-footer container medium">
+            <div class="single-footer-left">
+            </div>
+            <div class="single-footer-middle">
+                    <div class="single-footer-top">
+                        <h3 class="single-footer-title">Published by:</h3>
+                        <div class="author-list">
+                                <div class="author-image-placeholder u-placeholder square">
+                                    <a href="/author/caden/" title="Caden Kraft">
+                                        <img class="author-image lazyload u-object-fit"
+                                            data-srcset=""
+                                            src=""
+                                            srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                            alt="Caden Kraft">
+                                    </a>
+                                </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="single-footer-right">
+            </div>
+        </footer>
+</article>                                </main>
 </div>
         </div>
         <footer class="site-footer container">
