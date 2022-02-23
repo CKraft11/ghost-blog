@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="theme-dark" lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -26,7 +26,7 @@
     <meta property="og:url" content="http://debug.cadenkraft.com/creating-a-ghost-blog-with-free-webhosting/" />
     <meta property="og:image" content="http://debug.cadenkraft.com/content/images/2022/02/ghost-blog.png" />
     <meta property="article:published_time" content="2022-02-23T04:58:02.000Z" />
-    <meta property="article:modified_time" content="2022-02-23T07:48:58.000Z" />
+    <meta property="article:modified_time" content="2022-02-23T18:23:52.000Z" />
     <meta property="article:tag" content="Tutorial" />
     
     <meta property="article:publisher" content="https://www.facebook.com/ghost" />
@@ -53,7 +53,7 @@
         "url": "http://debug.cadenkraft.com/",
         "logo": {
             "@type": "ImageObject",
-            "url": "http://debug.cadenkraft.com/content/images/2022/02/white-logo.png",
+            "url": "http://debug.cadenkraft.com/content/images/2022/02/black-logo-1.png",
             "width": 60,
             "height": 60
         }
@@ -75,7 +75,7 @@
     "headline": "Creating a Ghost Blog with Free Webhosting using Github Pages",
     "url": "http://debug.cadenkraft.com/creating-a-ghost-blog-with-free-webhosting/",
     "datePublished": "2022-02-23T04:58:02.000Z",
-    "dateModified": "2022-02-23T07:48:58.000Z",
+    "dateModified": "2022-02-23T18:23:52.000Z",
     "image": {
         "@type": "ImageObject",
         "url": "http://debug.cadenkraft.com/content/images/2022/02/ghost-blog.png",
@@ -94,9 +94,18 @@
     <meta name="generator" content="Ghost 4.36" />
     <link rel="alternate" type="application/rss+xml" title="Caden Kraft" href="http://debug.cadenkraft.com/rss/" />
     
-    <script defer src="/public/cards.min.js?v=243053c876"></script><style>:root {--ghost-accent-color: #35bce3;}</style>
+    <script defer src="/public/cards.min.js?v=243053c876"></script>
     <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=243053c876">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-atom-dark.min.css" integrity="sha512-GZPS1oCebjx8g/ZkrTTvWirW+4wDkzIsilUQPXcZzuDpDzoH5brM2AojiFjo6ObIWeM68ZDostvdjaS9MNYCTg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CLH3QJRSQH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CLH3QJRSQH');
+</script><style>:root {--ghost-accent-color: #35bce3;}</style>
 </head>
 
 <body class="post-template tag-tutorial">
@@ -198,7 +207,8 @@
         <header class="site-header container">
     <div class="header-left">
         <a class="logo" href="http://debug.cadenkraft.com">
-                <img class="logo-image" src="http://debug.cadenkraft.com/content/images/2022/02/white-logo.png" alt="Caden Kraft">
+                    <img class="logo-image white" src="/content/images/2022/02/white-logo-1.png" alt="Caden Kraft">
+                <img class="logo-image" src="http://debug.cadenkraft.com/content/images/2022/02/black-logo-1.png" alt="Caden Kraft">
         </a>
     </div>
         <nav class="main-nav hidden-xs hidden-sm hidden-md">
@@ -208,6 +218,8 @@
         href="http://debug.cadenkraft.com/posts/">Posts</a>
     <a class="menu-item menu-item-resume"
         href="http://debug.cadenkraft.com/resume/">Resume</a>
+    <a class="menu-item menu-item-about"
+        href="http://debug.cadenkraft.com/about/">About</a>
 
         </nav>
 
@@ -225,6 +237,8 @@
         href="http://debug.cadenkraft.com/posts/">Posts</a>
     <a class="menu-item menu-item-resume"
         href="http://debug.cadenkraft.com/resume/">Resume</a>
+    <a class="menu-item menu-item-about"
+        href="http://debug.cadenkraft.com/about/">About</a>
 
                         <button class="button-text menu-item members-login" data-portal="signin">Login</button>
                         <button class="button-text menu-item menu-item-cta members-subscribe" data-portal="signup">Subscribe</button>
@@ -288,7 +302,7 @@
                 </figure>
     </header>
     <div class="single-content gh-content kg-canvas">
-        <p>When I began my search to find the best blog/CMS that I could host at home (or in my dorm room) on my server, I landed on Ghost pretty quickly with its slick UI and broad feature-set including an admin panel, app integrations, and native Docker support. </p><p>My problems arose when it came to hosting. Although I can host it on my server I currently cannot port-forward traffic to my blog, and it also introduces a pretty significant security risk.  </p><p>Bring in Github pages. Github pages is a great way to host websites completely for free with the one cavitate being that they have to be completely static. As Ghost doesn't natively support this to my knowledge, this is where the guide begins.</p><p><strong>Requirements</strong></p><ul><li>Server/Laptop/PC you have to host the server on for local editing. The final site will be on GitHub pages so this machine doesn't have to be running 24/7.</li><li>Free Github account</li><li>Basic Linux command line knowledge</li><li>Patience</li></ul><p><strong>Setting up Linux environment</strong></p><p>This guide should work natively on Linux and macOS (untested) and if you only have a Windows machine, it should work using WSL2. </p><p>First, we need to install Docker and some other packages. Going forward, I will be listing commands that would be used on Debian/Ubuntu-based systems as that is what I personally used, but they should be similar for other platforms. To install Docker, we can run these commands below.</p><figure class="kg-card kg-code-card"><pre><code class="language-bash">sudo apt-get install ca-certificates curl gnupg lsb-release nano git wget curl</code></pre><figcaption>Download apt packages</figcaption></figure><figure class="kg-card kg-code-card"><pre><code class="language-bash">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg</code></pre><figcaption>Add Docker GPG key</figcaption></figure><figure class="kg-card kg-code-card"><pre><code class="language-bash">echo \
+        <p>When I began my search to find the best blog/CMS that I could host at home (or in my dorm room) on my server, I landed on Ghost pretty quickly with its slick UI and broad feature-set including an admin panel, app integrations, and native <a href="https://docs.docker.com/get-started/overview/">Docker</a> support. </p><p>My problems arose when it came to hosting. Although I can host it on my server I currently cannot port-forward traffic to my blog, and it also introduces a pretty significant security risk.  </p><p>Bring in Github pages. Github pages is a great way to host websites completely for free with the one cavitate being that they have to be completely static. As Ghost doesn't natively support this to my knowledge, this is where the guide begins.</p><p><strong>Requirements</strong></p><ul><li>Server/Laptop/PC you have to host the server on for local editing. The final site will be on GitHub pages so this machine doesn't have to be running 24/7.</li><li>Free Github account</li><li>Basic Linux command line knowledge</li><li>Patience</li></ul><p><strong>Setting up Linux environment</strong></p><p>This guide should work natively on Linux and macOS (untested) and if you only have a Windows machine, it should work using <a href="https://docs.microsoft.com/en-us/windows/wsl/install">WSL2</a>. </p><p>First, we need to install Docker and some other packages. Going forward, I will be listing commands that would be used on Debian/Ubuntu-based systems as that is what I personally used, but they should be similar for other platforms. To install Docker, we can run these commands below.</p><figure class="kg-card kg-code-card"><pre><code class="language-bash">sudo apt-get install ca-certificates curl gnupg lsb-release nano git wget curl</code></pre><figcaption>Download apt packages</figcaption></figure><figure class="kg-card kg-code-card"><pre><code class="language-bash">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg</code></pre><figcaption>Add Docker GPG key</figcaption></figure><figure class="kg-card kg-code-card"><pre><code class="language-bash">echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</code></pre><figcaption>Set up stable repository</figcaption></figure><pre><code class="language-bash">sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli docker-compose containerd.io</code></pre><p>Next, we want to install all of the packages needed for the static site generator that we will be running outside of the Docker container on bare metal.</p><figure class="kg-card kg-code-card"><pre><code class="language-bash">curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -</code></pre><figcaption>Download Node.js install script from NodeSource (apt package is really old)</figcaption></figure><figure class="kg-card kg-code-card"><pre><code class="language-bash">sudo apt install nodejs</code></pre><figcaption>Install Node.js through apt now that the source is added (includes both nodejs and npm)</figcaption></figure><p><strong>Setting up the Ghost Docker container</strong></p><p>The method I'm going to be using to set up Ghost with Docker is through docker-compose. Firstly we need to create a docker-compose.yml file.</p><pre><code class="language-bash">nano docker-compose.yaml</code></pre><p> In nano paste and edit the docker-compose install parameters below.</p><figure class="kg-card kg-code-card"><pre><code class="language-docker">version: '3.1'
@@ -316,7 +330,7 @@ services:
     image: mysql:5.7
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: EXAMPLE</code></pre><figcaption>docker-compose.yml</figcaption></figure><p>Press CTRL-X to exit and Y to save your changes. Before we start the container, we also want to add your current user to the Docker group on your computer so you will be able to run all of these commands without using sudo.</p><figure class="kg-card kg-code-card"><pre><code class="language-bash">sudo groupadd docker</code></pre><figcaption>Create the Docker group</figcaption></figure><figure class="kg-card kg-code-card"><pre><code class="language-bash">sudo usermod -aG docker $USER</code></pre><figcaption>Add the current user to the Docker group</figcaption></figure><p>You will likely have to log out and log in for these changes to be implemented.</p><p>Finally, we can get into actually starting up the Ghost blog. If you are not running this on a server and are on a laptop or desktop, I recommend using VSCode with the Docker extension. The workflow is very nice for managing Docker containers and images.</p><figure class="kg-card kg-image-card"><img src="http://debug.cadenkraft.com/content/images/2022/02/docker-3.png" class="kg-image" alt loading="lazy"></figure><p>Now we need to load up the Docker container we created earlier. Navigate to the directory that you created the docker-compose.yml file in and run</p><pre><code class="language-bash">docker-compose up -d</code></pre><p>This should take a while as it has to download and set up the Ghost Docker image but after it says the website is finished loading you should be able to navigate in your browser to <code>http://localhost:2368</code> or <code>http://serverip:2368</code> depending on your setup. You should see a nice-looking blog template with all the images loaded properly. Then you can add <code>/ghost</code> to the end of your URL to access the admin dashboard. </p><figure class="kg-card kg-image-card"><img src="http://debug.cadenkraft.com/content/images/2022/02/ghost-default.jpg" class="kg-image" alt loading="lazy" width="1400" height="1123" bugicantfix="http://debug.cadenkraft.com/content/images/size/w600/2022/02/ghost-default.jpg 600w, http://debug.cadenkraft.com/content/images/size/w1000/2022/02/ghost-default.jpg 1000w, http://debug.cadenkraft.com/content/images/2022/02/ghost-default.jpg 1400w" sizes="(min-width: 720px) 720px"></figure><p>Here it will prompt you to set up an account and parts of your blog. I'm not going to go too much more in-depth on that side of things as that is more up to the user but if you have everything up to here working we should be good to set up the GitHub pages integration.</p><p><strong>Setting up Github Pages</strong></p><p>Now that we have our local Ghost blog up and running, we want to set the static site will be generated and sent to Github Pages. The tool we will be using is called <a href="https://github.com/Fried-Chicken/ghost-static-site-generator">Ghost-Static-Site-Generator</a>. A big thanks to the creator for making it and all of the useful documentation. To install it, we just run </p><pre><code class="language-bash">npm install -g ghost-static-site-generator</code></pre><p>Next, we need to prepare our git repository on our personal machine. To start, create a folder you want the repository to be in and initialize it. </p><pre><code class="language-bash">mkdir ghost
+      MYSQL_ROOT_PASSWORD: EXAMPLE</code></pre><figcaption>docker-compose.yml</figcaption></figure><p>Press CTRL-X to exit and Y to save your changes. Before we start the container, we also want to add your current user to the Docker group on your computer so you will be able to run all of these commands without using sudo.</p><figure class="kg-card kg-code-card"><pre><code class="language-bash">sudo groupadd docker</code></pre><figcaption>Create the Docker group</figcaption></figure><figure class="kg-card kg-code-card"><pre><code class="language-bash">sudo usermod -aG docker $USER</code></pre><figcaption>Add the current user to the Docker group</figcaption></figure><p>You will likely have to log out and log in for these changes to be implemented.</p><p>Finally, we can get into actually starting up the Ghost blog. If you are not running this on a server and are on a laptop or desktop, I recommend using <a href="https://code.visualstudio.com/">VSCode</a> with the Docker extension. The workflow is very nice for managing Docker containers and images.</p><figure class="kg-card kg-image-card"><img src="http://debug.cadenkraft.com/content/images/2022/02/docker-3.png" class="kg-image" alt loading="lazy"></figure><p>Now we need to load up the Docker container we created earlier. Navigate to the directory that you created the docker-compose.yml file in and run</p><pre><code class="language-bash">docker-compose up -d</code></pre><p>This should take a while as it has to download and set up the Ghost Docker image but after it says the website is finished loading you should be able to navigate in your browser to <code>http://localhost:2368</code> or <code>http://serverip:2368</code> depending on your setup. You should see a nice-looking blog template with all the images loaded properly. Then you can add <code>/ghost</code> to the end of your URL to access the admin dashboard. </p><figure class="kg-card kg-image-card"><img src="http://debug.cadenkraft.com/content/images/2022/02/ghost-default.jpg" class="kg-image" alt loading="lazy" width="1400" height="1123" bugicantfix="http://debug.cadenkraft.com/content/images/size/w600/2022/02/ghost-default.jpg 600w, http://debug.cadenkraft.com/content/images/size/w1000/2022/02/ghost-default.jpg 1000w, http://debug.cadenkraft.com/content/images/2022/02/ghost-default.jpg 1400w" sizes="(min-width: 720px) 720px"></figure><p>Here it will prompt you to set up an account and parts of your blog. I'm not going to go too much more in-depth on that side of things as that is more up to the user but if you have everything up to here working we should be good to set up the GitHub pages integration.</p><p><strong>Setting up Github Pages</strong></p><p>Now that we have our local Ghost blog up and running, we want to set the static site will be generated and sent to Github Pages. The tool we will be using is called <a href="https://github.com/Fried-Chicken/ghost-static-site-generator">Ghost-Static-Site-Generator</a>. A big thanks to the creator for making it and all of the useful documentation. To install it, we just run </p><pre><code class="language-bash">npm install -g ghost-static-site-generator</code></pre><p>Next, we need to prepare our git repository on our personal machine. To start, create a folder you want the repository to be in and initialize it. </p><pre><code class="language-bash">mkdir ghost
 cd ghost/
 git init </code></pre><p>Then we have to go online to Github and create a few things. Starting with the repository, create a repository with any name you like and copy the URL under the "code" dropdown.</p><figure class="kg-card kg-image-card"><img src="http://debug.cadenkraft.com/content/images/2022/02/image-13.png" class="kg-image" alt loading="lazy"></figure><p>We want to add this repository as a remote repository location for git to push the files. We can do this by running </p><pre><code class="language-bash">git remote add origin https://github.com/yourlinkhere.git</code></pre><p>We need to go back to Github and generate a personal access token that the GSSG can use when creating the site to push files to your repo. Go to this <a href="https://github.com/settings/tokens">link here</a> and create a new token with a name of your choice and give it repo permissions. Copy this link and keep it somewhere safe (e.g., not in your git repository folder). Next, we can run the following commands to test everything working.</p><figure class="kg-card kg-code-card"><pre><code class="language-bash">touch test
 git add .

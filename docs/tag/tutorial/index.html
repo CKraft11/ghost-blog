@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="theme-dark" lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -44,7 +44,7 @@
         "url": "http://debug.cadenkraft.com/",
         "logo": {
             "@type": "ImageObject",
-            "url": "http://debug.cadenkraft.com/content/images/2022/02/white-logo.png",
+            "url": "http://debug.cadenkraft.com/content/images/2022/02/black-logo-1.png",
             "width": 60,
             "height": 60
         }
@@ -61,9 +61,18 @@
     <meta name="generator" content="Ghost 4.36" />
     <link rel="alternate" type="application/rss+xml" title="Caden Kraft" href="http://debug.cadenkraft.com/rss/" />
     
-    <script defer src="/public/cards.min.js?v=243053c876"></script><style>:root {--ghost-accent-color: #35bce3;}</style>
+    <script defer src="/public/cards.min.js?v=243053c876"></script>
     <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=243053c876">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-atom-dark.min.css" integrity="sha512-GZPS1oCebjx8g/ZkrTTvWirW+4wDkzIsilUQPXcZzuDpDzoH5brM2AojiFjo6ObIWeM68ZDostvdjaS9MNYCTg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CLH3QJRSQH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CLH3QJRSQH');
+</script><style>:root {--ghost-accent-color: #35bce3;}</style>
 </head>
 
 <body class="tag-template tag-tutorial">
@@ -165,7 +174,8 @@
         <header class="site-header container">
     <div class="header-left">
         <a class="logo" href="http://debug.cadenkraft.com">
-                <img class="logo-image" src="http://debug.cadenkraft.com/content/images/2022/02/white-logo.png" alt="Caden Kraft">
+                    <img class="logo-image white" src="/content/images/2022/02/white-logo-1.png" alt="Caden Kraft">
+                <img class="logo-image" src="http://debug.cadenkraft.com/content/images/2022/02/black-logo-1.png" alt="Caden Kraft">
         </a>
     </div>
         <nav class="main-nav hidden-xs hidden-sm hidden-md">
@@ -175,6 +185,8 @@
         href="http://debug.cadenkraft.com/posts/">Posts</a>
     <a class="menu-item menu-item-resume"
         href="http://debug.cadenkraft.com/resume/">Resume</a>
+    <a class="menu-item menu-item-about"
+        href="http://debug.cadenkraft.com/about/">About</a>
 
         </nav>
 
@@ -192,6 +204,8 @@
         href="http://debug.cadenkraft.com/posts/">Posts</a>
     <a class="menu-item menu-item-resume"
         href="http://debug.cadenkraft.com/resume/">Resume</a>
+    <a class="menu-item menu-item-about"
+        href="http://debug.cadenkraft.com/about/">About</a>
 
                         <button class="button-text menu-item members-login" data-portal="signin">Login</button>
                         <button class="button-text menu-item menu-item-cta members-subscribe" data-portal="signup">Subscribe</button>
