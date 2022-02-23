@@ -8,6 +8,7 @@ echo "debug.cadenkraft.com" > CNAME
 cd -
 gssg --dest docs
 cd docs/
+docker cp ghost:/var/lib/ghost/content/images/. static/content/images
 grep -lR "10.0.0.42:2368" . | xargs sed -i 's/10.0.0.42:2368/debug.cadenkraft.com/g'
 cd -
 git add .
