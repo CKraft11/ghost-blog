@@ -5,7 +5,7 @@
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
 
-  <title>Tutorial - Caden Kraft</title>
+  <title>Creating a Single Part Tool-less Raspberry Pi Compute Cluster</title>
 
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 
@@ -22,36 +22,40 @@
   <script>
     var site_url                            = 'https://blog.cadenkraft.com',
         pagination_next_page_number         = '',
-        pagination_available_pages_number   = '1',
+        pagination_available_pages_number   = '',
         pagination_loading_text             = 'Loading',
         pagination_more_posts_text          = 'More Posts ↓',
         clipboard_copied_text               = 'Link copied to clipboard';
   </script>
 
   <link rel="icon" href="/favicon.png" type="image/png" />
-    <link rel="canonical" href="https://blog.cadenkraft.com/tag/tutorial/" />
+    <link rel="canonical" href="https://blog.cadenkraft.com/creating-a-single-part-tool-less/" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
     
     <meta property="og:site_name" content="Caden Kraft" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Tutorial - Caden Kraft" />
-    <meta property="og:description" content="Personal portfolio" />
-    <meta property="og:url" content="https://blog.cadenkraft.com/tag/tutorial/" />
-    <meta property="og:image" content="https://static.ghost.org/v4.0.0/images/publication-cover.jpg" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Creating a Single Part Tool-less Raspberry Pi Compute Cluster" />
+    <meta property="og:description" content="My Raspberry Pi&#x27;s are some of my favorite devices that I own. Their versatility cost and ease of use have allowed me to implement them into a wide range of projects and learn a lot about computing. One area I had never ventured however was the idea of clustered computing." />
+    <meta property="og:url" content="https://blog.cadenkraft.com/creating-a-single-part-tool-less/" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1553406830-f6e44ac97624?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDN8fHJhc3BiZXJyeSUyMHBpfGVufDB8fHx8MTY0NTY3MDY4Ng&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000" />
+    <meta property="article:published_time" content="2021-02-24T18:09:00.000Z" />
+    <meta property="article:modified_time" content="2022-02-24T18:10:58.000Z" />
     <meta property="article:publisher" content="https://www.facebook.com/ghost" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Tutorial - Caden Kraft" />
-    <meta name="twitter:description" content="Personal portfolio" />
-    <meta name="twitter:url" content="https://blog.cadenkraft.com/tag/tutorial/" />
-    <meta name="twitter:image" content="https://static.ghost.org/v4.0.0/images/publication-cover.jpg" />
+    <meta name="twitter:title" content="Creating a Single Part Tool-less Raspberry Pi Compute Cluster" />
+    <meta name="twitter:description" content="My Raspberry Pi&#x27;s are some of my favorite devices that I own. Their versatility cost and ease of use have allowed me to implement them into a wide range of projects and learn a lot about computing. One area I had never ventured however was the idea of clustered computing." />
+    <meta name="twitter:url" content="https://blog.cadenkraft.com/creating-a-single-part-tool-less/" />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1553406830-f6e44ac97624?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDN8fHJhc3BiZXJyeSUyMHBpfGVufDB8fHx8MTY0NTY3MDY4Ng&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Caden Kraft" />
     <meta name="twitter:site" content="@ghost" />
-    <meta property="og:image:width" content="7183" />
-    <meta property="og:image:height" content="2885" />
+    <meta property="og:image:width" content="2000" />
+    <meta property="og:image:height" content="1125" />
     
     <script type="application/ld+json">
 {
     "@context": "https://schema.org",
-    "@type": "Series",
+    "@type": "Article",
     "publisher": {
         "@type": "Organization",
         "name": "Caden Kraft",
@@ -63,8 +67,31 @@
             "height": 60
         }
     },
-    "url": "https://blog.cadenkraft.com/tag/tutorial/",
-    "name": "Tutorial",
+    "author": {
+        "@type": "Person",
+        "name": "Caden Kraft",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://blog.cadenkraft.com/content/images/2022/02/portfolio-4.jpg",
+            "width": 160,
+            "height": 160
+        },
+        "url": "https://blog.cadenkraft.com/author/caden/",
+        "sameAs": [
+            "http://linkedin.com/in/cadenkraft"
+        ]
+    },
+    "headline": "Creating a Single Part Tool-less Raspberry Pi Compute Cluster",
+    "url": "https://blog.cadenkraft.com/creating-a-single-part-tool-less/",
+    "datePublished": "2021-02-24T18:09:00.000Z",
+    "dateModified": "2022-02-24T18:10:58.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://images.unsplash.com/photo-1553406830-f6e44ac97624?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDN8fHJhc3BiZXJyeSUyMHBpfGVufDB8fHx8MTY0NTY3MDY4Ng&ixlib=rb-1.2.1&q=80&w=2000",
+        "width": 2000,
+        "height": 1125
+    },
+    "description": "My Raspberry Pi&#x27;s are some of my favorite devices that I own. Their versatility\ncost and ease of use have allowed me to implement them into a wide range of\nprojects and learn a lot about computing.\n\nOne area I had never ventured however was the idea of clustered computing.\nMaking a compute cluster out of Raspberry Pi&#x27;s had always seemed like a popular\nproject that people do but I personally had never seen a use for one.\n\nOracle Raspberry Pi Compute ClusterHowever, after watching some videos by J",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://blog.cadenkraft.com/"
@@ -108,7 +135,7 @@
 
 <style>:root {--ghost-accent-color: #002bff;}</style>
 </head>
-<body class='tag-template tag-tutorial'>
+<body class='post-template'>
   <a href='#main-content' class='c-skip-to-content'>Skip to content</a>
 
   <div class='c-site-container'>
@@ -168,57 +195,134 @@
       
 
 
-  <div class='o-grid'>
-    <div class='o-grid__col o-grid__col--center o-grid__col--9-10-m o-grid__col--2-3-l'>
-      <div class='c-archive'>
-        <h1 class='c-archive__title'>Tutorial</h1>
-      </div>
-    </div>
-  </div>
 
 <div class='o-grid'>
   <div class='o-grid__col o-grid__col--center o-grid__col--9-10-m o-grid__col--2-3-l'>
-    <div class='js-grid'>
-    <div class='c-post-card js-post-card post tag-tutorial  '>
-  <div class='c-post-card__meta'>
-    <time class='c-post-card__date' datetime='2022-02-22' title='22 February 2022'>22 Feb 2022</time>
+    <article class='c-post'>
+      <header class='c-post-header'>
+  <h1 class='c-post-header__title'>Creating a Single Part Tool-less Raspberry Pi Compute Cluster</h1>
 
-    <div class='is-membership
-                c-post-card__visibility
-                c-post-card__visibility--public
-'>
-      <span class='paid'>Paid</span>
-      <span class='members'>Members</span>
-      <span class='public'>Public</span>
+
+    <div class='c-post-header__meta'>
+        <a href='/author/caden/' class='c-post-header__author'>
+            <div class='c-post-header__author_media'>
+              <img class='c-post-header__author_image lazyload' data-src='/content/images/size/w64/2022/02/portfolio-4.jpg' alt='Caden Kraft' width='32' height='32'>
+            </div>
+          <div class='c-post-header__author_info'>
+            <div class='c-post-header__author_name'>Caden Kraft</div>
+            <time class='c-post-header__date' datetime='2021-02-24'>24 February 2021 . </time>
+            <span class='c-post-header__reading-time'>1 min read</span>
+          </div>
+        </a>
+    </div>
+
+    <figure class='c-post-image-wrap'>
+      <img
+        alt='Creating a Single Part Tool-less Raspberry Pi Compute Cluster'
+        class='c-post-image lazyload'
+        data-thisisbuggedatm='
+          https://images.unsplash.com/photo-1553406830-f6e44ac97624?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDN8fHJhc3BiZXJyeSUyMHBpfGVufDB8fHx8MTY0NTY3MDY4Ng&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 612w,
+          https://images.unsplash.com/photo-1553406830-f6e44ac97624?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDN8fHJhc3BiZXJyeSUyMHBpfGVufDB8fHx8MTY0NTY3MDY4Ng&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000 1462w'
+        sizes='(min-width: 1300px) 731px, (min-width: 1040px) calc(44.58vw + 160px), (min-width: 640px) calc(90vw - 61px), calc(100vw - 32px)'
+        data-src='https://images.unsplash.com/photo-1553406830-f6e44ac97624?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDN8fHJhc3BiZXJyeSUyMHBpfGVufDB8fHx8MTY0NTY3MDY4Ng&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000'
+      >
+    </figure>
+</header>
+      <section class='c-content'>
+        <p>My Raspberry Pi's are some of my favorite devices that I own. Their versatility cost and ease of use have allowed me to implement them into a wide range of projects and learn a lot about computing.</p><p>One area I had never ventured however was the idea of clustered computing. Making a compute cluster out of Raspberry Pi's had always seemed like a popular project that people do but I personally had never seen a use for one.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://blog.cadenkraft.com/content/images/2022/02/image-14.png" class="kg-image" alt loading="lazy" width="960" height="640" thisisbuggedatm="https://blog.cadenkraft.com/content/images/size/w600/2022/02/image-14.png 600w, https://blog.cadenkraft.com/content/images/2022/02/image-14.png 960w" sizes="(min-width: 720px) 720px"><figcaption>Oracle Raspberry Pi Compute Cluster</figcaption></figure><p>However, after watching some videos by <a href="https://www.youtube.com/channel/UCR-DXc1voovS8nhAvccRZhg">Jeff Geerling</a> I was interested. Luckily enough I just so happened to have 4 Raspberry Pi 3b+'s that currently had no use. After doing some research the consensus came to be that Pi 4's are recommended for making clusters and 3's might be a bit slow but I'm mostly doing it as a learning experience as opposed to a necessity.</p><p>Looking at the designs people have made previously for Raspberry Pi clusters I was disappointed to see that the actual mechanical design of the enclosures/lack-thereof was quite lacking in my opinion and I thought that I could do better. I tasked myself with designing a new enclosure satisfying these requirements.</p><ul><li>Tool-less install of the Raspberry Pi's</li><li>Streamlined power delivery (No big micro-USB cables</li><li>3D printable with as few parts as possible</li><li>Integrated network switch and active cooling</li></ul>
+      </section>
+
+
+        <ul class='c-share o-plain-list'>
+  <li class='c-share__item'>
+    <a class='c-share__link'
+       title='Share on Twitter'
+       aria-label='Share on Twitter'
+       href="https://twitter.com/share?text=Creating%20a%20Single%20Part%20Tool-less%20Raspberry%20Pi%20Compute%20Cluster&amp;url=https://blog.cadenkraft.com/creating-a-single-part-tool-less/"
+       onclick="window.open(this.href, 'twitter-share', 'width=550, height=235'); return false;">
+      <span data-icon='ei-sc-twitter' data-size='s' class='c-share__icon'></span>
+    </a>
+  </li>
+
+  <li class='c-share__item'>
+    <a class='c-share__link'
+       title='Share on Facebook'
+       aria-label='Share on Facebook'
+       href="https://www.facebook.com/sharer/sharer.php?u=https://blog.cadenkraft.com/creating-a-single-part-tool-less/"
+       onclick="window.open(this.href, 'facebook-share', 'width=580, height=296'); return false;">
+      <span data-icon='ei-sc-facebook' data-size='s' class='c-share__icon'></span>
+    </a>
+  </li>
+
+  <li class='c-share__item'>
+    <a class='c-share__link'
+      title='Share on LinkedIn'
+      aria-label='Share on LinkedIn'
+      href="https://www.linkedin.com/shareArticle?mini=true&url=https://blog.cadenkraft.com/creating-a-single-part-tool-less/&title=Creating%20a%20Single%20Part%20Tool-less%20Raspberry%20Pi%20Compute%20Cluster"
+      onclick="window.open(this.href, 'linkedin-share', 'width=580, height=296'); return false;">
+      <span data-icon='ei-sc-linkedin' data-size='s' class='c-share__icon'></span>
+    </a>
+  </li>
+
+  <li class='c-share__item'>
+    <a class='c-share__link'
+       title='Share on Pinterest'
+       aria-label='Share on Pinterest'
+       href="http://pinterest.com/pin/create/button/?url=https://blog.cadenkraft.com/creating-a-single-part-tool-less/&media=https://images.unsplash.com/photo-1553406830-f6e44ac97624?crop&#x3D;entropy&amp;cs&#x3D;tinysrgb&amp;fit&#x3D;max&amp;fm&#x3D;jpg&amp;ixid&#x3D;MnwxMTc3M3wwfDF8c2VhcmNofDN8fHJhc3BiZXJyeSUyMHBpfGVufDB8fHx8MTY0NTY3MDY4Ng&amp;ixlib&#x3D;rb-1.2.1&amp;q&#x3D;80&amp;w&#x3D;2000&description=Creating%20a%20Single%20Part%20Tool-less%20Raspberry%20Pi%20Compute%20Cluster"
+       onclick="window.open(this.href, 'pinterest-share', 'width=580, height=296'); return false;">
+      <span data-icon='ei-sc-pinterest' data-size='s' class='c-share__icon'></span>
+    </a>
+  </li>
+
+  <li class='c-share__item'>
+    <a class='c-share__link'
+       title='Share via Email'
+       aria-label='Share via Email'
+       href="mailto:?subject=Creating%20a%20Single%20Part%20Tool-less%20Raspberry%20Pi%20Compute%20Cluster&body=https://blog.cadenkraft.com/creating-a-single-part-tool-less/">
+      <span data-icon='ei-envelope' data-size='s' class='c-share__icon'></span>
+    </a>
+  </li>
+
+  <li class='c-share__item'>
+    <a class='c-share__link js-share__link--clipboard'
+       title='Copy link'
+       aria-label='Copy link'
+       href='#'
+       data-clipboard-text='https://blog.cadenkraft.com/creating-a-single-part-tool-less/'
+       onclick='return false;'>
+      <span data-icon='ei-link' data-size='s' class='c-share__icon'></span>
+    </a>
+  </li>
+</ul>
+
+          <div class=' is-membership'>
+    <div class=''>
+      <section class='c-subscribe'>
+        <div class='c-subscribe__content'>
+          <h3 class='c-subscribe__heading u-type-500 u-mb-8'>Caden Kraft Newsletter</h3>
+          <p class='u-mb-16'>Join the newsletter to receive the latest updates in your inbox.</p>
+          <form data-members-form='subscribe' class='c-subscribe-form is-membership '>
+  <div class='c-form-group'>
+    <label for='subscribe-box' class='u-hidden-visually'>Your email address</label>
+    <input type='email' name='email' class='c-form-group__input' id='subscribe-box' placeholder='Your email address' required data-members-email>
+    <button type='submit' value='Subscribe' class='c-btn c-form-group__btn'>Subscribe</button>
+  </div>
+
+  <div class='c-alert c-alert--success'>Please check your inbox and click the link to confirm your subscription.</div>
+  <div class='c-alert c-alert--invalid'>Please enter a valid email address!</div>
+  <div class='c-alert c-alert--error'>An error occurred, please try again later.</div>
+</form>        </div>
+        <div class='c-subscribe__icon'>
+          <svg height='300px' width='300px' xmlns:dc='http://purl.org/dc/elements/1.1/' xmlns:cc='http://creativecommons.org/ns#' xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#' xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' xmlns:sodipodi='http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd' xmlns:inkscape='http://www.inkscape.org/namespaces/inkscape' version='1.1' x='0px' y='0px' viewBox='0 0 100 100'><g transform='translate(0,-952.36218)'><path style='text-indent:0;text-transform:none;direction:ltr;block-progression:tb;baseline-shift:baseline;color:#000000;enable-background:accumulate;' d='m 16.999997,973.36216 c -4.4386,0 -7.9999997,3.7333 -7.9999997,8.2188 l 0,41.53124 c 0,4.4854 3.5613997,8.25 7.9999997,8.25 l 66.000006,0 c 4.4386,0 8,-3.7646 8,-8.25 l 0,-41.53124 c 0,-4.4855 -3.5614,-8.2188 -8,-8.2188 l -66.000005,0 z m 0,4 66.000006,0 c 0.5919,0 1.1508,0.1705 1.6562,0.4062 L 52.468798,1008.331 c -1.4774,1.4026 -3.3951,1.4027 -4.875,0 l -32.25,-30.56264 c 0.5054,-0.2357 1.0643,-0.4062 1.6562,-0.4062 z m -3.9375,3.75 22.7813,21.59384 -22.4063,22.375 c -0.2806,-0.5827 -0.4375,-1.2497 -0.4375,-1.9688 l 0,-41.53124 c 0,-0.1624 0.047,-0.3123 0.062,-0.4688 z m 73.875006,0 c 0.016,0.1565 0.062,0.3064 0.062,0.4688 l 0,41.53124 c 0,0.7087 -0.1644,1.3609 -0.4375,1.9375 l -22.343705,-22.375 22.718705,-21.56254 z m -25.625005,24.34384 21.875005,21.9062 c -0.063,0 -0.1241,0 -0.1875,0 l -66.000005,0 c -0.053,0 -0.104,0 -0.1562,0 l 21.9062,-21.875 6.0938,5.75 c 2.9023,2.7512 7.4733,2.7551 10.375,0 l 6.0937,-5.7812 z' fill-opacity='1' stroke='none' marker='none' visibility='visible' display='inline' overflow='visible'></path></g></svg>        </div>
+      </section>
     </div>
   </div>
 
-  <div class='c-post-card__content'>
-    <h2 class='c-post-card__title'>
-      <a href='/creating-a-ghost-blog-with-free-webhosting/' class='c-post-card__url'>Creating a Ghost Blog with Free Webhosting using Github Pages</a>
-    </h2>
-    <p class='c-post-card__excerpt'>When I began my search to find the best blog/CMS that I could host at home (or in my dorm room) on my server, I landed on Ghost pretty quickly with its slick UI and broad feature-set including an admin panel, app integrations, and native Docker support.  My problems</p>
+    </article>
   </div>
-
-    <div class='c-post-card__media'>
-      <div class='c-post-card__image-wrap'>
-        <img
-          alt='Creating a Ghost Blog with Free Webhosting using Github Pages'
-          class='c-post-card__image lazyload'
-          data-thisisbuggedatm='
-            /content/images/size/w612/2022/02/ghost-blog.png 612w,
-            /content/images/size/w1462/2022/02/ghost-blog.png 1462w'
-          sizes='(min-width: 1280px) 153px, (min-width: 1040px) 12.27vw, (min-width: 640px) calc(22.37vw - 44px), calc(100vw - 32px)'
-          data-src='/content/images/size/w1462/2022/02/ghost-blog.png'
-        >
-      </div>
-    </div>
-</div></div>  </div>
 </div>
 
-<div class='o-grid'>
-  
-</div>
+
     </main>
 
     <footer class='c-footer'>
