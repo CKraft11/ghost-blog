@@ -1,5 +1,5 @@
 User-agent: *
-Sitemap: https://blog.cadenkraft.com/sitemap.xml
+Sitemap: https://cadenkraft.com/sitemap.xml
 Disallow: /ghost/
 Disallow: /p/
 Disallow: /email/
