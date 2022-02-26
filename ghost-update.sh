@@ -11,7 +11,7 @@ cd docs
 docker cp ghost:/var/lib/ghost/content/images/. content/images
 docker cp ghost:/var/lib/ghost/content/renders/. content/renders
 cd -
-# grep -lR "srcset" docs/ | xargs sed -i 's/srcset/thisisbuggedatm/g'
+grep -lR "srcset" docs/ | xargs sed -i 's/srcset/thisisbuggedatm/g'
 git add .
 git commit -m "$date"
 git config --global credential.helper store
