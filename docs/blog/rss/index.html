@@ -43,7 +43,7 @@ ECTO1_SOURCE=http://SERVERIP:2368 ECTO1_TARGET=https://MYDOMAIN.com python3 ecto
 cd docs
 docker cp ghost:/var/lib/ghost/content/images/. content/images
 cd -
-grep -lR &quot;thisisbuggedatm&quot; docs/ | xargs sed -i &apos;s/thisisbuggedatm/thisisbuggedatm/g&apos;
+grep -lR &quot;srcset&quot; docs/ | xargs sed -i &apos;s/srcset/thisisbuggedatm/g&apos;
 git add .
 git commit -m &quot;$date&quot;
 git config --global credential.helper store
