@@ -141,6 +141,84 @@ download-circle" />
 <style>
   .c-post .c-subscribe { display: none; }
 </style>
+<style>
+    :root {
+        --background-primary: #fff1e0;
+        --background-secondary: #fff1e0;
+        --color-brand: #52aff8;
+        --color-text-primary:   #222129;
+        --color-text-secondary: #222129;
+        --color-border: var(--color-brand);
+    }
+    #kg-image {
+  		outline: 30px solid #ffa86a;
+        outline-offset: 26px; 
+    }
+    .c-title-bar__divider {
+  grid-area: divider;
+  height: 4px;
+  
+  flex: 1;
+  box-sizing: inherit;
+  outline: 4px dotted var(--color-brand);
+  background-color: var(--background-primary);
+ 
+}
+    .c-title-bar__title {
+  grid-area: title;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 700;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  background: var(--color-brand);
+  color: var(--background-primary);
+  padding: 5px 10px;
+}
+    .c-home__content {
+  padding: 40px 40px 40px 40px;
+  border: 30px solid var(--color-brand);
+}
+    .c-nav__item__icon {
+  --color-text-primary: var(--color-brand);
+}
+.c-nav-wrap {
+  #padding: 9px;
+  #background: var(--color-brand);
+  color: var(--color-brand);
+}
+.c-logo {
+  #background: var(--color-brand);
+  padding: 5px;
+}
+    .c-nav__link {
+  color: var(--color-brand);
+  #--color-text-primary: var(--color-brand);
+}
+    .kg-card figcaption {
+  background: var(--color-brand);
+  margin-top: 10px;
+  line-height: 8px;
+}
+    .c-logo__img {
+  filter: invert(60%) sepia(46%) saturate(923%) hue-rotate(179deg) brightness(99%) contrast(96%);
+}
+    :not(pre) > code[class*="language-"], pre[class*="language-"] {
+  background: #f5f2f0;
+  border: 2px solid var(--color-brand);
+  border-radius: 0%;
+}
+    .kg-bookmark-card a.kg-bookmark-container, .kg-bookmark-card a.kg-bookmark-container:hover {
+  border-radius: 0px;
+  border: 10px solid var(--color-brand);
+  padding: 10px;
+}
+    .kg-code-card, pre, pre[class*="language-"] {
+  border-radius: 0px;
+}
+</style>
 
 
 <style>:root {--ghost-accent-color: #002bff;}</style>
