@@ -35,23 +35,21 @@
     <meta property="og:site_name" content="Caden Kraft" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Creating a Ghost Blog with Free Webhosting using Github Pages" />
-    <meta property="og:description" content="When I began my search to find the best blog/CMS that I could host at home (or
-in my dorm room) on my server, I landed on Ghost pretty quickly with its slick
-UI and broad feature-set including an admin panel, app integrations, and native 
-Docker [https://docs.docker." />
+    <meta property="og:description" content="When I began my search to find the best blog/CMS that I could host at home (or in my dorm room) on my server, I landed on Ghost pretty quickly with its slick UI and broad feature-set including an admin panel, app integrations, and native Docker support.
+
+My problems" />
     <meta property="og:url" content="https://cadenkraft.com/creating-a-ghost-blog-with-free-webhosting/" />
     <meta property="og:image" content="https://cadenkraft.com/content/images/2022/02/ghost-blog.png" />
     <meta property="article:published_time" content="2022-02-23T04:58:02.000Z" />
-    <meta property="article:modified_time" content="2022-09-09T04:45:28.000Z" />
+    <meta property="article:modified_time" content="2023-07-26T07:04:37.000Z" />
     <meta property="article:tag" content="Tutorial" />
     
     <meta property="article:publisher" content="https://www.facebook.com/ghost" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Creating a Ghost Blog with Free Webhosting using Github Pages" />
-    <meta name="twitter:description" content="When I began my search to find the best blog/CMS that I could host at home (or
-in my dorm room) on my server, I landed on Ghost pretty quickly with its slick
-UI and broad feature-set including an admin panel, app integrations, and native 
-Docker [https://docs.docker." />
+    <meta name="twitter:description" content="When I began my search to find the best blog/CMS that I could host at home (or in my dorm room) on my server, I landed on Ghost pretty quickly with its slick UI and broad feature-set including an admin panel, app integrations, and native Docker support.
+
+My problems" />
     <meta name="twitter:url" content="https://cadenkraft.com/creating-a-ghost-blog-with-free-webhosting/" />
     <meta name="twitter:image" content="https://cadenkraft.com/content/images/2022/02/ghost-blog.png" />
     <meta name="twitter:label1" content="Written by" />
@@ -94,7 +92,7 @@ Docker [https://docs.docker." />
     "headline": "Creating a Ghost Blog with Free Webhosting using Github Pages",
     "url": "https://cadenkraft.com/creating-a-ghost-blog-with-free-webhosting/",
     "datePublished": "2022-02-23T04:58:02.000Z",
-    "dateModified": "2022-09-09T04:45:28.000Z",
+    "dateModified": "2023-07-26T07:04:37.000Z",
     "image": {
         "@type": "ImageObject",
         "url": "https://cadenkraft.com/content/images/2022/02/ghost-blog.png",
@@ -102,7 +100,7 @@ Docker [https://docs.docker." />
         "height": 1100
     },
     "keywords": "Tutorial",
-    "description": "When I began my search to find the best blog/CMS that I could host at home (or\nin my dorm room) on my server, I landed on Ghost pretty quickly with its slick\nUI and broad feature-set including an admin panel, app integrations, and native \nDocker [https://docs.docker.com/get-started/overview/] support. \n\nMy problems arose when it came to hosting. Although I can host it on my server I\ncurrently cannot port-forward traffic to my blog, and it also introduces a\npretty significant security risk.\n\nBrin",
+    "description": "When I began my search to find the best blog/CMS that I could host at home (or in my dorm room) on my server, I landed on Ghost pretty quickly with its slick UI and broad feature-set including an admin panel, app integrations, and native Docker support.\n\nMy problems arose when it came to hosting. Although I can host it on my server I currently cannot port-forward traffic to my blog, and it also introduces a pretty significant security risk.  \n\nBring in Github pages. Github pages is a great way t",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://cadenkraft.com/"
@@ -643,7 +641,7 @@ sudo apt-get install docker-ce docker-ce-cli docker-compose containerd.io</code>
 services:
 
   ghost:
-    image: ghost:4.36.3
+    image: ghost:latest
     restart: always
     ports:
       - 2368:2368
@@ -658,7 +656,7 @@ services:
       #NODE_ENV: development
 
   db:
-    image: mysql:5.7
+    image: mysql:8.0
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: EXAMPLE</code></pre><figcaption>docker-compose.yml</figcaption></figure><p>Press CTRL-X to exit and Y to save your changes. Before we start the container, we also want to add your current user to the Docker group on your computer so you will be able to run all of these commands without using sudo.</p><figure class="kg-card kg-code-card"><pre><code class="language-bash">sudo groupadd docker</code></pre><figcaption>Create the Docker group</figcaption></figure><figure class="kg-card kg-code-card"><pre><code class="language-bash">sudo usermod -aG docker $USER</code></pre><figcaption>Add the current user to the Docker group</figcaption></figure><p>You will likely have to log out and log in for these changes to be implemented.</p><p>Finally, we can get into actually starting up the Ghost blog. If you are not running this on a server and are on a laptop or desktop, I recommend using <a href="https://code.visualstudio.com/?ref=caden-kraft">VSCode</a> with the Docker extension. The workflow is very nice for managing Docker containers and images.</p><figure class="kg-card kg-image-card"><img src="https://cadenkraft.com/content/images/2022/02/docker-3.png" class="kg-image" alt loading="lazy"></figure><p>Now we need to load up the Docker container we created earlier. Navigate to the directory that you created the docker-compose.yml file in and run</p><pre><code class="language-bash">docker-compose up -d</code></pre><p>This should take a while as it has to download and set up the Ghost Docker image but after it says the website is finished loading you should be able to navigate in your browser to <code>http://localhost:2368</code> or <code>http://serverip:2368</code> depending on your setup. You should see a nice-looking blog template with all the images loaded properly. Then you can add <code>/ghost</code> to the end of your URL to access the admin dashboard. </p><figure class="kg-card kg-image-card"><img src="https://cadenkraft.com/content/images/2022/02/ghost-default.jpg" class="kg-image" alt loading="lazy" width="1400" height="1123" thisisbuggedatm="https://cadenkraft.com/content/images/size/w600/2022/02/ghost-default.jpg 600w, https://cadenkraft.com/content/images/size/w1000/2022/02/ghost-default.jpg 1000w, https://cadenkraft.com/content/images/2022/02/ghost-default.jpg 1400w" sizes="(min-width: 720px) 720px"></figure><p>Here it will prompt you to set up an account and parts of your blog. I&apos;m not going to go too much more in-depth on that side of things as that is more up to the user but if you have everything up to here working we should be good to set up the GitHub pages integration.</p><p><strong>Setting up Github Pages</strong></p><p>Now that we have our local Ghost blog up and running, we want to set the static site will be generated and sent to Github Pages. The tool we will be using is called Ecto1. A big thanks to <a href="https://github.com/arktronic?ref=caden-kraft" rel="author">arktronic</a> for making it and all of the useful documentation. To install it, we just run </p><figure class="kg-card kg-bookmark-card"><a class="kg-bookmark-container" href="https://github.com/arktronic/ecto1?ref=caden-kraft"><div class="kg-bookmark-content"><div class="kg-bookmark-title">GitHub - arktronic/ecto1: Ghost blog downloader/scraper/static-site-maker</div><div class="kg-bookmark-description">Ghost blog downloader/scraper/static-site-maker. Contribute to arktronic/ecto1 development by creating an account on GitHub.</div><div class="kg-bookmark-metadata"><img class="kg-bookmark-icon" src="https://github.com/fluidicon.png" alt><span class="kg-bookmark-author">GitHub</span><span class="kg-bookmark-publisher">arktronic</span></div></div><div class="kg-bookmark-thumbnail"><img src="https://opengraph.githubassets.com/2f21f11350247dd18a9b06e189effe53e4cd46f89f5bf410db8d7cff7ecad6dc/arktronic/ecto1" alt></div></a></figure><pre><code class="language-bash">git clone https://github.com/arktronic/ecto1</code></pre><p>Next, we need to prepare our git repository on our personal machine. To start, create a folder you want the repository to be in and initialize it. </p><pre><code class="language-bash">mkdir ghost
