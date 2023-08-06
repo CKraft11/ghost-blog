@@ -240,9 +240,24 @@ One area I had never ventured however was the idea of clustered computing." />
   transition: all .5s ease-in-out;
 }
 
-img {
-  /*border-radius: 10px;*/
+.kg-video-container {
+  box-shadow: 0 4px 6px rgba(3, 27, 78, 5%);
+  border-radius: 16px !important;
+  border: 1px solid #E5EFF5 !important;
+  margin-bottom: 0px;
+  overflow: hidden;
 }
+
+.kg-video-container:hover {
+  box-shadow: 0 15px 23px rgba(3, 27, 78, 8%), 0 3px 6px rgba(0, 0, 0, 2%);
+  transition: all .5s ease-in-out;
+}
+
+video {
+  /*border-radius: 16px 16px 0px 0px !important;
+  overflow: hidden;*/
+}
+
 
 .c-title-bar__divider {
   display: none;
@@ -872,7 +887,7 @@ Before the invention of the LED</p>
 
   <div class='c-post-card__content'>
     <h2 class='c-post-card__title'>
-      <a href='/designing-a-coreless-axial-flux-motor-part-1/' class='c-post-card__url'>Designing an Ironless Axial Flux Motor: Part 1</a>
+      <a href='/designing-a-coreless-axial-flux-motor-part-1/' class='c-post-card__url'>Designing an Ironless Axial Flux Motor</a>
     </h2>
     <p class='c-post-card__excerpt'>After my first custom brushless motor I felt confident enough with the basic theory of how they work to make a second design with significantly more thought and math defining the design.
 
@@ -882,7 +897,7 @@ Creating a 3D Printed Brushless MotorWith my work in the Iowa State Solar Car cl
     <div class='c-post-card__media'>
       <div class='c-post-card__image-wrap'>
         <img
-          alt='Designing an Ironless Axial Flux Motor: Part 1'
+          alt='Designing an Ironless Axial Flux Motor'
           class='c-post-card__image lazyload'
           data-thisisbuggedatm='
             /content/images/size/w612/2022/09/title-page-render-axial-flux-motor.16.jpg 612w,

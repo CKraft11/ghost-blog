@@ -5,7 +5,7 @@
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
 
-  <title>Designing an Ironless Axial Flux Motor: Part 1</title>
+  <title>Designing an Ironless Axial Flux Motor</title>
 
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 
@@ -34,18 +34,18 @@
     
     <meta property="og:site_name" content="Caden Kraft" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Designing an Ironless Axial Flux Motor: Part 1" />
+    <meta property="og:title" content="Designing an Ironless Axial Flux Motor" />
     <meta property="og:description" content="After my first custom brushless motor I felt confident enough with the basic theory of how they work to make a second design with significantly more thought and math defining the design.
 
 Creating a 3D Printed Brushless MotorWith my work in the Iowa State Solar Car club I have learned" />
     <meta property="og:url" content="https://cadenkraft.com/designing-a-coreless-axial-flux-motor-part-1/" />
     <meta property="og:image" content="https://cadenkraft.com/content/images/2022/09/title-page-render-axial-flux-motor.16.jpg" />
     <meta property="article:published_time" content="2022-09-09T04:39:12.000Z" />
-    <meta property="article:modified_time" content="2022-10-31T01:13:31.000Z" />
+    <meta property="article:modified_time" content="2023-08-06T10:47:26.000Z" />
     <meta property="article:tag" content="Build" />
     
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Designing an Ironless Axial Flux Motor: Part 1" />
+    <meta name="twitter:title" content="Designing an Ironless Axial Flux Motor" />
     <meta name="twitter:description" content="After my first custom brushless motor I felt confident enough with the basic theory of how they work to make a second design with significantly more thought and math defining the design.
 
 Creating a 3D Printed Brushless MotorWith my work in the Iowa State Solar Car club I have learned" />
@@ -87,10 +87,10 @@ Creating a 3D Printed Brushless MotorWith my work in the Iowa State Solar Car cl
             "https://linkedin.com/in/cadenkraft"
         ]
     },
-    "headline": "Designing an Ironless Axial Flux Motor: Part 1",
+    "headline": "Designing an Ironless Axial Flux Motor",
     "url": "https://cadenkraft.com/designing-a-coreless-axial-flux-motor-part-1/",
     "datePublished": "2022-09-09T04:39:12.000Z",
-    "dateModified": "2022-10-31T01:13:31.000Z",
+    "dateModified": "2023-08-06T10:47:26.000Z",
     "image": {
         "@type": "ImageObject",
         "url": "https://cadenkraft.com/content/images/2022/09/title-page-render-axial-flux-motor.16.jpg",
@@ -240,9 +240,24 @@ Creating a 3D Printed Brushless MotorWith my work in the Iowa State Solar Car cl
   transition: all .5s ease-in-out;
 }
 
-img {
-  /*border-radius: 10px;*/
+.kg-video-container {
+  box-shadow: 0 4px 6px rgba(3, 27, 78, 5%);
+  border-radius: 16px !important;
+  border: 1px solid #E5EFF5 !important;
+  margin-bottom: 0px;
+  overflow: hidden;
 }
+
+.kg-video-container:hover {
+  box-shadow: 0 15px 23px rgba(3, 27, 78, 8%), 0 3px 6px rgba(0, 0, 0, 2%);
+  transition: all .5s ease-in-out;
+}
+
+video {
+  /*border-radius: 16px 16px 0px 0px !important;
+  overflow: hidden;*/
+}
+
 
 .c-title-bar__divider {
   display: none;
@@ -607,7 +622,7 @@ p code {
   <div class='o-grid__col o-grid__col--center o-grid__col--9-10-m o-grid__col--2-3-l'>
     <article class='c-post tag-build featured'>
       <header class='c-post-header'>
-  <h1 class='c-post-header__title'>Designing an Ironless Axial Flux Motor: Part 1</h1>
+  <h1 class='c-post-header__title'>Designing an Ironless Axial Flux Motor</h1>
 
 
     <div class='c-post-header__meta'>
@@ -618,14 +633,14 @@ p code {
           <div class='c-post-header__author_info'>
             <div class='c-post-header__author_name'>Caden Kraft</div>
             <time class='c-post-header__date' datetime='2022-09-08'>08 September 2022 . </time>
-            <span class='c-post-header__reading-time'>7 min read</span>
+            <span class='c-post-header__reading-time'>8 min read</span>
           </div>
         </a>
     </div>
 
     <figure class='c-post-image-wrap'>
       <img
-        alt='Designing an Ironless Axial Flux Motor: Part 1'
+        alt='Designing an Ironless Axial Flux Motor'
         class='c-post-image lazyload'
         data-thisisbuggedatm='
           /content/images/size/w612/2022/09/title-page-render-axial-flux-motor.16.jpg 612w,
@@ -690,7 +705,7 @@ p code {
 </tr>
 </tbody>
 </table>
-<!--kg-card-end: markdown--><p>I chose for the motor to have 12 poles and 18 coils as it has an efficient high winding factor.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://cadenkraft.com/content/images/2022/09/motor-winding.png" class="kg-image" alt loading="lazy" width="696" height="838" thisisbuggedatm="https://cadenkraft.com/content/images/size/w600/2022/09/motor-winding.png 600w, https://cadenkraft.com/content/images/2022/09/motor-winding.png 696w"><figcaption>Winding Factor from Bavaria Direct Online Calculator</figcaption></figure><h2 id="calculating-parameters">Calculating Parameters</h2><p></p><p>The first step in defining the coil turns needed is calculating the area of the motor that is covered by the coils.</p><!--kg-card-begin: markdown--><p>$$A_{rotor}=\pi\left(r_o^2-r_i^2\right)$$</p>
+<!--kg-card-end: markdown--><p>I chose for the motor to have 12 poles and 18 coils as it has an efficient high winding factor.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://cadenkraft.com/content/images/2022/09/motor-winding.png" class="kg-image" alt loading="lazy" width="696" height="838" thisisbuggedatm="https://cadenkraft.com/content/images/size/w600/2022/09/motor-winding.png 600w, https://cadenkraft.com/content/images/2022/09/motor-winding.png 696w"><figcaption>Winding Factor from Bavaria Direct Online Calculator</figcaption></figure><h2 id="calculating-parameters">Calculating Parameters</h2><p></p><p>The first step in defining the coil turns needed is calculating the area of the motor that is covered by the coils.</p><!--kg-card-begin: markdown--><p>$$A_{rotor}=\pi (({r_0}^{2})-({r_i}{r_i}))$$</p>
 <!--kg-card-end: markdown--><p>Next, I needed to define an optimal outer to inner radius ratio in order to maximize the efficiency of the motor. As the paper above says, an optimal ratio for this is around 0.5. This allowed me to define the inner and outer radius based on the 36mm*6mm*6mm magnets that I found online.</p><!--kg-card-begin: markdown--><p>$$\alpha=\frac{r_i}{r_o}$$</p>
 <!--kg-card-end: markdown--><p>Then I had to calculate the peak flux density using the equation below as well as the recommended mean air gap flux density of 0.5 Tesla from the paper above.</p><!--kg-card-begin: markdown--><p>$$\tau=\frac{F}{A_{rotor}}=\frac{Bli}{lw}=\frac{Bi}{w}=BZ$$</p>
 <!--kg-card-end: markdown--><!--kg-card-begin: markdown--><p>$$B=\frac{2B_m}{\pi}$$</p>
@@ -705,7 +720,40 @@ p code {
     <iframe src="https://cadenkraft.com/content/renders/axial_flux_animation.html" allowfullscreen style="position: absolute; top: 0px; left: 0px; height: 100%; width: 1px; min-width: 100%; *width: 100%;" frameborder="0" scrolling="no">
     </iframe>
   </div>
-</div><!--kg-card-end: html--><p>Here is an image of all of the different printed parts and hardware (aside from magnets and enamel wire) needed to assemble the motor.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://cadenkraft.com/content/images/2022/09/IMG_20220908_224657.jpg" class="kg-image" alt loading="lazy" width="2000" height="2000" thisisbuggedatm="https://cadenkraft.com/content/images/size/w600/2022/09/IMG_20220908_224657.jpg 600w, https://cadenkraft.com/content/images/size/w1000/2022/09/IMG_20220908_224657.jpg 1000w, https://cadenkraft.com/content/images/size/w1600/2022/09/IMG_20220908_224657.jpg 1600w, https://cadenkraft.com/content/images/size/w2400/2022/09/IMG_20220908_224657.jpg 2400w" sizes="(min-width: 720px) 720px"><figcaption>All completed printed parts</figcaption></figure><p>These photos show a more in depth look at the design that I used in order to secure the bearing to the plastic piece. This has proved to work significantly better than the friction fit bearing mount seen in my first design.</p><figure class="kg-card kg-gallery-card kg-width-wide kg-card-hascaption"><div class="kg-gallery-container"><div class="kg-gallery-row"><div class="kg-gallery-image"><img src="https://cadenkraft.com/content/images/2022/09/IMG_20220908_224758.jpg" width="2000" height="2000" loading="lazy" alt thisisbuggedatm="https://cadenkraft.com/content/images/size/w600/2022/09/IMG_20220908_224758.jpg 600w, https://cadenkraft.com/content/images/size/w1000/2022/09/IMG_20220908_224758.jpg 1000w, https://cadenkraft.com/content/images/size/w1600/2022/09/IMG_20220908_224758.jpg 1600w, https://cadenkraft.com/content/images/size/w2400/2022/09/IMG_20220908_224758.jpg 2400w" sizes="(min-width: 720px) 720px"></div><div class="kg-gallery-image"><img src="https://cadenkraft.com/content/images/2022/09/IMG_20220908_224809.jpg" width="2000" height="2000" loading="lazy" alt thisisbuggedatm="https://cadenkraft.com/content/images/size/w600/2022/09/IMG_20220908_224809.jpg 600w, https://cadenkraft.com/content/images/size/w1000/2022/09/IMG_20220908_224809.jpg 1000w, https://cadenkraft.com/content/images/size/w1600/2022/09/IMG_20220908_224809.jpg 1600w, https://cadenkraft.com/content/images/size/w2400/2022/09/IMG_20220908_224809.jpg 2400w" sizes="(min-width: 720px) 720px"></div><div class="kg-gallery-image"><img src="https://cadenkraft.com/content/images/2022/09/IMG_20220908_224828.jpg" width="2000" height="2000" loading="lazy" alt thisisbuggedatm="https://cadenkraft.com/content/images/size/w600/2022/09/IMG_20220908_224828.jpg 600w, https://cadenkraft.com/content/images/size/w1000/2022/09/IMG_20220908_224828.jpg 1000w, https://cadenkraft.com/content/images/size/w1600/2022/09/IMG_20220908_224828.jpg 1600w, https://cadenkraft.com/content/images/size/w2400/2022/09/IMG_20220908_224828.jpg 2400w" sizes="(min-width: 720px) 720px"></div></div></div><figcaption>Pictures of the parts I used to secure the bearing to the rotor and the stator</figcaption></figure><p>Finally here is an image of the final design assembled (again without magnets or coils) with a Sharpie for scale.</p><figure class="kg-card kg-image-card"><img src="https://cadenkraft.com/content/images/2022/09/IMG_20220908_223902.jpg" class="kg-image" alt loading="lazy" width="2000" height="2000" thisisbuggedatm="https://cadenkraft.com/content/images/size/w600/2022/09/IMG_20220908_223902.jpg 600w, https://cadenkraft.com/content/images/size/w1000/2022/09/IMG_20220908_223902.jpg 1000w, https://cadenkraft.com/content/images/size/w1600/2022/09/IMG_20220908_223902.jpg 1600w, https://cadenkraft.com/content/images/size/w2400/2022/09/IMG_20220908_223902.jpg 2400w" sizes="(min-width: 720px) 720px"></figure><p>Last but not least, I thought I would throw in an image showing the amount of prototype parts it took to get the fitment of everything just perfect.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://cadenkraft.com/content/images/2022/09/IMG_20220908_231138.jpg" class="kg-image" alt loading="lazy" width="2000" height="2000" thisisbuggedatm="https://cadenkraft.com/content/images/size/w600/2022/09/IMG_20220908_231138.jpg 600w, https://cadenkraft.com/content/images/size/w1000/2022/09/IMG_20220908_231138.jpg 1000w, https://cadenkraft.com/content/images/size/w1600/2022/09/IMG_20220908_231138.jpg 1600w, https://cadenkraft.com/content/images/size/w2400/2022/09/IMG_20220908_231138.jpg 2400w" sizes="(min-width: 720px) 720px"><figcaption>All of the failed prototype parts created through the design process</figcaption></figure><h2 id="plans-for-part-2">Plans for Part 2</h2><p></p><p>Now that the printed parts are completed and they are successfully test fit I have ordered the necessary magnets and wire needed to complete the motor and finally get it up and running. Unfortunately, due to logistics delays the shipment is taking quite a while and I felt that there was definitely enough content to split this into two parts anyway.</p><p>The step-by-step plans for what part two will include are listed as below.</p><ul><li>Wind all 18 coils coils</li><li>Measure coil resistance with University LCR meter</li><li>Solder power leads and connectors to coils</li><li>Assemble magnets into rotor</li><li>Create test stand to power and characterize properties of the motor</li></ul><p>I have really loved this project so far and I am looking forward to completing it once all of the parts come in.</p><h2 id="references">References</h2><p></p><p>[1] &#xA0; T. Batzel, A. Skraba, and R. D. Massi, &#x201C;Design and Test of an Ironless Axial 	</p><p>		Flux Permanent Magnet Machine using Halbach Array,&#x201D; <em>IAJC-ISAM Joint 	</em></p><p><em>		International Conference</em>, vol. 88, 2014.</p>
+</div><!--kg-card-end: html--><p>Here is an image of all of the different printed parts and hardware (aside from magnets and enamel wire) needed to assemble the motor.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://cadenkraft.com/content/images/2022/09/IMG_20220908_224657.jpg" class="kg-image" alt loading="lazy" width="2000" height="2000" thisisbuggedatm="https://cadenkraft.com/content/images/size/w600/2022/09/IMG_20220908_224657.jpg 600w, https://cadenkraft.com/content/images/size/w1000/2022/09/IMG_20220908_224657.jpg 1000w, https://cadenkraft.com/content/images/size/w1600/2022/09/IMG_20220908_224657.jpg 1600w, https://cadenkraft.com/content/images/size/w2400/2022/09/IMG_20220908_224657.jpg 2400w" sizes="(min-width: 720px) 720px"><figcaption>All completed printed parts</figcaption></figure><p>These photos show a more in depth look at the design that I used in order to secure the bearing to the plastic piece. This has proved to work significantly better than the friction fit bearing mount seen in my first design.</p><figure class="kg-card kg-gallery-card kg-width-wide kg-card-hascaption"><div class="kg-gallery-container"><div class="kg-gallery-row"><div class="kg-gallery-image"><img src="https://cadenkraft.com/content/images/2022/09/IMG_20220908_224758.jpg" width="2000" height="2000" loading="lazy" alt thisisbuggedatm="https://cadenkraft.com/content/images/size/w600/2022/09/IMG_20220908_224758.jpg 600w, https://cadenkraft.com/content/images/size/w1000/2022/09/IMG_20220908_224758.jpg 1000w, https://cadenkraft.com/content/images/size/w1600/2022/09/IMG_20220908_224758.jpg 1600w, https://cadenkraft.com/content/images/size/w2400/2022/09/IMG_20220908_224758.jpg 2400w" sizes="(min-width: 720px) 720px"></div><div class="kg-gallery-image"><img src="https://cadenkraft.com/content/images/2022/09/IMG_20220908_224809.jpg" width="2000" height="2000" loading="lazy" alt thisisbuggedatm="https://cadenkraft.com/content/images/size/w600/2022/09/IMG_20220908_224809.jpg 600w, https://cadenkraft.com/content/images/size/w1000/2022/09/IMG_20220908_224809.jpg 1000w, https://cadenkraft.com/content/images/size/w1600/2022/09/IMG_20220908_224809.jpg 1600w, https://cadenkraft.com/content/images/size/w2400/2022/09/IMG_20220908_224809.jpg 2400w" sizes="(min-width: 720px) 720px"></div><div class="kg-gallery-image"><img src="https://cadenkraft.com/content/images/2022/09/IMG_20220908_224828.jpg" width="2000" height="2000" loading="lazy" alt thisisbuggedatm="https://cadenkraft.com/content/images/size/w600/2022/09/IMG_20220908_224828.jpg 600w, https://cadenkraft.com/content/images/size/w1000/2022/09/IMG_20220908_224828.jpg 1000w, https://cadenkraft.com/content/images/size/w1600/2022/09/IMG_20220908_224828.jpg 1600w, https://cadenkraft.com/content/images/size/w2400/2022/09/IMG_20220908_224828.jpg 2400w" sizes="(min-width: 720px) 720px"></div></div></div><figcaption>Pictures of the parts I used to secure the bearing to the rotor and the stator</figcaption></figure><p>Finally here is an image of the final design assembled (again without magnets or coils) with a Sharpie for scale.</p><figure class="kg-card kg-image-card"><img src="https://cadenkraft.com/content/images/2022/09/IMG_20220908_223902.jpg" class="kg-image" alt loading="lazy" width="2000" height="2000" thisisbuggedatm="https://cadenkraft.com/content/images/size/w600/2022/09/IMG_20220908_223902.jpg 600w, https://cadenkraft.com/content/images/size/w1000/2022/09/IMG_20220908_223902.jpg 1000w, https://cadenkraft.com/content/images/size/w1600/2022/09/IMG_20220908_223902.jpg 1600w, https://cadenkraft.com/content/images/size/w2400/2022/09/IMG_20220908_223902.jpg 2400w" sizes="(min-width: 720px) 720px"></figure><p>Last but not least, I thought I would throw in an image showing the amount of prototype parts it took to get the fitment of everything just perfect.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://cadenkraft.com/content/images/2022/09/IMG_20220908_231138.jpg" class="kg-image" alt loading="lazy" width="2000" height="2000" thisisbuggedatm="https://cadenkraft.com/content/images/size/w600/2022/09/IMG_20220908_231138.jpg 600w, https://cadenkraft.com/content/images/size/w1000/2022/09/IMG_20220908_231138.jpg 1000w, https://cadenkraft.com/content/images/size/w1600/2022/09/IMG_20220908_231138.jpg 1600w, https://cadenkraft.com/content/images/size/w2400/2022/09/IMG_20220908_231138.jpg 2400w" sizes="(min-width: 720px) 720px"><figcaption>All of the failed prototype parts created through the design process</figcaption></figure><h2 id="assembly">Assembly</h2><p></p><p>Now that the printed parts are completed and they are successfully test fit I ordered the necessary magnets and wire needed to complete the motor and finally get it up and running. </p><p>The step-by-step plans for what the assembly will include are listed as below.</p><ul><li>Wind all 18 coils coils</li><li>Measure coil resistance with University LCR meter</li><li>Solder power leads and connectors to coils</li><li>Assemble magnets into rotor</li><li>Create test stand to power and characterize properties of the motor</li></ul><p>Here are the photos of the wound coils for the motor as well as the magnets in the rotor. I used a magnetometer app to find the northern pole of the magnets in order to properly construct the Halbach array.</p><figure class="kg-card kg-gallery-card kg-width-wide kg-card-hascaption"><div class="kg-gallery-container"><div class="kg-gallery-row"><div class="kg-gallery-image"><img src="https://cadenkraft.com/content/images/2023/08/IMG_20221005_212325.jpg" width="2000" height="2000" loading="lazy" alt thisisbuggedatm="https://cadenkraft.com/content/images/size/w600/2023/08/IMG_20221005_212325.jpg 600w, https://cadenkraft.com/content/images/size/w1000/2023/08/IMG_20221005_212325.jpg 1000w, https://cadenkraft.com/content/images/size/w1600/2023/08/IMG_20221005_212325.jpg 1600w, https://cadenkraft.com/content/images/size/w2400/2023/08/IMG_20221005_212325.jpg 2400w" sizes="(min-width: 720px) 720px"></div><div class="kg-gallery-image"><img src="https://cadenkraft.com/content/images/2023/08/IMG_20221003_233943.jpg" width="2000" height="2000" loading="lazy" alt thisisbuggedatm="https://cadenkraft.com/content/images/size/w600/2023/08/IMG_20221003_233943.jpg 600w, https://cadenkraft.com/content/images/size/w1000/2023/08/IMG_20221003_233943.jpg 1000w, https://cadenkraft.com/content/images/size/w1600/2023/08/IMG_20221003_233943.jpg 1600w, https://cadenkraft.com/content/images/size/w2400/2023/08/IMG_20221003_233943.jpg 2400w" sizes="(min-width: 720px) 720px"></div></div></div><figcaption>Magnets in rotor (left), Would coils (right)</figcaption></figure><p>In order to make sure that I wound the coils correctly and the solder joints didn&apos;t induce any added resistance I took the stator assembly to one of the university LCR meters to measure resistance and inductance.</p><figure class="kg-card kg-gallery-card kg-width-wide kg-card-hascaption"><div class="kg-gallery-container"><div class="kg-gallery-row"><div class="kg-gallery-image"><img src="https://cadenkraft.com/content/images/2023/08/IMG_20221004_004635.jpg" width="2000" height="2000" loading="lazy" alt thisisbuggedatm="https://cadenkraft.com/content/images/size/w600/2023/08/IMG_20221004_004635.jpg 600w, https://cadenkraft.com/content/images/size/w1000/2023/08/IMG_20221004_004635.jpg 1000w, https://cadenkraft.com/content/images/size/w1600/2023/08/IMG_20221004_004635.jpg 1600w, https://cadenkraft.com/content/images/size/w2400/2023/08/IMG_20221004_004635.jpg 2400w" sizes="(min-width: 720px) 720px"></div><div class="kg-gallery-image"><img src="https://cadenkraft.com/content/images/2023/08/IMG_20221004_114243.jpg" width="2000" height="2000" loading="lazy" alt thisisbuggedatm="https://cadenkraft.com/content/images/size/w600/2023/08/IMG_20221004_114243.jpg 600w, https://cadenkraft.com/content/images/size/w1000/2023/08/IMG_20221004_114243.jpg 1000w, https://cadenkraft.com/content/images/size/w1600/2023/08/IMG_20221004_114243.jpg 1600w, https://cadenkraft.com/content/images/size/w2400/2023/08/IMG_20221004_114243.jpg 2400w" sizes="(min-width: 720px) 720px"></div></div></div><figcaption>Labeled coils (left), LCR meter setup (right)</figcaption></figure><p>Below is a table summarizing the LCR measurements.</p><!--kg-card-begin: markdown--><table>
+<thead>
+<tr>
+<th></th>
+<th>AB</th>
+<th>AC</th>
+<th>BC</th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Resistance (mOhms)</td>
+<td>699</td>
+<td>705</td>
+<td>708</td>
+<td>348</td>
+<td>351</td>
+<td>357</td>
+</tr>
+<tr>
+<td>Inductance (uH)</td>
+<td>56.45</td>
+<td>57.69</td>
+<td>57.19</td>
+<td>28.48</td>
+<td>27.98</td>
+<td>29.22</td>
+</tr>
+</tbody>
+</table>
+<!--kg-card-end: markdown--><p>While coil A differed slightly I deemed this within my allotted margin of error and moved forward. </p><p>Finally once it was fully assembled I was able to hook everything up and hope that it would spin. Below is a video of its first spin.</p><hr><figure class="kg-card kg-video-card kg-card-hascaption"><div class="kg-video-container"><video src="https://cadenkraft.com/content/media/2023/08/VID_20221007_233811_1.mp4" poster="https://img.spacergif.org/v1/1080x730/0a/spacer.png" width="1080" height="730" playsinline preload="metadata" style="background: transparent url(&apos;https://cadenkraft.com/content/images/2023/08/media-thumbnail-ember327.jpg&apos;) 50% 50% / cover no-repeat;"></video><div class="kg-video-overlay"><button class="kg-video-large-play-icon"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M23.14 10.608 2.253.164A1.559 1.559 0 0 0 0 1.557v20.887a1.558 1.558 0 0 0 2.253 1.392L23.14 13.393a1.557 1.557 0 0 0 0-2.785Z"/></svg></button></div><div class="kg-video-player-container"><div class="kg-video-player"><button class="kg-video-play-icon"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M23.14 10.608 2.253.164A1.559 1.559 0 0 0 0 1.557v20.887a1.558 1.558 0 0 0 2.253 1.392L23.14 13.393a1.557 1.557 0 0 0 0-2.785Z"/></svg></button><button class="kg-video-pause-icon kg-video-hide"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><rect x="3" y="1" width="7" height="22" rx="1.5" ry="1.5"/><rect x="14" y="1" width="7" height="22" rx="1.5" ry="1.5"/></svg></button><span class="kg-video-current-time">0:00</span><div class="kg-video-time">/<span class="kg-video-duration"></span></div><input type="range" class="kg-video-seek-slider" max="100" value="0"><button class="kg-video-playback-rate">1&#xD7;</button><button class="kg-video-unmute-icon"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M15.189 2.021a9.728 9.728 0 0 0-7.924 4.85.249.249 0 0 1-.221.133H5.25a3 3 0 0 0-3 3v2a3 3 0 0 0 3 3h1.794a.249.249 0 0 1 .221.133 9.73 9.73 0 0 0 7.924 4.85h.06a1 1 0 0 0 1-1V3.02a1 1 0 0 0-1.06-.998Z"/></svg></button><button class="kg-video-mute-icon kg-video-hide"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M16.177 4.3a.248.248 0 0 0 .073-.176v-1.1a1 1 0 0 0-1.061-1 9.728 9.728 0 0 0-7.924 4.85.249.249 0 0 1-.221.133H5.25a3 3 0 0 0-3 3v2a3 3 0 0 0 3 3h.114a.251.251 0 0 0 .177-.073ZM23.707 1.706A1 1 0 0 0 22.293.292l-22 22a1 1 0 0 0 0 1.414l.009.009a1 1 0 0 0 1.405-.009l6.63-6.631A.251.251 0 0 1 8.515 17a.245.245 0 0 1 .177.075 10.081 10.081 0 0 0 6.5 2.92 1 1 0 0 0 1.061-1V9.266a.247.247 0 0 1 .073-.176Z"/></svg></button><input type="range" class="kg-video-volume-slider" max="100" value="100"></div></div></div><figcaption>Video of me spinning up the motor for the first time.</figcaption></figure><p>I would have liked to test the torque of the motor with a dynamometer but I did not have access to one at the time. Maybe I will save this for a future project but for now I&apos;ll have to leave this one here.</p><hr><h2 id="conclusion">Conclusion</h2><p>I really enjoyed this project because it was the first project I&apos;ve done that required me to do a lot of research and get a baseline understanding of what was needed to complete the project before even starting. </p><p>This took quite a long time to make but I think it was ultimately worth it as I have vastly expanded my knowledge of motors and motor design and I actually was able to create a working motor. Hopefully I am able to carry the skills that I learned through this project onwards to future ones. </p><p>Thanks for reading this post. If you are interested in any of my other posts they are linked below!</p><h2 id="references">References</h2><p></p><p>[1] &#xA0; T. Batzel, A. Skraba, and R. D. Massi, &#x201C;Design and Test of an Ironless Axial &#x2003;</p><p>&#x2003;&#x2003;Flux Permanent Magnet Machine using Halbach Array,&#x201D; <em>IAJC-ISAM Joint &#x2003;</em></p><p><em>&#x2003;&#x2003;International Conference</em>, vol. 88, 2014.</p>
       </section>
 
           <section class='c-tags'>
@@ -717,7 +765,7 @@ p code {
     <a class='c-share__link'
        title='Share on Twitter'
        aria-label='Share on Twitter'
-       href="https://twitter.com/share?text=Designing%20an%20Ironless%20Axial%20Flux%20Motor%3A%20Part%201&amp;url=https://cadenkraft.com/designing-a-coreless-axial-flux-motor-part-1/"
+       href="https://twitter.com/share?text=Designing%20an%20Ironless%20Axial%20Flux%20Motor&amp;url=https://cadenkraft.com/designing-a-coreless-axial-flux-motor-part-1/"
        onclick="window.open(this.href, 'twitter-share', 'width=550, height=235'); return false;">
       <span data-icon='ei-sc-twitter' data-size='s' class='c-share__icon'></span>
     </a>
@@ -737,7 +785,7 @@ p code {
     <a class='c-share__link'
       title='Share on LinkedIn'
       aria-label='Share on LinkedIn'
-      href="https://www.linkedin.com/shareArticle?mini=true&url=https://cadenkraft.com/designing-a-coreless-axial-flux-motor-part-1/&title=Designing%20an%20Ironless%20Axial%20Flux%20Motor%3A%20Part%201"
+      href="https://www.linkedin.com/shareArticle?mini=true&url=https://cadenkraft.com/designing-a-coreless-axial-flux-motor-part-1/&title=Designing%20an%20Ironless%20Axial%20Flux%20Motor"
       onclick="window.open(this.href, 'linkedin-share', 'width=580, height=296'); return false;">
       <span data-icon='ei-sc-linkedin' data-size='s' class='c-share__icon'></span>
     </a>
@@ -747,7 +795,7 @@ p code {
     <a class='c-share__link'
        title='Share on Pinterest'
        aria-label='Share on Pinterest'
-       href="https://pinterest.com/pin/create/button/?url=https://cadenkraft.com/designing-a-coreless-axial-flux-motor-part-1/&media=https://cadenkraft.com/content/images/2022/09/title-page-render-axial-flux-motor.16.jpg&description=Designing%20an%20Ironless%20Axial%20Flux%20Motor%3A%20Part%201"
+       href="https://pinterest.com/pin/create/button/?url=https://cadenkraft.com/designing-a-coreless-axial-flux-motor-part-1/&media=https://cadenkraft.com/content/images/2022/09/title-page-render-axial-flux-motor.16.jpg&description=Designing%20an%20Ironless%20Axial%20Flux%20Motor"
        onclick="window.open(this.href, 'pinterest-share', 'width=580, height=296'); return false;">
       <span data-icon='ei-sc-pinterest' data-size='s' class='c-share__icon'></span>
     </a>
@@ -757,7 +805,7 @@ p code {
     <a class='c-share__link'
        title='Share via Email'
        aria-label='Share via Email'
-       href="mailto:?subject=Designing%20an%20Ironless%20Axial%20Flux%20Motor%3A%20Part%201&body=https://cadenkraft.com/designing-a-coreless-axial-flux-motor-part-1/">
+       href="mailto:?subject=Designing%20an%20Ironless%20Axial%20Flux%20Motor&body=https://cadenkraft.com/designing-a-coreless-axial-flux-motor-part-1/">
       <span data-icon='ei-envelope' data-size='s' class='c-share__icon'></span>
     </a>
   </li>
