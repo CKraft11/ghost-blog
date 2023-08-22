@@ -12,6 +12,7 @@ cp -r /helium/ghost/content/images/. content/images
 cp -r /helium/ghost/content/renders/. content/renders
 cd -
 grep -lR "srcset=" docs/ | xargs sed -i 's/srcset=/thisisbuggedatm=/g'
+bash ./image_optimizer.sh
 git add .
 git commit -m "Compiled Changes - $date" ghost-updater.sh ecto1.py requirements.txt README.md serve.py docs/.
 git config --global credential.helper store
