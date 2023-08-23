@@ -59,7 +59,7 @@ In nano paste and edit the docker-compose install parameters below.
 services:
 
   ghost:
-    image: ghost:4.36.3
+    image: ghost:latest
     restart: always
     ports:
       - 2368:2368
@@ -76,7 +76,7 @@ services:
       #NODE_ENV: development
 
   db:
-    image: mysql:5.7
+    image: mysql:8
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: EXAMPLE`
