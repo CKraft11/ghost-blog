@@ -317,7 +317,13 @@ video {
     align-items: baseline !important;
   }
 }
-
+@media (min-width: 40em) {
+  .c-post-card__media {
+    grid-area: media;
+    aspect-ratio: 1/1;
+    align-self: center;
+  }
+}
 @media screen and (min-width:639px) {
   .c-post-card__meta {
     border-radius: 8px;
@@ -325,8 +331,8 @@ video {
     border-radius: 16px !important;
     writing-mode: vertical-rl;
     border: 1px solid #E5EFF5 !important;
+    padding: 20px 0px;
   }
-
   .c-post-card__date {
     font-weight: 900;
     font-size: 20px;
