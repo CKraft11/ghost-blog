@@ -41,7 +41,7 @@ Creating a 3D Printed Brushless MotorWith my work in the Iowa State Solar Car cl
     <meta property="og:url" content="https://cadenkraft.com/designing-a-coreless-axial-flux-motor-part-1/" />
     <meta property="og:image" content="https://cadenkraft.com/content/images/2022/09/title-page-render-axial-flux-motor.16.jpg" />
     <meta property="article:published_time" content="2022-09-09T04:39:12.000Z" />
-    <meta property="article:modified_time" content="2023-10-11T17:34:58.000Z" />
+    <meta property="article:modified_time" content="2023-10-30T16:48:45.000Z" />
     <meta property="article:tag" content="Build" />
     <meta property="article:tag" content="Motors" />
     
@@ -91,7 +91,7 @@ Creating a 3D Printed Brushless MotorWith my work in the Iowa State Solar Car cl
     "headline": "Designing an Ironless Axial Flux Motor",
     "url": "https://cadenkraft.com/designing-a-coreless-axial-flux-motor-part-1/",
     "datePublished": "2022-09-09T04:39:12.000Z",
-    "dateModified": "2023-10-11T17:34:58.000Z",
+    "dateModified": "2023-10-30T16:48:45.000Z",
     "image": {
         "@type": "ImageObject",
         "url": "https://cadenkraft.com/content/images/2022/09/title-page-render-axial-flux-motor.16.jpg",
@@ -112,8 +112,8 @@ Creating a 3D Printed Brushless MotorWith my work in the Iowa State Solar Car cl
     
     <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/sodo-search.min.js" data-key="e4668b9947c02b97527f834bde" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/main.css" data-sodo-search="https://cadenkraft.com/" crossorigin="anonymous"></script>
     <link href="https://cadenkraft.com/webmentions/receive/" rel="webmention" />
-    <script defer src="/public/cards.min.js?v=fa311198fb"></script>
-    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=fa311198fb">
+    <script defer src="/public/cards.min.js?v=be84d26ff1"></script>
+    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=be84d26ff1">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 <link rel="stylesheet" href="https://github.com/PrismJS/prism-themes/blob/master/themes/prism-one-light.css"/>
@@ -678,7 +678,7 @@ p code {
 </tr>
 <tr>
 <td>Base Speed</td>
-<td>1500 RPM</td>
+<td>700 rpm</td>
 </tr>
 <tr>
 <td>Rated Current</td>
@@ -686,7 +686,7 @@ p code {
 </tr>
 <tr>
 <td>Wire Diameter</td>
-<td>0.65 MM</td>
+<td>0.65 mm</td>
 </tr>
 <tr>
 <td>Poles</td>
@@ -702,15 +702,15 @@ p code {
 </tr>
 <tr>
 <td>Coil Area (A<sub>coil</sub>)</td>
-<td>4.92*10<sup>-4</sup> M<sup>2</sup></td>
+<td>4.92*10<sup>-4</sup> m<sup>2</sup></td>
 </tr>
 <tr>
 <td>Outer Radius (r<sub>o</sub>)</td>
-<td>65 MM</td>
+<td>65 mm</td>
 </tr>
 <tr>
 <td>Inner Radius (r<sub>i</sub>)</td>
-<td>35 MM</td>
+<td>35 mm</td>
 </tr>
 <tr>
 <td>Magnetic Flux Density (B)</td>
@@ -726,8 +726,9 @@ p code {
 <!--kg-card-end: markdown--><!--kg-card-begin: markdown--><p>$$B(\theta)=B_m\sin{{(\omega}_et)}$$</p>
 <!--kg-card-end: markdown--><!--kg-card-begin: markdown--><p>$$e_{ph}=N_{ph}A_{coil}\omega_eB_m\cos{(\omega_et)}$$</p>
 <!--kg-card-end: markdown--><!--kg-card-begin: markdown--><p>$$N_{ph}=\frac{e_{ph}}{A_{coil}\omega_eB_m}$$</p>
-<!--kg-card-end: markdown--><p>Plugging in the final numbers into the equation below equates to about ~87 coils per phase of the motor.</p><!--kg-card-begin: markdown--><p>$$N_{ph}=\frac{\frac{24\ V}{\sqrt3}}{4.92*{10}^{-4}\frac{1300\ RPM}{\pi}0.785}$$</p>
-<!--kg-card-end: markdown--><!--kg-card-begin: markdown--><p>$$N_{ph}=86.70$$</p>
+<!--kg-card-end: markdown--><p>The electrical frequency of the stator voltage can be determined using the shaft speed and number of pole pairs.</p><!--kg-card-begin: markdown--><p>$${\omega_e}=\frac{700\ rpm}{60\ s}\cdot2\pi\cdot6$$</p>
+<!--kg-card-end: markdown--><p>Plugging in the final numbers into the equation below equates to about ~87 coils per phase of the motor.</p><!--kg-card-begin: markdown--><p>$$N_{ph}=\frac{\frac{24\ V}{\sqrt3}}{4.92\cdot{10}^{-4}\cdot\frac{700\ rpm}{60\ s}{2\pi}\cdot{6}\cdot{0.785\ T}}$$</p>
+<!--kg-card-end: markdown--><!--kg-card-begin: markdown--><p>$$N_{ph}=81.57$$</p>
 <!--kg-card-end: markdown--><p>Dividing this by six as there are 6 coils per phase it equates to around 14 turns per coil.</p><h2 id="finalizing-the-design">Finalizing the Design</h2><p></p><p>Now that I had the parameters defined I started work on creating the final design. The final design will consist of mostly 3D printed parts and a 62mm*40mm*12mm unsealed roller bearing. This bearing has significantly more rigidity than the 608 skateboard bearing I used in my first design.</p><p>Here are a few renders of the final motor design that I decided on. The white/clear parts are printed in PLA while the base stator is made of PETG for the extra temperature resistance as the coils heat up.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://cadenkraft.com/content/images/2022/09/completed-assembly.17.jpg" class="kg-image" alt loading="lazy" width="2000" height="1409" thisisbuggedatm="https://cadenkraft.com/content/images/size/w600/2022/09/completed-assembly.17.jpg 600w, https://cadenkraft.com/content/images/size/w1000/2022/09/completed-assembly.17.jpg 1000w, https://cadenkraft.com/content/images/size/w1600/2022/09/completed-assembly.17.jpg 1600w, https://cadenkraft.com/content/images/size/w2400/2022/09/completed-assembly.17.jpg 2400w" sizes="(min-width: 720px) 720px"><figcaption>Completed assembly</figcaption></figure><figure class="kg-card kg-image-card kg-width-wide kg-card-hascaption"><img src="https://cadenkraft.com/content/images/2022/09/title-page-render-axial-flux-motor.16-1.jpg" class="kg-image" alt loading="lazy" width="2000" height="1409" thisisbuggedatm="https://cadenkraft.com/content/images/size/w600/2022/09/title-page-render-axial-flux-motor.16-1.jpg 600w, https://cadenkraft.com/content/images/size/w1000/2022/09/title-page-render-axial-flux-motor.16-1.jpg 1000w, https://cadenkraft.com/content/images/size/w1600/2022/09/title-page-render-axial-flux-motor.16-1.jpg 1600w, https://cadenkraft.com/content/images/size/w2400/2022/09/title-page-render-axial-flux-motor.16-1.jpg 2400w" sizes="(min-width: 1200px) 1200px"><figcaption>View of the magnets and coils with the rotor hidden</figcaption></figure><p>Below is a draggable render where you can see the final explosion view of the design from multiple angles.</p><!--kg-card-begin: html--><div style="max-width: 1746px; max-height: 1230px;">
   <div style="left: 0px; width: 100%; height: 0px; position: relative; padding-bottom: 70.4467%; overflow: hidden;">
     <iframe src="https://cadenkraft.com/content/renders/axial_flux_animation.html" allowfullscreen style="position: absolute; top: 0px; left: 0px; height: 100%; width: 1px; min-width: 100%; *width: 100%;" frameborder="0" scrolling="no">
@@ -1002,7 +1003,7 @@ One of the things that has come to interest me the most are motors. Getting the 
   </div>
 </footer>  </div>
 
-  <script src='/assets/js/app.min.js?v=fa311198fb'></script>
+  <script src='/assets/js/app.min.js?v=be84d26ff1'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js" integrity="sha512-9khQRAUBYEJDCDVP2yw3LRUQvjJ0Pjx0EShmaQjcHa6AXiOv6qHQu9lCAIR8O+/D8FtaCoJ2c0Tf9Xo7hYH01Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-fTl/qcO1VgvKtOMApX2PdZzkziyr2stM65GYPLGuYMnuMm1z2JLJG6XVU7C/mR+E7xBUqCivykuhlzfqxXBXbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
