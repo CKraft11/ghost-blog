@@ -41,7 +41,7 @@ My problems" />
     <meta property="og:url" content="https://cadenkraft.com/creating-a-ghost-blog-with-free-webhosting/" />
     <meta property="og:image" content="https://cadenkraft.com/content/images/2022/02/ghost-blog.png" />
     <meta property="article:published_time" content="2022-02-23T04:58:02.000Z" />
-    <meta property="article:modified_time" content="2023-08-09T20:39:03.000Z" />
+    <meta property="article:modified_time" content="2023-12-12T19:15:57.000Z" />
     <meta property="article:tag" content="Tutorial" />
     
     <meta name="twitter:card" content="summary_large_image" />
@@ -90,7 +90,7 @@ My problems" />
     "headline": "Creating a Ghost Blog with Free Webhosting using Github Pages",
     "url": "https://cadenkraft.com/creating-a-ghost-blog-with-free-webhosting/",
     "datePublished": "2022-02-23T04:58:02.000Z",
-    "dateModified": "2023-08-09T20:39:03.000Z",
+    "dateModified": "2023-12-12T19:15:57.000Z",
     "image": {
         "@type": "ImageObject",
         "url": "https://cadenkraft.com/content/images/2022/02/ghost-blog.png",
@@ -111,8 +111,8 @@ My problems" />
     
     <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/sodo-search.min.js" data-key="e4668b9947c02b97527f834bde" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/main.css" data-sodo-search="https://cadenkraft.com/" crossorigin="anonymous"></script>
     <link href="https://cadenkraft.com/webmentions/receive/" rel="webmention" />
-    <script defer src="/public/cards.min.js?v=be84d26ff1"></script>
-    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=be84d26ff1">
+    <script defer src="/public/cards.min.js?v=f991f7ac30"></script>
+    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=f991f7ac30">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 <link rel="stylesheet" href="https://github.com/PrismJS/prism-themes/blob/master/themes/prism-one-light.css"/>
@@ -645,7 +645,7 @@ p code {
           <div class='c-post-header__author_info'>
             <div class='c-post-header__author_name'>Caden Kraft</div>
             <time class='c-post-header__date' datetime='2022-02-22'>22 February 2022 . </time>
-            <span class='c-post-header__reading-time'>7 min read</span>
+            <span class='c-post-header__reading-time'>6 min read</span>
           </div>
         </a>
     </div>
@@ -712,7 +712,8 @@ grep -lR &quot;srcset&quot; docs/ | xargs sed -i &apos;s/srcset/thisisbuggedatm/
 git add .
 git commit -m &quot;$date&quot;
 git config --global credential.helper store
-git push -u origin master</code></pre><figcaption>Paste the following code into nano and then save and exit.</figcaption></figure><p>Also, I know there are some patchy solutions to some current bugs in Ecto1 in this script but I don&apos;t really know how to code well enough to make a proper fork. If you are reading this it is probably still working.</p><figure class="kg-card kg-code-card"><pre><code class="language-bash">sudo chmod +x ghost-updater.sh</code></pre><figcaption>Make the script executable</figcaption></figure><figure class="kg-card kg-code-card"><pre><code class="language-bash">./ghost-updater.sh</code></pre><figcaption>Run the script</figcaption></figure><p>If all of this went successfully, you should have many files in your Github repo now. To set up Github pages, go to the Github pages tab in settings and select the master branch and <code>/docs</code> as your folder. You can set up a custom domain here as well. Just make sure it is the one you have been using in these scripts.</p><p>If your page is bugged out and only showing HTML elements and no CSS or Javascript, you likely put the wrong domain in the script above. If you don&apos;t have a custom domain, the default should be <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&amp;ref=caden-kraft">https://github-username.github.io/you-repo-name</a>.</p><p>If all of this has worked up till now, congratulations, you&apos;re done! I hope this guide helped get you to that point. &#xA0;</p><p>If I made any mistakes in my guide or updates break the code, please open an issue.</p><figure class="kg-card kg-bookmark-card"><a class="kg-bookmark-container" href="https://github.com/CKraft11/ghost-docker-on-github-pages/issues?ref=caden-kraft"><div class="kg-bookmark-content"><div class="kg-bookmark-title">Issues &#xB7; CKraft11/ghost-docker-on-github-pages</div><div class="kg-bookmark-description">The most up-to-date guide on installing Ghost using Github pages as free Static hosting - Issues &#xB7; CKraft11/ghost-docker-on-github-pages</div><div class="kg-bookmark-metadata"><img class="kg-bookmark-icon" src="https://github.com/fluidicon.png" alt><span class="kg-bookmark-author">GitHub</span><span class="kg-bookmark-publisher">CKraft11</span></div></div><div class="kg-bookmark-thumbnail"><img src="https://opengraph.githubassets.com/0e46a96670740c9242b09f1c1a7a6d1c9fb512328f8864a649a2f99c8ee12054/CKraft11/ghost-docker-on-github-pages" alt></div></a></figure>
+git push -u origin master</code></pre><figcaption>Paste the following code into nano and then save and exit.</figcaption></figure><p>Also, I know there are some patchy solutions to some current bugs in Ecto1 in this script but I don&apos;t really know how to code well enough to make a proper fork. If you are reading this it is probably still working.</p><figure class="kg-card kg-code-card"><pre><code class="language-bash">sudo chmod +x ghost-updater.sh</code></pre><figcaption>Make the script executable</figcaption></figure><figure class="kg-card kg-code-card"><pre><code class="language-bash">./ghost-updater.sh</code></pre><figcaption>Run the script</figcaption></figure><p>If all of this went successfully, you should have many files in your Github repo now. To set up Github pages, go to the Github pages tab in settings and select the master branch and <code>/docs</code> as your folder. You can set up a custom domain here as well. Just make sure it is the one you have been using in these scripts.</p><p>If your page is bugged out and only showing HTML elements and no CSS or Javascript, you likely put the wrong domain in the script above. If you don&apos;t have a custom domain, the default should be <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&amp;ref=caden-kraft">https://github-username.github.io/you-repo-name</a>.</p><p>If all of this has worked up till now, congratulations, you&apos;re done! I hope this guide helped get you to that point. &#xA0;</p><p>If I made any mistakes in my guide or updates break the code, please comment below.</p><!--kg-card-begin: html--><script src="https://giscus.app/client.js" data-repo="CKraft11/ghost-docker-on-github-pages" data-repo-id="R_kgDOG5I0WA" data-category="General" data-category-id="DIC_kwDOG5I0WM4CbsF2" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="1" data-input-position="bottom" data-theme="https://home.cadenkraft.com/no-border-light-ghost.css" data-lang="en" crossorigin="anonymous" async>
+</script><!--kg-card-end: html-->
       </section>
 
           <section class='c-tags'>
@@ -833,7 +834,7 @@ git push -u origin master</code></pre><figcaption>Paste the following code into 
   </div>
 </footer>  </div>
 
-  <script src='/assets/js/app.min.js?v=be84d26ff1'></script>
+  <script src='/assets/js/app.min.js?v=f991f7ac30'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js" integrity="sha512-9khQRAUBYEJDCDVP2yw3LRUQvjJ0Pjx0EShmaQjcHa6AXiOv6qHQu9lCAIR8O+/D8FtaCoJ2c0Tf9Xo7hYH01Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-fTl/qcO1VgvKtOMApX2PdZzkziyr2stM65GYPLGuYMnuMm1z2JLJG6XVU7C/mR+E7xBUqCivykuhlzfqxXBXbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
