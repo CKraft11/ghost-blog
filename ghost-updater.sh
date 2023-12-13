@@ -3,6 +3,7 @@ date=$(date)
 git pull origin master
 rm -r docs
 mkdir docs
+cp no-border-light-ghost.css docs/
 cd docs
 echo "cadenkraft.com" > CNAME
 cd -
