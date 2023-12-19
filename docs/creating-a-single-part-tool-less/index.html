@@ -5,7 +5,7 @@
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
 
-  <title>Building a Single Part Tool-less Raspberry Pi Compute Cluster</title>
+  <title>Single Part Raspberry Pi Compute Cluster</title>
 
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 
@@ -34,18 +34,18 @@
     
     <meta property="og:site_name" content="Caden Kraft" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Building a Single Part Tool-less Raspberry Pi Compute Cluster" />
+    <meta property="og:title" content="Single Part Raspberry Pi Compute Cluster" />
     <meta property="og:description" content="My Raspberry Pi&#x27;s are some of my favorite devices that I own. Their versatility cost and ease of use have allowed me to implement them into a wide range of projects and learn a lot about computing.
 
 One area I had never ventured however was the idea of clustered computing." />
     <meta property="og:url" content="https://cadenkraft.com/creating-a-single-part-tool-less/" />
     <meta property="og:image" content="https://cadenkraft.com/content/images/2023/07/rpi-cluster.11.png" />
     <meta property="article:published_time" content="2021-04-13T17:09:00.000Z" />
-    <meta property="article:modified_time" content="2023-12-13T18:27:14.000Z" />
+    <meta property="article:modified_time" content="2023-12-13T20:08:15.000Z" />
     <meta property="article:tag" content="Build" />
     
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Building a Single Part Tool-less Raspberry Pi Compute Cluster" />
+    <meta name="twitter:title" content="Single Part Raspberry Pi Compute Cluster" />
     <meta name="twitter:description" content="My Raspberry Pi&#x27;s are some of my favorite devices that I own. Their versatility cost and ease of use have allowed me to implement them into a wide range of projects and learn a lot about computing.
 
 One area I had never ventured however was the idea of clustered computing." />
@@ -87,10 +87,10 @@ One area I had never ventured however was the idea of clustered computing." />
             "https://linkedin.com/in/cadenkraft"
         ]
     },
-    "headline": "Building a Single Part Tool-less Raspberry Pi Compute Cluster",
+    "headline": "Single Part Raspberry Pi Compute Cluster",
     "url": "https://cadenkraft.com/creating-a-single-part-tool-less/",
     "datePublished": "2021-04-13T17:09:00.000Z",
-    "dateModified": "2023-12-13T18:27:14.000Z",
+    "dateModified": "2023-12-13T20:08:15.000Z",
     "image": {
         "@type": "ImageObject",
         "url": "https://cadenkraft.com/content/images/2023/07/rpi-cluster.11.png",
@@ -117,6 +117,14 @@ One area I had never ventured however was the idea of clustered computing." />
 
 <link rel="stylesheet" href="https://github.com/PrismJS/prism-themes/blob/master/themes/prism-one-light.css"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap' rel='stylesheet'>
+<style>
+:root {
+    --font-family: 'Poppins', sans-serif;
+    --type-sans-serif: "Poppins",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+</style>
+
 <style>
     .update__button{
     	width:15rem;
@@ -139,7 +147,9 @@ One area I had never ventured however was the idea of clustered computing." />
   box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 0.25ch;
 }
 
-    
+.c-post-card__title:hover { 
+    text-decoration: none; 
+}
     
 .is-membership {
   display: none;
@@ -156,7 +166,10 @@ One area I had never ventured however was the idea of clustered computing." />
   display: none;
 }
 
-
+.c-content h2 {
+  font-size: 48px !important;
+  line-height: 56px !important;
+}
 .c-post-card__visibility {
   display: none;
 }
@@ -268,26 +281,36 @@ video {
   display: none;
 
 }
-
 .c-post-card {
-  grid-template-areas: "meta content content content content content content content content media media media";
-  margin: 0px !important;
+  grid-template-areas: ". . . . meta meta meta meta media media media media"
+      				   "content content content content content content content content media media media media";																						
+  margin-top: 50px !important;
   margin-bottom: 20px !important;
 }
 
+.c-post-card__content {
+    margin-bottom: 80px;
+}
 .c-post-card__title {
   font-size: 30px;
-  line-height: 40px;
+  line-height: 30px;
+  margin-top: 20px;
 }
 
 .c-post-card__meta {
   display: flex;
+  position: inherit;
+  
   justify-content: center;
   align-items: center;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(3, 27, 78, 5%);
   border-radius: 16px !important;
   border: 1px solid #E5EFF5 !important;
+  direction: ltr;
+}
+.c-post-card__excerpt {
+   margin-top: 10px !important; 
 }
 
 @media screen and (max-width:1022px) {
@@ -314,13 +337,13 @@ video {
 
 @media screen and (min-width:640px) {
   .c-home__content {
-    align-items: baseline !important;
+    /*align-items: baseline !important;*/
   }
 }
 @media (min-width: 40em) {
   .c-post-card__media {
     grid-area: media;
-    aspect-ratio: 1/1;
+    aspect-ratio: 3/2;
     align-self: center;
   }
 }
@@ -329,15 +352,42 @@ video {
     border-radius: 8px;
     box-shadow: 0 15px 23px rgba(3, 27, 78, 8%), 0 3px 6px rgba(0, 0, 0, 2%);
     border-radius: 16px !important;
-    writing-mode: vertical-rl;
+    /*writing-mode: vertical-rl;*/
     border: 1px solid #E5EFF5 !important;
-    padding: 20px 0px;
+    padding: 10px 0px;
+    margin-top: 20px;
+    height: max-content;
   }
   .c-post-card__date {
-    font-weight: 900;
+    font-weight: 700;
     font-size: 20px;
-    transform: rotate(180deg);
+    /*transform: rotate(180deg);*/
   }
+  .c-post-card:nth-child(odd) {
+    direction: rtl;
+}
+.c-post-card:nth-child(odd) .c-post-card__content {
+    direction: ltr;
+}
+.c-post-card:nth-child(odd) .c-post-card__title {
+    direction: ltr;
+}
+.c-post-card:nth-child(odd) .c-post-card__meta {
+    direction: ltr;
+}
+    .c-post-card__content {
+    direction: rtl;	
+    margin-bottom: 80px;
+}
+.c-post-card__title {
+  direction: rtl;
+  font-size: 50px;
+  line-height: 50px;
+  margin-top: 20px;
+}
+.c-post-card__meta {
+  top: -60px;
+}
 }
 
 .c-post-card__date {
@@ -353,9 +403,10 @@ video {
 
 .c-home__content {
   padding: 40px 40px 40px 40px;
-  box-shadow: 0 15px 23px rgba(3, 27, 78, 8%), 0 3px 6px rgba(0, 0, 0, 2%);
+  display: 
+  /*box-shadow: 0 15px 23px rgba(3, 27, 78, 8%), 0 3px 6px rgba(0, 0, 0, 2%);
   border-radius: 16px !important;
-  border: 1px solid #E5EFF5 !important;
+  border: 1px solid #E5EFF5 !important;*/
 
 
 }
@@ -435,18 +486,18 @@ video {
 }
 
 .c-post-card {
-  box-shadow: 0 4px 6px rgba(3, 27, 78, 5%);
+  /*box-shadow: 0 4px 6px rgba(3, 27, 78, 5%);
   border-radius: 16px !important;
-  border: 1px solid #E5EFF5 !important;
-  padding: 20px 20px 20px 20px;
-  margin: 20px;
+  border: 1px solid #E5EFF5 !important;*/
+  /*padding: 0px 20px 0px 20px;
+  margin: 20px 20px 40px 20px;*/
 }
 
-.c-post-card:hover {
+/*.c-post-card:hover {
   box-shadow: 0 15px 23px rgba(3, 27, 78, 8%), 0 3px 6px rgba(0, 0, 0, 2%);
   transition: all .5s ease-in-out;
 
-}
+}*/
 
 .c-post-header__title {
   margin-top: 20px;
@@ -634,7 +685,7 @@ p code {
   <div class='o-grid__col o-grid__col--center o-grid__col--9-10-m o-grid__col--2-3-l'>
     <article class='c-post tag-build featured'>
       <header class='c-post-header'>
-  <h1 class='c-post-header__title'>Building a Single Part Tool-less Raspberry Pi Compute Cluster</h1>
+  <h1 class='c-post-header__title'>Single Part Raspberry Pi Compute Cluster</h1>
 
 
     <div class='c-post-header__meta'>
@@ -652,7 +703,7 @@ p code {
 
     <figure class='c-post-image-wrap'>
       <img
-        alt='Building a Single Part Tool-less Raspberry Pi Compute Cluster'
+        alt='Single Part Raspberry Pi Compute Cluster'
         class='c-post-image lazyload'
         data-thisisbuggedatm='
           /content/images/size/w612/2023/07/rpi-cluster.11.png 612w,
@@ -713,7 +764,7 @@ p code {
     <a class='c-share__link'
        title='Share on Twitter'
        aria-label='Share on Twitter'
-       href="https://twitter.com/share?text=Building%20a%20Single%20Part%20Tool-less%20Raspberry%20Pi%20Compute%20Cluster&amp;url=https://cadenkraft.com/creating-a-single-part-tool-less/"
+       href="https://twitter.com/share?text=Single%20Part%20Raspberry%20Pi%20Compute%20Cluster&amp;url=https://cadenkraft.com/creating-a-single-part-tool-less/"
        onclick="window.open(this.href, 'twitter-share', 'width=550, height=235'); return false;">
       <span data-icon='ei-sc-twitter' data-size='s' class='c-share__icon'></span>
     </a>
@@ -733,7 +784,7 @@ p code {
     <a class='c-share__link'
       title='Share on LinkedIn'
       aria-label='Share on LinkedIn'
-      href="https://www.linkedin.com/shareArticle?mini=true&url=https://cadenkraft.com/creating-a-single-part-tool-less/&title=Building%20a%20Single%20Part%20Tool-less%20Raspberry%20Pi%20Compute%20Cluster"
+      href="https://www.linkedin.com/shareArticle?mini=true&url=https://cadenkraft.com/creating-a-single-part-tool-less/&title=Single%20Part%20Raspberry%20Pi%20Compute%20Cluster"
       onclick="window.open(this.href, 'linkedin-share', 'width=580, height=296'); return false;">
       <span data-icon='ei-sc-linkedin' data-size='s' class='c-share__icon'></span>
     </a>
@@ -743,7 +794,7 @@ p code {
     <a class='c-share__link'
        title='Share on Pinterest'
        aria-label='Share on Pinterest'
-       href="https://pinterest.com/pin/create/button/?url=https://cadenkraft.com/creating-a-single-part-tool-less/&media=https://cadenkraft.com/content/images/2023/07/rpi-cluster.11.png&description=Building%20a%20Single%20Part%20Tool-less%20Raspberry%20Pi%20Compute%20Cluster"
+       href="https://pinterest.com/pin/create/button/?url=https://cadenkraft.com/creating-a-single-part-tool-less/&media=https://cadenkraft.com/content/images/2023/07/rpi-cluster.11.png&description=Single%20Part%20Raspberry%20Pi%20Compute%20Cluster"
        onclick="window.open(this.href, 'pinterest-share', 'width=580, height=296'); return false;">
       <span data-icon='ei-sc-pinterest' data-size='s' class='c-share__icon'></span>
     </a>
@@ -753,7 +804,7 @@ p code {
     <a class='c-share__link'
        title='Share via Email'
        aria-label='Share via Email'
-       href="mailto:?subject=Building%20a%20Single%20Part%20Tool-less%20Raspberry%20Pi%20Compute%20Cluster&body=https://cadenkraft.com/creating-a-single-part-tool-less/">
+       href="mailto:?subject=Single%20Part%20Raspberry%20Pi%20Compute%20Cluster&body=https://cadenkraft.com/creating-a-single-part-tool-less/">
       <span data-icon='ei-envelope' data-size='s' class='c-share__icon'></span>
     </a>
   </li>
@@ -859,7 +910,7 @@ p code {
 
   <div class='c-post-card__content'>
     <h2 class='c-post-card__title'>
-      <a href='/the-ntpixie-a-wifi-connected-nixie-tube-clock/' class='c-post-card__url'>The NTPixie, A WiFi Connected Nixie Tube Clock</a>
+      <a href='/the-ntpixie-a-wifi-connected-nixie-tube-clock/' class='c-post-card__url'>The NTPixie, A WiFi Nixie Tube Clock</a>
     </h2>
     <p class='c-post-card__excerpt'>I have always thought that nixie tubes are one of the coolest inventions ever made. The novelty of having such an intricate assembly of blown glass and spot welded numbers just to simply display digits is something I've always admired.
 
@@ -874,7 +925,7 @@ Before the invention of the LED</p>
     <div class='c-post-card__media'>
       <div class='c-post-card__image-wrap'>
         <img
-          alt='The NTPixie, A WiFi Connected Nixie Tube Clock'
+          alt='The NTPixie, A WiFi Nixie Tube Clock'
           class='c-post-card__image lazyload'
           data-thisisbuggedatm='
             /content/images/size/w612/2023/06/nixie-tube-clock-render.3.png 612w,
@@ -900,7 +951,7 @@ Before the invention of the LED</p>
 
   <div class='c-post-card__content'>
     <h2 class='c-post-card__title'>
-      <a href='/designing-a-coreless-axial-flux-motor-part-1/' class='c-post-card__url'>Designing an Ironless Axial Flux Motor</a>
+      <a href='/designing-a-coreless-axial-flux-motor-part-1/' class='c-post-card__url'>Ironless Axial Flux Motor</a>
     </h2>
     <p class='c-post-card__excerpt'>After my first custom brushless motor I felt confident enough with the basic theory of how they work to make a second design with significantly more thought and math defining the design.
 
@@ -910,7 +961,7 @@ Creating a 3D Printed Brushless MotorWith my work in the Iowa State Solar Car cl
     <div class='c-post-card__media'>
       <div class='c-post-card__image-wrap'>
         <img
-          alt='Designing an Ironless Axial Flux Motor'
+          alt='Ironless Axial Flux Motor'
           class='c-post-card__image lazyload'
           data-thisisbuggedatm='
             /content/images/size/w612/2022/09/title-page-render-axial-flux-motor.16.jpg 612w,

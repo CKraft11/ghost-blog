@@ -114,6 +114,14 @@
 
 <link rel="stylesheet" href="https://github.com/PrismJS/prism-themes/blob/master/themes/prism-one-light.css"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap' rel='stylesheet'>
+<style>
+:root {
+    --font-family: 'Poppins', sans-serif;
+    --type-sans-serif: "Poppins",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+</style>
+
 <style>
     .update__button{
     	width:15rem;
@@ -136,7 +144,9 @@
   box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 0.25ch;
 }
 
-    
+.c-post-card__title:hover { 
+    text-decoration: none; 
+}
     
 .is-membership {
   display: none;
@@ -153,7 +163,10 @@
   display: none;
 }
 
-
+.c-content h2 {
+  font-size: 48px !important;
+  line-height: 56px !important;
+}
 .c-post-card__visibility {
   display: none;
 }
@@ -265,26 +278,36 @@ video {
   display: none;
 
 }
-
 .c-post-card {
-  grid-template-areas: "meta content content content content content content content content media media media";
-  margin: 0px !important;
+  grid-template-areas: ". . . . meta meta meta meta media media media media"
+      				   "content content content content content content content content media media media media";																						
+  margin-top: 50px !important;
   margin-bottom: 20px !important;
 }
 
+.c-post-card__content {
+    margin-bottom: 80px;
+}
 .c-post-card__title {
   font-size: 30px;
-  line-height: 40px;
+  line-height: 30px;
+  margin-top: 20px;
 }
 
 .c-post-card__meta {
   display: flex;
+  position: inherit;
+  
   justify-content: center;
   align-items: center;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(3, 27, 78, 5%);
   border-radius: 16px !important;
   border: 1px solid #E5EFF5 !important;
+  direction: ltr;
+}
+.c-post-card__excerpt {
+   margin-top: 10px !important; 
 }
 
 @media screen and (max-width:1022px) {
@@ -311,13 +334,13 @@ video {
 
 @media screen and (min-width:640px) {
   .c-home__content {
-    align-items: baseline !important;
+    /*align-items: baseline !important;*/
   }
 }
 @media (min-width: 40em) {
   .c-post-card__media {
     grid-area: media;
-    aspect-ratio: 1/1;
+    aspect-ratio: 3/2;
     align-self: center;
   }
 }
@@ -326,15 +349,42 @@ video {
     border-radius: 8px;
     box-shadow: 0 15px 23px rgba(3, 27, 78, 8%), 0 3px 6px rgba(0, 0, 0, 2%);
     border-radius: 16px !important;
-    writing-mode: vertical-rl;
+    /*writing-mode: vertical-rl;*/
     border: 1px solid #E5EFF5 !important;
-    padding: 20px 0px;
+    padding: 10px 0px;
+    margin-top: 20px;
+    height: max-content;
   }
   .c-post-card__date {
-    font-weight: 900;
+    font-weight: 700;
     font-size: 20px;
-    transform: rotate(180deg);
+    /*transform: rotate(180deg);*/
   }
+  .c-post-card:nth-child(odd) {
+    direction: rtl;
+}
+.c-post-card:nth-child(odd) .c-post-card__content {
+    direction: ltr;
+}
+.c-post-card:nth-child(odd) .c-post-card__title {
+    direction: ltr;
+}
+.c-post-card:nth-child(odd) .c-post-card__meta {
+    direction: ltr;
+}
+    .c-post-card__content {
+    direction: rtl;	
+    margin-bottom: 80px;
+}
+.c-post-card__title {
+  direction: rtl;
+  font-size: 50px;
+  line-height: 50px;
+  margin-top: 20px;
+}
+.c-post-card__meta {
+  top: -60px;
+}
 }
 
 .c-post-card__date {
@@ -350,9 +400,10 @@ video {
 
 .c-home__content {
   padding: 40px 40px 40px 40px;
-  box-shadow: 0 15px 23px rgba(3, 27, 78, 8%), 0 3px 6px rgba(0, 0, 0, 2%);
+  display: 
+  /*box-shadow: 0 15px 23px rgba(3, 27, 78, 8%), 0 3px 6px rgba(0, 0, 0, 2%);
   border-radius: 16px !important;
-  border: 1px solid #E5EFF5 !important;
+  border: 1px solid #E5EFF5 !important;*/
 
 
 }
@@ -432,18 +483,18 @@ video {
 }
 
 .c-post-card {
-  box-shadow: 0 4px 6px rgba(3, 27, 78, 5%);
+  /*box-shadow: 0 4px 6px rgba(3, 27, 78, 5%);
   border-radius: 16px !important;
-  border: 1px solid #E5EFF5 !important;
-  padding: 20px 20px 20px 20px;
-  margin: 20px;
+  border: 1px solid #E5EFF5 !important;*/
+  /*padding: 0px 20px 0px 20px;
+  margin: 20px 20px 40px 20px;*/
 }
 
-.c-post-card:hover {
+/*.c-post-card:hover {
   box-shadow: 0 15px 23px rgba(3, 27, 78, 8%), 0 3px 6px rgba(0, 0, 0, 2%);
   transition: all .5s ease-in-out;
 
-}
+}*/
 
 .c-post-header__title {
   margin-top: 20px;
@@ -785,7 +836,7 @@ p code {
 
   <div class='c-post-card__content'>
     <h2 class='c-post-card__title'>
-      <a href='/the-ntpixie-a-wifi-connected-nixie-tube-clock/' class='c-post-card__url'>The NTPixie, A WiFi Connected Nixie Tube Clock</a>
+      <a href='/the-ntpixie-a-wifi-connected-nixie-tube-clock/' class='c-post-card__url'>The NTPixie, A WiFi Nixie Tube Clock</a>
     </h2>
     <p class='c-post-card__excerpt'>I have always thought that nixie tubes are one of the coolest inventions ever made. The novelty of having such an intricate assembly of blown glass and spot welded numbers just to simply display digits is something I've always admired.
 
@@ -800,7 +851,7 @@ Before the invention of the LED</p>
     <div class='c-post-card__media'>
       <div class='c-post-card__image-wrap'>
         <img
-          alt='The NTPixie, A WiFi Connected Nixie Tube Clock'
+          alt='The NTPixie, A WiFi Nixie Tube Clock'
           class='c-post-card__image lazyload'
           data-thisisbuggedatm='
             /content/images/size/w612/2023/06/nixie-tube-clock-render.3.png 612w,
@@ -826,7 +877,7 @@ Before the invention of the LED</p>
 
   <div class='c-post-card__content'>
     <h2 class='c-post-card__title'>
-      <a href='/designing-a-coreless-axial-flux-motor-part-1/' class='c-post-card__url'>Designing an Ironless Axial Flux Motor</a>
+      <a href='/designing-a-coreless-axial-flux-motor-part-1/' class='c-post-card__url'>Ironless Axial Flux Motor</a>
     </h2>
     <p class='c-post-card__excerpt'>After my first custom brushless motor I felt confident enough with the basic theory of how they work to make a second design with significantly more thought and math defining the design.
 
@@ -836,7 +887,7 @@ Creating a 3D Printed Brushless MotorWith my work in the Iowa State Solar Car cl
     <div class='c-post-card__media'>
       <div class='c-post-card__image-wrap'>
         <img
-          alt='Designing an Ironless Axial Flux Motor'
+          alt='Ironless Axial Flux Motor'
           class='c-post-card__image lazyload'
           data-thisisbuggedatm='
             /content/images/size/w612/2022/09/title-page-render-axial-flux-motor.16.jpg 612w,
@@ -862,7 +913,7 @@ Creating a 3D Printed Brushless MotorWith my work in the Iowa State Solar Car cl
 
   <div class='c-post-card__content'>
     <h2 class='c-post-card__title'>
-      <a href='/solar-car-gps-tracker/' class='c-post-card__url'>Making a Solar Car GPS Tracker</a>
+      <a href='/solar-car-gps-tracker/' class='c-post-card__url'>Solar Car GPS Tracker</a>
     </h2>
     <p class='c-post-card__excerpt'>This is a quick post about a small project that I made for the PrISUm Solar Car Club here at Iowa State.
 
@@ -876,7 +927,7 @@ This competition consists of both a</p>
     <div class='c-post-card__media'>
       <div class='c-post-card__image-wrap'>
         <img
-          alt='Making a Solar Car GPS Tracker'
+          alt='Solar Car GPS Tracker'
           class='c-post-card__image lazyload'
           data-thisisbuggedatm='
             /content/images/size/w612/2022/09/solar-car-tracker-image.png 612w,
