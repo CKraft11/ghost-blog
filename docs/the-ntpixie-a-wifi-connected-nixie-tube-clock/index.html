@@ -28,38 +28,25 @@
         clipboard_copied_text               = 'Link copied to clipboard';
   </script>
 
-  <link rel="icon" href="https://cadenkraft.com/content/images/2022/11/favicon.ico" type="image/x-icon">
+  <meta name="description" content="I&#x27;ve always wanted to make a nixie tube clock but wanted to make one that I could trust was accurate. This was done through syncing the time with NTP servers the same way phones and computers do.">
+    <link rel="icon" href="https://cadenkraft.com/content/images/2022/11/favicon.ico" type="image/x-icon">
     <link rel="canonical" href="https://cadenkraft.com/the-ntpixie-a-wifi-connected-nixie-tube-clock/">
     <meta name="referrer" content="no-referrer-when-downgrade">
     
     <meta property="og:site_name" content="Caden Kraft">
     <meta property="og:type" content="article">
     <meta property="og:title" content="The NTPixie, A WiFi Nixie Tube Clock">
-    <meta property="og:description" content="I have always thought that nixie tubes are one of the coolest inventions ever made. The novelty of having such an intricate assembly of blown glass and spot welded numbers just to simply display digits is something I&#x27;ve always admired.
-
-
-What&#x27;s a Nixie Tube?
-
-
-
-Before the invention of the LED">
+    <meta property="og:description" content="I&#x27;ve always wanted to make a nixie tube clock but wanted to make one that I could trust was accurate. This was done through syncing the time with NTP servers the same way phones and computers do.">
     <meta property="og:url" content="https://cadenkraft.com/the-ntpixie-a-wifi-connected-nixie-tube-clock/">
     <meta property="og:image" content="https://cadenkraft.com/content/images/2023/06/nixie-tube-clock-render.3.png">
     <meta property="article:published_time" content="2023-05-17T23:17:00.000Z">
-    <meta property="article:modified_time" content="2024-02-24T06:59:50.000Z">
+    <meta property="article:modified_time" content="2024-02-26T17:37:43.000Z">
     <meta property="article:tag" content="Build">
     <meta property="article:tag" content="Coding">
     
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="The NTPixie, A WiFi Nixie Tube Clock">
-    <meta name="twitter:description" content="I have always thought that nixie tubes are one of the coolest inventions ever made. The novelty of having such an intricate assembly of blown glass and spot welded numbers just to simply display digits is something I&#x27;ve always admired.
-
-
-What&#x27;s a Nixie Tube?
-
-
-
-Before the invention of the LED">
+    <meta name="twitter:description" content="I&#x27;ve always wanted to make a nixie tube clock but wanted to make one that I could trust was accurate. This was done through syncing the time with NTP servers the same way phones and computers do.">
     <meta name="twitter:url" content="https://cadenkraft.com/the-ntpixie-a-wifi-connected-nixie-tube-clock/">
     <meta name="twitter:image" content="https://cadenkraft.com/content/images/2023/06/nixie-tube-clock-render.3.png">
     <meta name="twitter:label1" content="Written by">
@@ -93,7 +80,7 @@ Before the invention of the LED">
     "headline": "The NTPixie, A WiFi Nixie Tube Clock",
     "url": "https://cadenkraft.com/the-ntpixie-a-wifi-connected-nixie-tube-clock/",
     "datePublished": "2023-05-17T23:17:00.000Z",
-    "dateModified": "2024-02-24T06:59:50.000Z",
+    "dateModified": "2024-02-26T17:37:43.000Z",
     "image": {
         "@type": "ImageObject",
         "url": "https://cadenkraft.com/content/images/2023/06/nixie-tube-clock-render.3.png",
@@ -101,7 +88,7 @@ Before the invention of the LED">
         "height": 819
     },
     "keywords": "Build, Coding",
-    "description": "I have always thought that nixie tubes are one of the coolest inventions ever made. The novelty of having such an intricate assembly of blown glass and spot welded numbers just to simply display digits is something I&#x27;ve always admired.\n\n\nWhat&#x27;s a Nixie Tube?\n\n\n\nBefore the invention of the LED or the seven segment display, engineers needed a device capable of displaying digits for things like voltmeters, multimeters, and frequency counters.\n\nTo solve this problem Engineers in the USSR created nix",
+    "description": "I&#x27;ve always wanted to make a nixie tube clock but wanted to make one that I could trust was accurate. This was done through syncing the time with NTP servers the same way phones and computers do.",
     "mainEntityOfPage": "https://cadenkraft.com/the-ntpixie-a-wifi-connected-nixie-tube-clock/"
 }
     </script>
@@ -219,7 +206,7 @@ a:hover {
   --color-border: var(--color-brand);
 }
 .c-post-card{
-  margin: 0px;
+
 }
 .c-post-card__image-wrap {
   height: 200px;
@@ -302,7 +289,9 @@ video {
   /*border-radius: 16px 16px 0px 0px !important;
   overflow: hidden;*/
 }
-
+.c-btn {
+  width:100%;
+}
 
 .c-title-bar__divider {
   display: none;
@@ -314,14 +303,14 @@ video {
 
 }
 .c-post-card {
-  grid-template-areas: ". . . . meta meta meta meta media media media media"
+  grid-template-areas: ". . . . meta meta meta meta . . . . "
       				   "content content content content content content content content media media media media";																						
-  margin-top: 50px !important;
-  margin-bottom: 20px !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
 }
 
 .c-post-card__content {
-    margin-bottom: 80px;
+    margin-bottom: 0px;
 }
 .c-post-card__title {
   font-size: 30px;
@@ -376,7 +365,6 @@ video {
   .c-post-card__media {
     grid-area: media;
     aspect-ratio: 3/2;
-    align-self: center;
   }
 }
 @media screen and (min-width:639px) {
@@ -390,12 +378,15 @@ video {
     margin-top: 20px;
     height: max-content;
   }
+  .c-btn{
+    width:300px !important;
+  }
   .c-post-card__date {
     font-weight: 700;
     font-size: 20px;
     /*transform: rotate(180deg);*/
   }
-  .c-post-card:nth-child(odd) {
+  /* .c-post-card:nth-child(odd) {
     direction: rtl;
 }
 .c-post-card:nth-child(odd) .c-post-card__content {
@@ -410,15 +401,18 @@ video {
     .c-post-card__content {
     direction: rtl;	
     margin-bottom: 80px;
-}
+} */
 .c-post-card__title {
-  direction: rtl;
+  /* direction: rtl; */
   font-size: 50px;
   line-height: 50px;
-  margin-top: 20px;
+  margin-top: 0px;
 }
 .c-post-card__meta {
   top: -60px;
+}
+.c-post-card__content {
+  margin-bottom: 0px;
 }
 }
 
@@ -1006,9 +1000,7 @@ while True:
     <h2 class='c-post-card__title'>
       <a href='/3d-printed-dual-cycloidal-actuator/' class='c-post-card__url'>3D Printed Dual Cycloidal Actuator</a>
     </h2>
-    <p class='c-post-card__excerpt'>This project is a continuation of my previous axial flux motor project. If you&#39;ve not yet read that I would recommend doing so.
-
-Ironless Axial Flux MotorAfter my first custom brushless motor I felt confident enough with the basic theory of how they work to make a second</p>
+    <p class='c-post-card__excerpt'>This project builds on my previous axial flux motor. To improve the torque output of the motor I designed a cycloidal gearbox that integrates into the current motor design allowing for more torque.</p>
   </div>
 
     <div class='c-post-card__media'>
@@ -1042,7 +1034,7 @@ Ironless Axial Flux MotorAfter my first custom brushless motor I felt confident 
     <h2 class='c-post-card__title'>
       <a href='/solar-car-hv-bus-bar-distribution/' class='c-post-card__url'>Solar Car HV Bus Bar Distribution</a>
     </h2>
-    <p class='c-post-card__excerpt'>As I&#39;ve continued working on the Iowa State Solar Car team one problem on our current car I have noticed is how we handle routing the high voltage connections in our battery pack. This project aims to create a design that consolidates our HV connections and makes maintenance</p>
+    <p class='c-post-card__excerpt'>I designed a high voltage distribution assembly for the solar car that centralizes all of our high voltage connections, contactors, and fuses into a centralized location.</p>
   </div>
 
     <div class='c-post-card__media'>
@@ -1076,9 +1068,7 @@ Ironless Axial Flux MotorAfter my first custom brushless motor I felt confident 
     <h2 class='c-post-card__title'>
       <a href='/designing-a-coreless-axial-flux-motor-part-1/' class='c-post-card__url'>Ironless Axial Flux Motor</a>
     </h2>
-    <p class='c-post-card__excerpt'>After my first custom brushless motor I felt confident enough with the basic theory of how they work to make a second design with significantly more thought and math defining the design.
-
-Creating a 3D Printed Brushless MotorWith my work in the Iowa State Solar Car club I have learned</p>
+    <p class='c-post-card__excerpt'>Building off my first motor project, I designed and tested an axial flux motor by mathematically calculating all of the motor parameters needed to meet the design requirements that I set.</p>
   </div>
 
     <div class='c-post-card__media'>

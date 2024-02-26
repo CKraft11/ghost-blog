@@ -190,7 +190,7 @@ a:hover {
   --color-border: var(--color-brand);
 }
 .c-post-card{
-  margin: 0px;
+
 }
 .c-post-card__image-wrap {
   height: 200px;
@@ -273,7 +273,9 @@ video {
   /*border-radius: 16px 16px 0px 0px !important;
   overflow: hidden;*/
 }
-
+.c-btn {
+  width:100%;
+}
 
 .c-title-bar__divider {
   display: none;
@@ -285,14 +287,14 @@ video {
 
 }
 .c-post-card {
-  grid-template-areas: ". . . . meta meta meta meta media media media media"
+  grid-template-areas: ". . . . meta meta meta meta . . . . "
       				   "content content content content content content content content media media media media";																						
-  margin-top: 50px !important;
-  margin-bottom: 20px !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
 }
 
 .c-post-card__content {
-    margin-bottom: 80px;
+    margin-bottom: 0px;
 }
 .c-post-card__title {
   font-size: 30px;
@@ -347,7 +349,6 @@ video {
   .c-post-card__media {
     grid-area: media;
     aspect-ratio: 3/2;
-    align-self: center;
   }
 }
 @media screen and (min-width:639px) {
@@ -361,12 +362,15 @@ video {
     margin-top: 20px;
     height: max-content;
   }
+  .c-btn{
+    width:300px !important;
+  }
   .c-post-card__date {
     font-weight: 700;
     font-size: 20px;
     /*transform: rotate(180deg);*/
   }
-  .c-post-card:nth-child(odd) {
+  /* .c-post-card:nth-child(odd) {
     direction: rtl;
 }
 .c-post-card:nth-child(odd) .c-post-card__content {
@@ -381,15 +385,18 @@ video {
     .c-post-card__content {
     direction: rtl;	
     margin-bottom: 80px;
-}
+} */
 .c-post-card__title {
-  direction: rtl;
+  /* direction: rtl; */
   font-size: 50px;
   line-height: 50px;
-  margin-top: 20px;
+  margin-top: 0px;
 }
 .c-post-card__meta {
   top: -60px;
+}
+.c-post-card__content {
+  margin-bottom: 0px;
 }
 }
 
@@ -696,7 +703,7 @@ p code {
           </section>
         </div>
       </div>
-      <h3 style="display:grid;margin:1em;align-items:center;justify-content:center;">Work Experience</h3> 
+      <h3 style="text-align:center;display:grid;margin:1em;align-items:center;justify-content:center;">Work Experience</h3> 
       <div style="align-items:center;grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));margin-bottom:1em;text-align: center;display:grid;grid-column-gap: 1em;grid-row-gap: 1em;">
         <section class="company_card" style="">
             <div style="padding:1em;border: 1px solid #E5EFF5;justify-items:center;align-items:center;display: grid;grid-template-columns: 1fr;grid-template-rows: 2fr 0.4fr 1fr 0.5fr;grid-column-gap: 0px;grid-row-gap: 0px;box-shadow: 0 15px 23px rgba(3, 27, 78, 8%), 0 3px 6px rgba(0, 0, 0, 2%);border-radius:16px;width:100%;height:100%;">
@@ -747,7 +754,7 @@ p code {
             </div>
           </section>
       </div>
-      <h3 style="display:grid;margin:1em;align-items:center;justify-content:center;">Featured Projects</h3>
+      <h3 style="text-align:center;margin-bottom:2em !important;display:grid;margin:1em;align-items:center;justify-content:center;">Featured Projects</h3>
   </div>
 
 
@@ -777,9 +784,7 @@ p code {
     <h2 class='c-post-card__title'>
       <a href='/3d-printed-dual-cycloidal-actuator/' class='c-post-card__url'>3D Printed Dual Cycloidal Actuator</a>
     </h2>
-    <p class='c-post-card__excerpt'>This project is a continuation of my previous axial flux motor project. If you&#39;ve not yet read that I would recommend doing so.
-
-Ironless Axial Flux MotorAfter my first custom brushless motor I felt confident enough with the basic theory of how they work to make a second</p>
+    <p class='c-post-card__excerpt'>This project builds on my previous axial flux motor. To improve the torque output of the motor I designed a cycloidal gearbox that integrates into the current motor design allowing for more torque.</p>
   </div>
 
     <div class='c-post-card__media'>
@@ -813,7 +818,7 @@ Ironless Axial Flux MotorAfter my first custom brushless motor I felt confident 
     <h2 class='c-post-card__title'>
       <a href='/solar-car-hv-bus-bar-distribution/' class='c-post-card__url'>Solar Car HV Bus Bar Distribution</a>
     </h2>
-    <p class='c-post-card__excerpt'>As I&#39;ve continued working on the Iowa State Solar Car team one problem on our current car I have noticed is how we handle routing the high voltage connections in our battery pack. This project aims to create a design that consolidates our HV connections and makes maintenance</p>
+    <p class='c-post-card__excerpt'>I designed a high voltage distribution assembly for the solar car that centralizes all of our high voltage connections, contactors, and fuses into a centralized location.</p>
   </div>
 
     <div class='c-post-card__media'>
@@ -847,14 +852,7 @@ Ironless Axial Flux MotorAfter my first custom brushless motor I felt confident 
     <h2 class='c-post-card__title'>
       <a href='/the-ntpixie-a-wifi-connected-nixie-tube-clock/' class='c-post-card__url'>The NTPixie, A WiFi Nixie Tube Clock</a>
     </h2>
-    <p class='c-post-card__excerpt'>I have always thought that nixie tubes are one of the coolest inventions ever made. The novelty of having such an intricate assembly of blown glass and spot welded numbers just to simply display digits is something I&#39;ve always admired.
-
-
-What&#39;s a Nixie Tube?
-
-
-
-Before the</p>
+    <p class='c-post-card__excerpt'>I&#39;ve always wanted to make a nixie tube clock but wanted to make one that I could trust was accurate. This was done through syncing the time with NTP servers the same way phones and computers do.</p>
   </div>
 
     <div class='c-post-card__media'>
@@ -888,9 +886,7 @@ Before the</p>
     <h2 class='c-post-card__title'>
       <a href='/designing-a-coreless-axial-flux-motor-part-1/' class='c-post-card__url'>Ironless Axial Flux Motor</a>
     </h2>
-    <p class='c-post-card__excerpt'>After my first custom brushless motor I felt confident enough with the basic theory of how they work to make a second design with significantly more thought and math defining the design.
-
-Creating a 3D Printed Brushless MotorWith my work in the Iowa State Solar Car club I have learned</p>
+    <p class='c-post-card__excerpt'>Building off my first motor project, I designed and tested an axial flux motor by mathematically calculating all of the motor parameters needed to meet the design requirements that I set.</p>
   </div>
 
     <div class='c-post-card__media'>
@@ -924,13 +920,7 @@ Creating a 3D Printed Brushless MotorWith my work in the Iowa State Solar Car cl
     <h2 class='c-post-card__title'>
       <a href='/solar-car-gps-tracker/' class='c-post-card__url'>Solar Car GPS Tracker</a>
     </h2>
-    <p class='c-post-card__excerpt'>This is a quick post about a small project that I made for the PRISUM Solar Car Club here at Iowa State.
-
-Every other summer our team competes in the American Solar Challenge.
-
-ASC &amp; FSGP – Collegiate solar car competitionASC &amp; FSGP Collegiate solar car competition
-
-This competition consists of</p>
+    <p class='c-post-card__excerpt'>For our 2022 solar car race, I designed a simple webpage that tied into our cars live telemetry in order to display the current speeds and location on a map. This allowed us to share our race progress with family and friends.</p>
   </div>
 
     <div class='c-post-card__media'>
@@ -964,9 +954,7 @@ This competition consists of</p>
     <h2 class='c-post-card__title'>
       <a href='/creating-a-3d-printed-brushless-motor/' class='c-post-card__url'>Creating a 3D Printed Brushless Motor</a>
     </h2>
-    <p class='c-post-card__excerpt'>With my work in the Iowa State Solar Car club I have learned so many things about so many different technologies that I have not had the chance of working with before.
-
-One of the things that has come to interest me the most are motors. Getting the chance to</p>
+    <p class='c-post-card__excerpt'>This was my first attempt at making a motor from scratch. This design is a simple brushless motor made with components I had on hand at the time and taught me quite a lot about motor design and magnetics.</p>
   </div>
 
     <div class='c-post-card__media'>
@@ -1000,9 +988,7 @@ One of the things that has come to interest me the most are motors. Getting the 
     <h2 class='c-post-card__title'>
       <a href='/designing-solar-car-steering-wheel/' class='c-post-card__url'>Solar Car Steering Wheel</a>
     </h2>
-    <p class='c-post-card__excerpt'>At Iowa State University, one of my main interests has quickly become the PRISUM Solar Car Club. It has given me an opportunity to use my engineering skills outside of classes with some pretty cool people.
-
-As I am a Freshman at Iowa State, and at the time of writing</p>
+    <p class='c-post-card__excerpt'>This was one of my first projects on solar car where I designed a new steering wheel that had its own integrated PCB to minimize the wiring harness connecting it to the rest of the car.</p>
   </div>
 
     <div class='c-post-card__media'>
@@ -1036,9 +1022,7 @@ As I am a Freshman at Iowa State, and at the time of writing</p>
     <h2 class='c-post-card__title'>
       <a href='/creating-a-ghost-blog-with-free-webhosting/' class='c-post-card__url'>Ghost Blog with Free Webhosting</a>
     </h2>
-    <p class='c-post-card__excerpt'>When I began my search to find the best blog/CMS that I could host at home (or in my dorm room) on my server, I landed on Ghost pretty quickly with its slick UI and broad feature-set including an admin panel, app integrations, and native Docker support.
-
-My problems</p>
+    <p class='c-post-card__excerpt'>This is an in depth guide on how I made this very website through locally developing the website and pushing changes to Github pages. This allows me to host this site while paying $0 in hosting.</p>
   </div>
 
     <div class='c-post-card__media'>
@@ -1072,9 +1056,7 @@ My problems</p>
     <h2 class='c-post-card__title'>
       <a href='/creating-a-single-part-tool-less/' class='c-post-card__url'>Single Part Raspberry Pi Compute Cluster</a>
     </h2>
-    <p class='c-post-card__excerpt'>My Raspberry Pi&#39;s are some of my favorite devices that I own. Their versatility cost and ease of use have allowed me to implement them into a wide range of projects and learn a lot about computing.
-
-One area I had never ventured however was the idea of</p>
+    <p class='c-post-card__excerpt'>This is a Raspberry Pi cluster that I created where all of the Raspberry Pi&#39;s and networking gear can click into a single 3D printed component without the use of any fasteners.</p>
   </div>
 
     <div class='c-post-card__media'>
@@ -1096,7 +1078,7 @@ One area I had never ventured however was the idea of</p>
     <div class='o-grid'>
       <div class='o-grid__col o-grid__col--center o-grid__col--9-10-m o-grid__col--2-3-l'>
         <div class='c-title-bar'>
-          <h3 class='c-title-bar__title'>Recent Posts</h3>
+          <h3 style="margin-bottom:2em;"class='c-title-bar__title'>Recent Posts</h3>
           <span class='c-title-bar__divider'></span>
         </div>
       </div>
@@ -1122,9 +1104,7 @@ One area I had never ventured however was the idea of</p>
     <h2 class='c-post-card__title'>
       <a href='/3d-printed-dual-cycloidal-actuator/' class='c-post-card__url'>3D Printed Dual Cycloidal Actuator</a>
     </h2>
-    <p class='c-post-card__excerpt'>This project is a continuation of my previous axial flux motor project. If you&#39;ve not yet read that I would recommend doing so.
-
-Ironless Axial Flux MotorAfter my first custom brushless motor I felt confident enough with the basic theory of how they work to make a second</p>
+    <p class='c-post-card__excerpt'>This project builds on my previous axial flux motor. To improve the torque output of the motor I designed a cycloidal gearbox that integrates into the current motor design allowing for more torque.</p>
   </div>
 
     <div class='c-post-card__media'>
@@ -1158,7 +1138,7 @@ Ironless Axial Flux MotorAfter my first custom brushless motor I felt confident 
     <h2 class='c-post-card__title'>
       <a href='/solar-car-hv-bus-bar-distribution/' class='c-post-card__url'>Solar Car HV Bus Bar Distribution</a>
     </h2>
-    <p class='c-post-card__excerpt'>As I&#39;ve continued working on the Iowa State Solar Car team one problem on our current car I have noticed is how we handle routing the high voltage connections in our battery pack. This project aims to create a design that consolidates our HV connections and makes maintenance</p>
+    <p class='c-post-card__excerpt'>I designed a high voltage distribution assembly for the solar car that centralizes all of our high voltage connections, contactors, and fuses into a centralized location.</p>
   </div>
 
     <div class='c-post-card__media'>
@@ -1192,14 +1172,7 @@ Ironless Axial Flux MotorAfter my first custom brushless motor I felt confident 
     <h2 class='c-post-card__title'>
       <a href='/the-ntpixie-a-wifi-connected-nixie-tube-clock/' class='c-post-card__url'>The NTPixie, A WiFi Nixie Tube Clock</a>
     </h2>
-    <p class='c-post-card__excerpt'>I have always thought that nixie tubes are one of the coolest inventions ever made. The novelty of having such an intricate assembly of blown glass and spot welded numbers just to simply display digits is something I&#39;ve always admired.
-
-
-What&#39;s a Nixie Tube?
-
-
-
-Before the</p>
+    <p class='c-post-card__excerpt'>I&#39;ve always wanted to make a nixie tube clock but wanted to make one that I could trust was accurate. This was done through syncing the time with NTP servers the same way phones and computers do.</p>
   </div>
 
     <div class='c-post-card__media'>
@@ -1219,9 +1192,11 @@ Before the</p>
     </div>
 
 <div class='o-grid'>
+  <div class='o-grid__col o-grid__col--center o-grid__col--1-3-l'>
+    <a href='https://cadenkraft.com/posts/' class='c-btn c-btn--outline c-btn--full'>All Posts →</a>
+  </div>  
   <div class='o-grid__col o-grid__col--center o-grid__col--2-4-m o-grid__col--1-3-l'>
     <div class='c-pagination c-pagination--count-9'>
-      <a href='https://cadenkraft.com/posts/' class='c-btn c-btn--outline c-btn--full'>All Posts →</a>
     </div>
   </div>
 </div>

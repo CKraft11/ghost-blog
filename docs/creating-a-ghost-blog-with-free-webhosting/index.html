@@ -28,27 +28,24 @@
         clipboard_copied_text               = 'Link copied to clipboard';
   </script>
 
-  <link rel="icon" href="https://cadenkraft.com/content/images/2022/11/favicon.ico" type="image/x-icon">
+  <meta name="description" content="This is an in depth guide on how I made this very website through locally developing the website and pushing changes to Github pages. This allows me to host this site while paying $0 in hosting.">
+    <link rel="icon" href="https://cadenkraft.com/content/images/2022/11/favicon.ico" type="image/x-icon">
     <link rel="canonical" href="https://cadenkraft.com/creating-a-ghost-blog-with-free-webhosting/">
     <meta name="referrer" content="no-referrer-when-downgrade">
     
     <meta property="og:site_name" content="Caden Kraft">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Ghost Blog with Free Webhosting">
-    <meta property="og:description" content="When I began my search to find the best blog/CMS that I could host at home (or in my dorm room) on my server, I landed on Ghost pretty quickly with its slick UI and broad feature-set including an admin panel, app integrations, and native Docker support.
-
-My problems">
+    <meta property="og:description" content="This is an in depth guide on how I made this very website through locally developing the website and pushing changes to Github pages. This allows me to host this site while paying $0 in hosting.">
     <meta property="og:url" content="https://cadenkraft.com/creating-a-ghost-blog-with-free-webhosting/">
     <meta property="og:image" content="https://cadenkraft.com/content/images/2022/02/ghost-blog.png">
     <meta property="article:published_time" content="2022-02-23T04:58:02.000Z">
-    <meta property="article:modified_time" content="2024-02-23T23:31:18.000Z">
+    <meta property="article:modified_time" content="2024-02-26T17:48:03.000Z">
     <meta property="article:tag" content="Tutorial">
     
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Ghost Blog with Free Webhosting">
-    <meta name="twitter:description" content="When I began my search to find the best blog/CMS that I could host at home (or in my dorm room) on my server, I landed on Ghost pretty quickly with its slick UI and broad feature-set including an admin panel, app integrations, and native Docker support.
-
-My problems">
+    <meta name="twitter:description" content="This is an in depth guide on how I made this very website through locally developing the website and pushing changes to Github pages. This allows me to host this site while paying $0 in hosting.">
     <meta name="twitter:url" content="https://cadenkraft.com/creating-a-ghost-blog-with-free-webhosting/">
     <meta name="twitter:image" content="https://cadenkraft.com/content/images/2022/02/ghost-blog.png">
     <meta name="twitter:label1" content="Written by">
@@ -82,7 +79,7 @@ My problems">
     "headline": "Ghost Blog with Free Webhosting",
     "url": "https://cadenkraft.com/creating-a-ghost-blog-with-free-webhosting/",
     "datePublished": "2022-02-23T04:58:02.000Z",
-    "dateModified": "2024-02-23T23:31:18.000Z",
+    "dateModified": "2024-02-26T17:48:03.000Z",
     "image": {
         "@type": "ImageObject",
         "url": "https://cadenkraft.com/content/images/2022/02/ghost-blog.png",
@@ -90,7 +87,7 @@ My problems">
         "height": 660
     },
     "keywords": "Tutorial",
-    "description": "When I began my search to find the best blog/CMS that I could host at home (or in my dorm room) on my server, I landed on Ghost pretty quickly with its slick UI and broad feature-set including an admin panel, app integrations, and native Docker support.\n\nMy problems arose when it came to hosting. Although I can host it on my server I currently cannot port-forward traffic to my blog, and it also introduces a pretty significant security risk.\n\nBring in Github pages. Github pages is a great way to ",
+    "description": "This is an in depth guide on how I made this very website through locally developing the website and pushing changes to Github pages. This allows me to host this site while paying $0 in hosting.",
     "mainEntityOfPage": "https://cadenkraft.com/creating-a-ghost-blog-with-free-webhosting/"
 }
     </script>
@@ -208,7 +205,7 @@ a:hover {
   --color-border: var(--color-brand);
 }
 .c-post-card{
-  margin: 0px;
+
 }
 .c-post-card__image-wrap {
   height: 200px;
@@ -291,7 +288,9 @@ video {
   /*border-radius: 16px 16px 0px 0px !important;
   overflow: hidden;*/
 }
-
+.c-btn {
+  width:100%;
+}
 
 .c-title-bar__divider {
   display: none;
@@ -303,14 +302,14 @@ video {
 
 }
 .c-post-card {
-  grid-template-areas: ". . . . meta meta meta meta media media media media"
+  grid-template-areas: ". . . . meta meta meta meta . . . . "
       				   "content content content content content content content content media media media media";																						
-  margin-top: 50px !important;
-  margin-bottom: 20px !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
 }
 
 .c-post-card__content {
-    margin-bottom: 80px;
+    margin-bottom: 0px;
 }
 .c-post-card__title {
   font-size: 30px;
@@ -365,7 +364,6 @@ video {
   .c-post-card__media {
     grid-area: media;
     aspect-ratio: 3/2;
-    align-self: center;
   }
 }
 @media screen and (min-width:639px) {
@@ -379,12 +377,15 @@ video {
     margin-top: 20px;
     height: max-content;
   }
+  .c-btn{
+    width:300px !important;
+  }
   .c-post-card__date {
     font-weight: 700;
     font-size: 20px;
     /*transform: rotate(180deg);*/
   }
-  .c-post-card:nth-child(odd) {
+  /* .c-post-card:nth-child(odd) {
     direction: rtl;
 }
 .c-post-card:nth-child(odd) .c-post-card__content {
@@ -399,15 +400,18 @@ video {
     .c-post-card__content {
     direction: rtl;	
     margin-bottom: 80px;
-}
+} */
 .c-post-card__title {
-  direction: rtl;
+  /* direction: rtl; */
   font-size: 50px;
   line-height: 50px;
-  margin-top: 20px;
+  margin-top: 0px;
 }
 .c-post-card__meta {
   top: -60px;
+}
+.c-post-card__content {
+  margin-bottom: 0px;
 }
 }
 
@@ -912,9 +916,7 @@ git push -u origin master</code></pre><figcaption><p><span style="white-space: p
     <h2 class='c-post-card__title'>
       <a href='/3d-printed-dual-cycloidal-actuator/' class='c-post-card__url'>3D Printed Dual Cycloidal Actuator</a>
     </h2>
-    <p class='c-post-card__excerpt'>This project is a continuation of my previous axial flux motor project. If you&#39;ve not yet read that I would recommend doing so.
-
-Ironless Axial Flux MotorAfter my first custom brushless motor I felt confident enough with the basic theory of how they work to make a second</p>
+    <p class='c-post-card__excerpt'>This project builds on my previous axial flux motor. To improve the torque output of the motor I designed a cycloidal gearbox that integrates into the current motor design allowing for more torque.</p>
   </div>
 
     <div class='c-post-card__media'>
@@ -948,7 +950,7 @@ Ironless Axial Flux MotorAfter my first custom brushless motor I felt confident 
     <h2 class='c-post-card__title'>
       <a href='/solar-car-hv-bus-bar-distribution/' class='c-post-card__url'>Solar Car HV Bus Bar Distribution</a>
     </h2>
-    <p class='c-post-card__excerpt'>As I&#39;ve continued working on the Iowa State Solar Car team one problem on our current car I have noticed is how we handle routing the high voltage connections in our battery pack. This project aims to create a design that consolidates our HV connections and makes maintenance</p>
+    <p class='c-post-card__excerpt'>I designed a high voltage distribution assembly for the solar car that centralizes all of our high voltage connections, contactors, and fuses into a centralized location.</p>
   </div>
 
     <div class='c-post-card__media'>
@@ -982,14 +984,7 @@ Ironless Axial Flux MotorAfter my first custom brushless motor I felt confident 
     <h2 class='c-post-card__title'>
       <a href='/the-ntpixie-a-wifi-connected-nixie-tube-clock/' class='c-post-card__url'>The NTPixie, A WiFi Nixie Tube Clock</a>
     </h2>
-    <p class='c-post-card__excerpt'>I have always thought that nixie tubes are one of the coolest inventions ever made. The novelty of having such an intricate assembly of blown glass and spot welded numbers just to simply display digits is something I&#39;ve always admired.
-
-
-What&#39;s a Nixie Tube?
-
-
-
-Before the</p>
+    <p class='c-post-card__excerpt'>I&#39;ve always wanted to make a nixie tube clock but wanted to make one that I could trust was accurate. This was done through syncing the time with NTP servers the same way phones and computers do.</p>
   </div>
 
     <div class='c-post-card__media'>
