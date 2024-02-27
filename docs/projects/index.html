@@ -91,8 +91,8 @@ Going into the design I just wanted to try my hand at making a motor without hav
     <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/sodo-search.min.js" data-key="3e74f414b63324d66c09dfed49" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/main.css" data-sodo-search="https://cadenkraft.com/" crossorigin="anonymous"></script>
     
     <link href="https://cadenkraft.com/webmentions/receive/" rel="webmention">
-    <script defer src="/public/cards.min.js?v=e004ed37f9"></script>
-    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=e004ed37f9">
+    <script defer src="/public/cards.min.js?v=18f876031c"></script>
+    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=18f876031c">
     
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Z51SVJ5W4"></script>
@@ -168,14 +168,22 @@ a:hover {
 .c-header .is-membership {
   display: none;
 }
-
+.c-home{
+  background:none;
+}
 .c-content h2 {
   font-size: 48px;
   line-height: 48px;
 }
 #caden-kraft {
-  font-size: 60px !important;
-  line-height: 60px !important;
+  font-size: 72px !important;
+  line-height: 72px !important;
+}
+#mechanical-engineer {
+  margin-top: 0px;
+  font-size:32px;
+  color: var(--ghost-accent-color);
+  text-shadow: 0px 0px 2px rgba(0,0,0,0.3);
 }
 .c-post-card__visibility {
   display: none;
@@ -192,13 +200,13 @@ a:hover {
         --background-secondary: #fff1e0;*/
   --background-primary: #ffffff;
   --background-secondary: #ffffff;
-  --color-brand: #007AFF;
+  --color-brand: var(--ghost-accent-color);
   --color-text-primary: #222129;
   --color-text-secondary: #222129;
   --color-border: var(--color-brand);
 }
 .c-post-card{
-  
+  margin-left:0em;
 }
 .c-post-card__image-wrap {
   height: 200px;
@@ -281,9 +289,7 @@ video {
   /*border-radius: 16px 16px 0px 0px !important;
   overflow: hidden;*/
 }
-.c-btn {
-  width:100%;
-}
+
 
 .c-title-bar__divider {
   display: none;
@@ -295,15 +301,14 @@ video {
 
 }
 .c-post-card {
-  grid-template-areas: ". . . . meta meta meta meta . . . . "
+  grid-template-areas: ". . . . meta meta meta meta media media media media"
       				   "content content content content content content content content media media media media";																						
   margin-top: 0px !important;
   margin-bottom: 0px !important;
-  
 }
 
 .c-post-card__content {
-    margin-bottom: 0px;
+    margin-bottom: 80px;
 }
 .c-post-card__title {
   font-size: 30px;
@@ -314,7 +319,7 @@ video {
 .c-post-card__meta {
   display: flex;
   position: inherit;
-  
+  background: #fff;
   justify-content: center;
   align-items: center;
   border-radius: 8px;
@@ -347,7 +352,16 @@ video {
     justify-items: center;
   }
 }
-
+.c-tags a {
+  padding: 0.5em 1em !important;
+  line-height: 10px;
+  margin:0.5em 1em 0.5em 0em;
+  background: var(--ghost-accent-color);
+  color: #000;
+  border-radius: 16px;
+  font-weight: 700;
+  border: 0px;
+}
 
 @media screen and (min-width:640px) {
   .c-home__content {
@@ -358,6 +372,7 @@ video {
   .c-post-card__media {
     grid-area: media;
     aspect-ratio: 3/2;
+    align-self: center;
   }
 }
 @media screen and (min-width:639px) {
@@ -370,9 +385,6 @@ video {
     padding: 10px 0px;
     margin-top: 20px;
     height: max-content;
-  }
-  .c-btn{
-    width:320px !important;
   }
   .c-post-card__date {
     font-weight: 700;
@@ -402,14 +414,12 @@ video {
   margin-top: 0px;
 }
 .c-post-card__meta {
-  top: -40px;
+  top: -60px;
 }
-.c-post-card__content {
-  margin-bottom: 0px;
-}
-.c-post-card {
+  .c-post-card {
   margin-left:1em;
 }
+  
 }
 
 .c-post-card__date {
@@ -476,17 +486,19 @@ video {
 }
 
 .c-nav__item__icon {
-  --color-text-primary: #000000;
+  /* --color-text-primary: color: var(--ghost-accent-color); */
+  --color-text-primary: color: #000;
 }
 
 .c-nav-wrap {
   #padding: 9px;
   #background: #000000;
-  color: #000000;
+  /* color: var(--ghost-accent-color); */
+  color: #fff;
 }
 
 .c-btn {
-  background-color: #007AFF;
+  background-color: var(--ghost-accent-color);
   border-radius: 16px;
   color: #ffffff;
   box-shadow: 0 4px 6px rgba(3, 27, 78, 5%);
@@ -503,8 +515,10 @@ video {
 }
 
 .c-nav__link {
-  color: #000000;
-  #--color-text-primary: var(--color-brand);
+  color: #000 !important;
+  /* color: var(--ghost-accent-color); */
+  /* --color-text-primary: var(--color-brand); */
+  font-weight: 700;
 }
 
 .c-post-card {
@@ -646,7 +660,7 @@ p code {
 
 
 
-<style>:root {--ghost-accent-color: #002bff;}</style>
+<style>:root {--ghost-accent-color: #6EFFA8;}</style>
 </head>
 <body class='page-template page-projects tag-hash-import-2024-02-23-22-57'>
   <a href='#main-content' class='c-skip-to-content'>Skip to content</a>
@@ -655,7 +669,7 @@ p code {
     <header class='c-header'>
   <div class='o-grid'>
     <div class='o-grid__col'>
-      <div class='c-header__inner'>
+      <div class='c-header__inner' style="background: linear-gradient(to left, #fff 40%,rgba(255,255,255,0) 100%);">
         <div class='c-logo'>
             <a href='https://cadenkraft.com'>
               <img class='c-logo__img' src='https://cadenkraft.com/content/images/2022/02/black-logo-1.png' alt='Caden Kraft' width='' height=''>
@@ -703,46 +717,6 @@ p code {
 
 
 
-<div class='o-grid'>
-  <div class='o-grid__col o-grid__col--center o-grid__col--9-10-m o-grid__col--2-3-l'>
-    <article class='c-post tag-hash-import-2024-02-23-22-57 no-image'>
-      <header class='c-post-header'>
-  <h1 class='c-post-header__title'>Projects</h1>
-
-
-</header>
-      <section class='c-content'>
-        <!--kg-card-begin: html--><section style="height:50ex; width:80vw; margin-bottom:20px;">
-    <style>
-.project_image {
-  		box-shadow: 0 4px 6px rgba(3,27,78,5%);
-        border-radius: 16px !important; 
-        border: 1px solid #E5EFF5 !important; 
-        margin-bottom:20px;
-    }
-.project_image:hover {
-  		box-shadow: 0 15px 23px rgba(3,27,78,8%),0 3px 6px rgba(0,0,0,2%);
-  transition: all .5s ease;
-    }
-</style>
-<figure style="float: left; width: 40%; margin-right: 15px; margin-left: 0;">
-<img class="project_image" src="https://cadenkraft.com/content/images/size/w1462/2022/07/motor-title-render.14.jpg" alt="First Motor Design" style="height:50ex; width:auto;">
-    </figure>
-    <div style="height:inherit; display:flex; flex-direction: column; padding:20px; padding-left:40px;">
-        <h2 style="position:absolute;">3D Printed Brushless Motor</h2>    
-        <p style="display:grid; align-content:center; height:inherit; font-size: 20px; line-height: 40px;">Going into the design I just wanted to try my hand at making a motor without having to learn advanced motor simulation software like Ansys MotorCAD and Ansys Maxwell. My goal was simply to make a motor that works and spins on its own. Starting a design in Autodesk Inventor, I began by creating the main profile of the stator.
-        </p>
-    </div>
-</section>
-<!--kg-card-end: html--><hr><p></p>
-      </section>
-
-      <hr>
-    </article>
-  </div>
-</div>
-
-
     </main>
 
     <footer class='c-footer'>
@@ -766,7 +740,7 @@ p code {
   </div>
 </footer>  </div>
 
-  <script src='/assets/js/app.min.js?v=e004ed37f9'></script>
+  <script src='/assets/js/app.min.js?v=18f876031c'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js" integrity="sha512-9khQRAUBYEJDCDVP2yw3LRUQvjJ0Pjx0EShmaQjcHa6AXiOv6qHQu9lCAIR8O+/D8FtaCoJ2c0Tf9Xo7hYH01Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-fTl/qcO1VgvKtOMApX2PdZzkziyr2stM65GYPLGuYMnuMm1z2JLJG6XVU7C/mR+E7xBUqCivykuhlzfqxXBXbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 

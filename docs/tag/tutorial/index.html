@@ -69,8 +69,8 @@
     <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/sodo-search.min.js" data-key="3e74f414b63324d66c09dfed49" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/main.css" data-sodo-search="https://cadenkraft.com/" crossorigin="anonymous"></script>
     
     <link href="https://cadenkraft.com/webmentions/receive/" rel="webmention">
-    <script defer src="/public/cards.min.js?v=e004ed37f9"></script>
-    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=e004ed37f9">
+    <script defer src="/public/cards.min.js?v=18f876031c"></script>
+    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=18f876031c">
     
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Z51SVJ5W4"></script>
@@ -146,14 +146,22 @@ a:hover {
 .c-header .is-membership {
   display: none;
 }
-
+.c-home{
+  background:none;
+}
 .c-content h2 {
   font-size: 48px;
   line-height: 48px;
 }
 #caden-kraft {
-  font-size: 60px !important;
-  line-height: 60px !important;
+  font-size: 72px !important;
+  line-height: 72px !important;
+}
+#mechanical-engineer {
+  margin-top: 0px;
+  font-size:32px;
+  color: var(--ghost-accent-color);
+  text-shadow: 0px 0px 2px rgba(0,0,0,0.3);
 }
 .c-post-card__visibility {
   display: none;
@@ -170,13 +178,13 @@ a:hover {
         --background-secondary: #fff1e0;*/
   --background-primary: #ffffff;
   --background-secondary: #ffffff;
-  --color-brand: #007AFF;
+  --color-brand: var(--ghost-accent-color);
   --color-text-primary: #222129;
   --color-text-secondary: #222129;
   --color-border: var(--color-brand);
 }
 .c-post-card{
-  
+  margin-left:0em;
 }
 .c-post-card__image-wrap {
   height: 200px;
@@ -259,9 +267,7 @@ video {
   /*border-radius: 16px 16px 0px 0px !important;
   overflow: hidden;*/
 }
-.c-btn {
-  width:100%;
-}
+
 
 .c-title-bar__divider {
   display: none;
@@ -273,15 +279,14 @@ video {
 
 }
 .c-post-card {
-  grid-template-areas: ". . . . meta meta meta meta . . . . "
+  grid-template-areas: ". . . . meta meta meta meta media media media media"
       				   "content content content content content content content content media media media media";																						
   margin-top: 0px !important;
   margin-bottom: 0px !important;
-  
 }
 
 .c-post-card__content {
-    margin-bottom: 0px;
+    margin-bottom: 80px;
 }
 .c-post-card__title {
   font-size: 30px;
@@ -292,7 +297,7 @@ video {
 .c-post-card__meta {
   display: flex;
   position: inherit;
-  
+  background: #fff;
   justify-content: center;
   align-items: center;
   border-radius: 8px;
@@ -325,7 +330,16 @@ video {
     justify-items: center;
   }
 }
-
+.c-tags a {
+  padding: 0.5em 1em !important;
+  line-height: 10px;
+  margin:0.5em 1em 0.5em 0em;
+  background: var(--ghost-accent-color);
+  color: #000;
+  border-radius: 16px;
+  font-weight: 700;
+  border: 0px;
+}
 
 @media screen and (min-width:640px) {
   .c-home__content {
@@ -336,6 +350,7 @@ video {
   .c-post-card__media {
     grid-area: media;
     aspect-ratio: 3/2;
+    align-self: center;
   }
 }
 @media screen and (min-width:639px) {
@@ -348,9 +363,6 @@ video {
     padding: 10px 0px;
     margin-top: 20px;
     height: max-content;
-  }
-  .c-btn{
-    width:320px !important;
   }
   .c-post-card__date {
     font-weight: 700;
@@ -380,14 +392,12 @@ video {
   margin-top: 0px;
 }
 .c-post-card__meta {
-  top: -40px;
+  top: -60px;
 }
-.c-post-card__content {
-  margin-bottom: 0px;
-}
-.c-post-card {
+  .c-post-card {
   margin-left:1em;
 }
+  
 }
 
 .c-post-card__date {
@@ -454,17 +464,19 @@ video {
 }
 
 .c-nav__item__icon {
-  --color-text-primary: #000000;
+  /* --color-text-primary: color: var(--ghost-accent-color); */
+  --color-text-primary: color: #000;
 }
 
 .c-nav-wrap {
   #padding: 9px;
   #background: #000000;
-  color: #000000;
+  /* color: var(--ghost-accent-color); */
+  color: #fff;
 }
 
 .c-btn {
-  background-color: #007AFF;
+  background-color: var(--ghost-accent-color);
   border-radius: 16px;
   color: #ffffff;
   box-shadow: 0 4px 6px rgba(3, 27, 78, 5%);
@@ -481,8 +493,10 @@ video {
 }
 
 .c-nav__link {
-  color: #000000;
-  #--color-text-primary: var(--color-brand);
+  color: #000 !important;
+  /* color: var(--ghost-accent-color); */
+  /* --color-text-primary: var(--color-brand); */
+  font-weight: 700;
 }
 
 .c-post-card {
@@ -624,7 +638,7 @@ p code {
 
 
 
-<style>:root {--ghost-accent-color: #002bff;}</style>
+<style>:root {--ghost-accent-color: #6EFFA8;}</style>
 </head>
 <body class='tag-template tag-tutorial'>
   <a href='#main-content' class='c-skip-to-content'>Skip to content</a>
@@ -633,7 +647,7 @@ p code {
     <header class='c-header'>
   <div class='o-grid'>
     <div class='o-grid__col'>
-      <div class='c-header__inner'>
+      <div class='c-header__inner' style="background: linear-gradient(to left, #fff 40%,rgba(255,255,255,0) 100%);">
         <div class='c-logo'>
             <a href='https://cadenkraft.com'>
               <img class='c-logo__img' src='https://cadenkraft.com/content/images/2022/02/black-logo-1.png' alt='Caden Kraft' width='' height=''>
@@ -691,10 +705,372 @@ p code {
 <div class='o-grid'>
   <div class='o-grid__col o-grid__col--center o-grid__col--9-10-m o-grid__col--2-3-l'>
     <div class='js-grid'>
-    <div class='c-post-card js-post-card post tag-tutorial tag-hash-import-2024-02-23-22-57 featured  '>
-  <div class='c-post-card__meta'>
-    <time class='c-post-card__date' datetime='2022-02-22' title='22 February 2022'>22 Feb 2022</time>
+        <div class='c-post-card js-post-card post tag-motors tag-build featured  '>
+<div style="background: conic-gradient(from 160deg at 50% 50%,#6EFFA8 0deg,#6EFFA8 1turn);
+  -webkit-filter: blur(600px);
+  filter: blur(600px);
+  height: 200px;
+  opacity: 50%;
+  position: absolute;
+  top: 50px;
+  width: 25%;
+  left: 70%;
+  z-index: -1;">
 
+  </div>
+  <div class='c-post-card__meta'>
+    
+    <time class='c-post-card__date' datetime='2024-02-22' title='22 February 2024'>22 Feb 2024</time>
+    <div class='is-membership
+                c-post-card__visibility
+                c-post-card__visibility--public
+'>
+      <span class='paid'>Paid</span>
+      <span class='members'>Members</span>
+      <span class='public'>Public</span>
+    </div>
+  </div>
+
+  <div class='c-post-card__content'>
+    <h2 class='c-post-card__title'>
+      <a href='/3d-printed-dual-cycloidal-actuator/' class='c-post-card__url'>3D Printed Dual Cycloidal Actuator</a>
+    </h2>
+    <div class="c-post-card__tags">
+                  <section class='c-tags'>
+                      <a href="/tag/motors/">Motors</a><a href="/tag/build/">Build</a>
+                  </section>
+                </div>
+    <p class='c-post-card__excerpt'>This project builds on my previous axial flux motor. To improve the torque output of the motor I designed a cycloidal gearbox that integrates into the current motor design allowing for more torque.</p>
+  </div>
+    <div class='c-post-card__media'>
+      <div class='c-post-card__image-wrap'>
+        <img
+          alt='3D Printed Dual Cycloidal Actuator'
+          class='c-post-card__image lazyload'
+          data-thisisbuggedatm='
+            /content/images/size/w612/2024/02/Title-Image.jpg 612w,
+            /content/images/size/w1462/2024/02/Title-Image.jpg 1462w'
+          sizes='(min-width: 1280px) 153px, (min-width: 1040px) 12.27vw, (min-width: 640px) calc(22.37vw - 44px), calc(100vw - 32px)'
+          data-src='/content/images/size/w1462/2024/02/Title-Image.jpg'
+        >
+      </div>
+    </div>
+</div>        <div class='c-post-card js-post-card post tag-solar-car tag-build tag-hash-import-2024-02-23-22-57 featured  '>
+<div style="background: conic-gradient(from 160deg at 50% 50%,#6EFFA8 0deg,#6EFFA8 1turn);
+  -webkit-filter: blur(600px);
+  filter: blur(600px);
+  height: 200px;
+  opacity: 50%;
+  position: absolute;
+  top: 50px;
+  width: 25%;
+  left: 70%;
+  z-index: -1;">
+
+  </div>
+  <div class='c-post-card__meta'>
+    
+    <time class='c-post-card__date' datetime='2023-07-12' title='12 July 2023'>12 Jul 2023</time>
+    <div class='is-membership
+                c-post-card__visibility
+                c-post-card__visibility--public
+'>
+      <span class='paid'>Paid</span>
+      <span class='members'>Members</span>
+      <span class='public'>Public</span>
+    </div>
+  </div>
+
+  <div class='c-post-card__content'>
+    <h2 class='c-post-card__title'>
+      <a href='/solar-car-hv-bus-bar-distribution/' class='c-post-card__url'>Solar Car HV Bus Bar Distribution</a>
+    </h2>
+    <div class="c-post-card__tags">
+                  <section class='c-tags'>
+                      <a href="/tag/solar-car/">Solar Car</a><a href="/tag/build/">Build</a>
+                  </section>
+                </div>
+    <p class='c-post-card__excerpt'>I designed a high voltage distribution assembly for the solar car that centralizes all of our high voltage connections, contactors, and fuses into a centralized location.</p>
+  </div>
+    <div class='c-post-card__media'>
+      <div class='c-post-card__image-wrap'>
+        <img
+          alt='Solar Car HV Bus Bar Distribution'
+          class='c-post-card__image lazyload'
+          data-thisisbuggedatm='
+            /content/images/size/w612/2023/07/untitled.6.png 612w,
+            /content/images/size/w1462/2023/07/untitled.6.png 1462w'
+          sizes='(min-width: 1280px) 153px, (min-width: 1040px) 12.27vw, (min-width: 640px) calc(22.37vw - 44px), calc(100vw - 32px)'
+          data-src='/content/images/size/w1462/2023/07/untitled.6.png'
+        >
+      </div>
+    </div>
+</div>        <div class='c-post-card js-post-card post tag-build tag-coding tag-hash-import-2024-02-23-22-57 featured  '>
+<div style="background: conic-gradient(from 160deg at 50% 50%,#6EFFA8 0deg,#6EFFA8 1turn);
+  -webkit-filter: blur(600px);
+  filter: blur(600px);
+  height: 200px;
+  opacity: 50%;
+  position: absolute;
+  top: 50px;
+  width: 25%;
+  left: 70%;
+  z-index: -1;">
+
+  </div>
+  <div class='c-post-card__meta'>
+    
+    <time class='c-post-card__date' datetime='2023-05-17' title='17 May 2023'>17 May 2023</time>
+    <div class='is-membership
+                c-post-card__visibility
+                c-post-card__visibility--public
+'>
+      <span class='paid'>Paid</span>
+      <span class='members'>Members</span>
+      <span class='public'>Public</span>
+    </div>
+  </div>
+
+  <div class='c-post-card__content'>
+    <h2 class='c-post-card__title'>
+      <a href='/the-ntpixie-a-wifi-connected-nixie-tube-clock/' class='c-post-card__url'>The NTPixie, A WiFi Nixie Tube Clock</a>
+    </h2>
+    <div class="c-post-card__tags">
+                  <section class='c-tags'>
+                      <a href="/tag/build/">Build</a><a href="/tag/coding/">Coding</a>
+                  </section>
+                </div>
+    <p class='c-post-card__excerpt'>I&#39;ve always wanted to make a nixie tube clock but wanted to make one that I could trust was accurate. This was done through syncing the time with NTP servers the same way phones and computers do.</p>
+  </div>
+    <div class='c-post-card__media'>
+      <div class='c-post-card__image-wrap'>
+        <img
+          alt='The NTPixie, A WiFi Nixie Tube Clock'
+          class='c-post-card__image lazyload'
+          data-thisisbuggedatm='
+            /content/images/size/w612/2023/06/nixie-tube-clock-render.3.png 612w,
+            /content/images/size/w1462/2023/06/nixie-tube-clock-render.3.png 1462w'
+          sizes='(min-width: 1280px) 153px, (min-width: 1040px) 12.27vw, (min-width: 640px) calc(22.37vw - 44px), calc(100vw - 32px)'
+          data-src='/content/images/size/w1462/2023/06/nixie-tube-clock-render.3.png'
+        >
+      </div>
+    </div>
+</div>        <div class='c-post-card js-post-card post tag-build tag-motors tag-hash-import-2024-02-23-22-57 featured  '>
+<div style="background: conic-gradient(from 160deg at 50% 50%,#6EFFA8 0deg,#6EFFA8 1turn);
+  -webkit-filter: blur(600px);
+  filter: blur(600px);
+  height: 200px;
+  opacity: 50%;
+  position: absolute;
+  top: 50px;
+  width: 25%;
+  left: 70%;
+  z-index: -1;">
+
+  </div>
+  <div class='c-post-card__meta'>
+    
+    <time class='c-post-card__date' datetime='2022-09-08' title='08 September 2022'>08 Sep 2022</time>
+    <div class='is-membership
+                c-post-card__visibility
+                c-post-card__visibility--public
+'>
+      <span class='paid'>Paid</span>
+      <span class='members'>Members</span>
+      <span class='public'>Public</span>
+    </div>
+  </div>
+
+  <div class='c-post-card__content'>
+    <h2 class='c-post-card__title'>
+      <a href='/designing-a-coreless-axial-flux-motor-part-1/' class='c-post-card__url'>Ironless Axial Flux Motor</a>
+    </h2>
+    <div class="c-post-card__tags">
+                  <section class='c-tags'>
+                      <a href="/tag/build/">Build</a><a href="/tag/motors/">Motors</a>
+                  </section>
+                </div>
+    <p class='c-post-card__excerpt'>Building off my first motor project, I designed and tested an axial flux motor by mathematically calculating all of the motor parameters needed to meet the design requirements that I set.</p>
+  </div>
+    <div class='c-post-card__media'>
+      <div class='c-post-card__image-wrap'>
+        <img
+          alt='Ironless Axial Flux Motor'
+          class='c-post-card__image lazyload'
+          data-thisisbuggedatm='
+            /content/images/size/w612/2022/09/title-page-render-axial-flux-motor.16.jpg 612w,
+            /content/images/size/w1462/2022/09/title-page-render-axial-flux-motor.16.jpg 1462w'
+          sizes='(min-width: 1280px) 153px, (min-width: 1040px) 12.27vw, (min-width: 640px) calc(22.37vw - 44px), calc(100vw - 32px)'
+          data-src='/content/images/size/w1462/2022/09/title-page-render-axial-flux-motor.16.jpg'
+        >
+      </div>
+    </div>
+</div>        <div class='c-post-card js-post-card post tag-solar-car tag-coding tag-hash-import-2024-02-23-22-57 featured  '>
+<div style="background: conic-gradient(from 160deg at 50% 50%,#6EFFA8 0deg,#6EFFA8 1turn);
+  -webkit-filter: blur(600px);
+  filter: blur(600px);
+  height: 200px;
+  opacity: 50%;
+  position: absolute;
+  top: 50px;
+  width: 25%;
+  left: 70%;
+  z-index: -1;">
+
+  </div>
+  <div class='c-post-card__meta'>
+    
+    <time class='c-post-card__date' datetime='2022-08-08' title='08 August 2022'>08 Aug 2022</time>
+    <div class='is-membership
+                c-post-card__visibility
+                c-post-card__visibility--public
+'>
+      <span class='paid'>Paid</span>
+      <span class='members'>Members</span>
+      <span class='public'>Public</span>
+    </div>
+  </div>
+
+  <div class='c-post-card__content'>
+    <h2 class='c-post-card__title'>
+      <a href='/solar-car-gps-tracker/' class='c-post-card__url'>Solar Car GPS Tracker</a>
+    </h2>
+    <div class="c-post-card__tags">
+                  <section class='c-tags'>
+                      <a href="/tag/solar-car/">Solar Car</a><a href="/tag/coding/">Coding</a>
+                  </section>
+                </div>
+    <p class='c-post-card__excerpt'>For our 2022 solar car race, I designed a simple webpage that tied into our cars live telemetry in order to display the current speeds and location on a map. This allowed us to share our race progress with family and friends.</p>
+  </div>
+    <div class='c-post-card__media'>
+      <div class='c-post-card__image-wrap'>
+        <img
+          alt='Solar Car GPS Tracker'
+          class='c-post-card__image lazyload'
+          data-thisisbuggedatm='
+            /content/images/size/w612/2022/09/solar-car-tracker-image.png 612w,
+            /content/images/size/w1462/2022/09/solar-car-tracker-image.png 1462w'
+          sizes='(min-width: 1280px) 153px, (min-width: 1040px) 12.27vw, (min-width: 640px) calc(22.37vw - 44px), calc(100vw - 32px)'
+          data-src='/content/images/size/w1462/2022/09/solar-car-tracker-image.png'
+        >
+      </div>
+    </div>
+</div>        <div class='c-post-card js-post-card post tag-build tag-motors tag-hash-import-2024-02-23-22-57 featured  '>
+<div style="background: conic-gradient(from 160deg at 50% 50%,#6EFFA8 0deg,#6EFFA8 1turn);
+  -webkit-filter: blur(600px);
+  filter: blur(600px);
+  height: 200px;
+  opacity: 50%;
+  position: absolute;
+  top: 50px;
+  width: 25%;
+  left: 70%;
+  z-index: -1;">
+
+  </div>
+  <div class='c-post-card__meta'>
+    
+    <time class='c-post-card__date' datetime='2022-07-07' title='07 July 2022'>07 Jul 2022</time>
+    <div class='is-membership
+                c-post-card__visibility
+                c-post-card__visibility--public
+'>
+      <span class='paid'>Paid</span>
+      <span class='members'>Members</span>
+      <span class='public'>Public</span>
+    </div>
+  </div>
+
+  <div class='c-post-card__content'>
+    <h2 class='c-post-card__title'>
+      <a href='/creating-a-3d-printed-brushless-motor/' class='c-post-card__url'>Creating a 3D Printed Brushless Motor</a>
+    </h2>
+    <div class="c-post-card__tags">
+                  <section class='c-tags'>
+                      <a href="/tag/build/">Build</a><a href="/tag/motors/">Motors</a>
+                  </section>
+                </div>
+    <p class='c-post-card__excerpt'>This was my first attempt at making a motor from scratch. This design is a simple brushless motor made with components I had on hand at the time and taught me quite a lot about motor design and magnetics.</p>
+  </div>
+    <div class='c-post-card__media'>
+      <div class='c-post-card__image-wrap'>
+        <img
+          alt='Creating a 3D Printed Brushless Motor'
+          class='c-post-card__image lazyload'
+          data-thisisbuggedatm='
+            /content/images/size/w612/2022/07/motor-title-render.14.jpg 612w,
+            /content/images/size/w1462/2022/07/motor-title-render.14.jpg 1462w'
+          sizes='(min-width: 1280px) 153px, (min-width: 1040px) 12.27vw, (min-width: 640px) calc(22.37vw - 44px), calc(100vw - 32px)'
+          data-src='/content/images/size/w1462/2022/07/motor-title-render.14.jpg'
+        >
+      </div>
+    </div>
+</div>        <div class='c-post-card js-post-card post tag-build tag-solar-car tag-hash-import-2024-02-23-22-57 featured  '>
+<div style="background: conic-gradient(from 160deg at 50% 50%,#6EFFA8 0deg,#6EFFA8 1turn);
+  -webkit-filter: blur(600px);
+  filter: blur(600px);
+  height: 200px;
+  opacity: 50%;
+  position: absolute;
+  top: 50px;
+  width: 25%;
+  left: 70%;
+  z-index: -1;">
+
+  </div>
+  <div class='c-post-card__meta'>
+    
+    <time class='c-post-card__date' datetime='2022-03-23' title='23 March 2022'>23 Mar 2022</time>
+    <div class='is-membership
+                c-post-card__visibility
+                c-post-card__visibility--public
+'>
+      <span class='paid'>Paid</span>
+      <span class='members'>Members</span>
+      <span class='public'>Public</span>
+    </div>
+  </div>
+
+  <div class='c-post-card__content'>
+    <h2 class='c-post-card__title'>
+      <a href='/designing-solar-car-steering-wheel/' class='c-post-card__url'>Solar Car Steering Wheel</a>
+    </h2>
+    <div class="c-post-card__tags">
+                  <section class='c-tags'>
+                      <a href="/tag/build/">Build</a><a href="/tag/solar-car/">Solar Car</a>
+                  </section>
+                </div>
+    <p class='c-post-card__excerpt'>This was one of my first projects on solar car where I designed a new steering wheel that had its own integrated PCB to minimize the wiring harness connecting it to the rest of the car.</p>
+  </div>
+    <div class='c-post-card__media'>
+      <div class='c-post-card__image-wrap'>
+        <img
+          alt='Solar Car Steering Wheel'
+          class='c-post-card__image lazyload'
+          data-thisisbuggedatm='
+            /content/images/size/w612/2022/06/steering-wheel-render-title-2.6-1.jpg 612w,
+            /content/images/size/w1462/2022/06/steering-wheel-render-title-2.6-1.jpg 1462w'
+          sizes='(min-width: 1280px) 153px, (min-width: 1040px) 12.27vw, (min-width: 640px) calc(22.37vw - 44px), calc(100vw - 32px)'
+          data-src='/content/images/size/w1462/2022/06/steering-wheel-render-title-2.6-1.jpg'
+        >
+      </div>
+    </div>
+</div>        <div class='c-post-card js-post-card post tag-tutorial tag-hash-import-2024-02-23-22-57 featured  '>
+<div style="background: conic-gradient(from 160deg at 50% 50%,#6EFFA8 0deg,#6EFFA8 1turn);
+  -webkit-filter: blur(600px);
+  filter: blur(600px);
+  height: 200px;
+  opacity: 50%;
+  position: absolute;
+  top: 50px;
+  width: 25%;
+  left: 70%;
+  z-index: -1;">
+
+  </div>
+  <div class='c-post-card__meta'>
+    
+    <time class='c-post-card__date' datetime='2022-02-22' title='22 February 2022'>22 Feb 2022</time>
     <div class='is-membership
                 c-post-card__visibility
                 c-post-card__visibility--public
@@ -709,9 +1085,13 @@ p code {
     <h2 class='c-post-card__title'>
       <a href='/creating-a-ghost-blog-with-free-webhosting/' class='c-post-card__url'>Ghost Blog with Free Webhosting</a>
     </h2>
+    <div class="c-post-card__tags">
+                  <section class='c-tags'>
+                      <a href="/tag/tutorial/">Tutorial</a>
+                  </section>
+                </div>
     <p class='c-post-card__excerpt'>This is an in depth guide on how I made this very website through locally developing the website and pushing changes to Github pages. This allows me to host this site while paying $0 in hosting.</p>
   </div>
-
     <div class='c-post-card__media'>
       <div class='c-post-card__image-wrap'>
         <img
@@ -725,9 +1105,58 @@ p code {
         >
       </div>
     </div>
+</div>        <div class='c-post-card js-post-card post tag-build tag-hash-import-2024-02-23-22-57 featured  '>
+<div style="background: conic-gradient(from 160deg at 50% 50%,#6EFFA8 0deg,#6EFFA8 1turn);
+  -webkit-filter: blur(600px);
+  filter: blur(600px);
+  height: 200px;
+  opacity: 50%;
+  position: absolute;
+  top: 50px;
+  width: 25%;
+  left: 70%;
+  z-index: -1;">
+
+  </div>
+  <div class='c-post-card__meta'>
+    
+    <time class='c-post-card__date' datetime='2021-04-13' title='13 April 2021'>13 Apr 2021</time>
+    <div class='is-membership
+                c-post-card__visibility
+                c-post-card__visibility--public
+'>
+      <span class='paid'>Paid</span>
+      <span class='members'>Members</span>
+      <span class='public'>Public</span>
+    </div>
+  </div>
+
+  <div class='c-post-card__content'>
+    <h2 class='c-post-card__title'>
+      <a href='/creating-a-single-part-tool-less/' class='c-post-card__url'>Single Part Raspberry Pi Compute Cluster</a>
+    </h2>
+    <div class="c-post-card__tags">
+                  <section class='c-tags'>
+                      <a href="/tag/build/">Build</a>
+                  </section>
+                </div>
+    <p class='c-post-card__excerpt'>This is a Raspberry Pi cluster that I created where all of the Raspberry Pi&#39;s and networking gear can click into a single 3D printed component without the use of any fasteners.</p>
+  </div>
+    <div class='c-post-card__media'>
+      <div class='c-post-card__image-wrap'>
+        <img
+          alt='Single Part Raspberry Pi Compute Cluster'
+          class='c-post-card__image lazyload'
+          data-thisisbuggedatm='
+            /content/images/size/w612/2023/07/rpi-cluster.11.png 612w,
+            /content/images/size/w1462/2023/07/rpi-cluster.11.png 1462w'
+          sizes='(min-width: 1280px) 153px, (min-width: 1040px) 12.27vw, (min-width: 640px) calc(22.37vw - 44px), calc(100vw - 32px)'
+          data-src='/content/images/size/w1462/2023/07/rpi-cluster.11.png'
+        >
+      </div>
+    </div>
 </div></div>  </div>
 </div>
-
 <div class='o-grid'>
   
 </div>
@@ -754,7 +1183,7 @@ p code {
   </div>
 </footer>  </div>
 
-  <script src='/assets/js/app.min.js?v=e004ed37f9'></script>
+  <script src='/assets/js/app.min.js?v=18f876031c'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js" integrity="sha512-9khQRAUBYEJDCDVP2yw3LRUQvjJ0Pjx0EShmaQjcHa6AXiOv6qHQu9lCAIR8O+/D8FtaCoJ2c0Tf9Xo7hYH01Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-fTl/qcO1VgvKtOMApX2PdZzkziyr2stM65GYPLGuYMnuMm1z2JLJG6XVU7C/mR+E7xBUqCivykuhlzfqxXBXbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 

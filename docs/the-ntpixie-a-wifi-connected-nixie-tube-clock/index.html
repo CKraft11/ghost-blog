@@ -38,7 +38,7 @@
     <meta property="og:title" content="The NTPixie, A WiFi Nixie Tube Clock">
     <meta property="og:description" content="I&#x27;ve always wanted to make a nixie tube clock but wanted to make one that I could trust was accurate. This was done through syncing the time with NTP servers the same way phones and computers do.">
     <meta property="og:url" content="https://cadenkraft.com/the-ntpixie-a-wifi-connected-nixie-tube-clock/">
-    <meta property="og:image" content="https://cadenkraft.com/content/images/2023/06/nixie-tube-clock-render.3.png">
+    <meta property="og:image" content="https://cadenkraft.com/content/images/size/w1200/2023/06/nixie-tube-clock-render.3.png">
     <meta property="article:published_time" content="2023-05-17T23:17:00.000Z">
     <meta property="article:modified_time" content="2024-02-26T17:37:43.000Z">
     <meta property="article:tag" content="Build">
@@ -48,7 +48,7 @@
     <meta name="twitter:title" content="The NTPixie, A WiFi Nixie Tube Clock">
     <meta name="twitter:description" content="I&#x27;ve always wanted to make a nixie tube clock but wanted to make one that I could trust was accurate. This was done through syncing the time with NTP servers the same way phones and computers do.">
     <meta name="twitter:url" content="https://cadenkraft.com/the-ntpixie-a-wifi-connected-nixie-tube-clock/">
-    <meta name="twitter:image" content="https://cadenkraft.com/content/images/2023/06/nixie-tube-clock-render.3.png">
+    <meta name="twitter:image" content="https://cadenkraft.com/content/images/size/w1200/2023/06/nixie-tube-clock-render.3.png">
     <meta name="twitter:label1" content="Written by">
     <meta name="twitter:data1" content="Caden Kraft">
     <meta name="twitter:label2" content="Filed under">
@@ -83,7 +83,7 @@
     "dateModified": "2024-02-26T17:37:43.000Z",
     "image": {
         "@type": "ImageObject",
-        "url": "https://cadenkraft.com/content/images/2023/06/nixie-tube-clock-render.3.png",
+        "url": "https://cadenkraft.com/content/images/size/w1200/2023/06/nixie-tube-clock-render.3.png",
         "width": 1200,
         "height": 819
     },
@@ -99,8 +99,8 @@
     <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/sodo-search.min.js" data-key="3e74f414b63324d66c09dfed49" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/main.css" data-sodo-search="https://cadenkraft.com/" crossorigin="anonymous"></script>
     
     <link href="https://cadenkraft.com/webmentions/receive/" rel="webmention">
-    <script defer src="/public/cards.min.js?v=e004ed37f9"></script>
-    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=e004ed37f9">
+    <script defer src="/public/cards.min.js?v=18f876031c"></script>
+    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=18f876031c">
     
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Z51SVJ5W4"></script>
@@ -176,14 +176,22 @@ a:hover {
 .c-header .is-membership {
   display: none;
 }
-
+.c-home{
+  background:none;
+}
 .c-content h2 {
   font-size: 48px;
   line-height: 48px;
 }
 #caden-kraft {
-  font-size: 60px !important;
-  line-height: 60px !important;
+  font-size: 72px !important;
+  line-height: 72px !important;
+}
+#mechanical-engineer {
+  margin-top: 0px;
+  font-size:32px;
+  color: var(--ghost-accent-color);
+  text-shadow: 0px 0px 2px rgba(0,0,0,0.3);
 }
 .c-post-card__visibility {
   display: none;
@@ -200,13 +208,13 @@ a:hover {
         --background-secondary: #fff1e0;*/
   --background-primary: #ffffff;
   --background-secondary: #ffffff;
-  --color-brand: #007AFF;
+  --color-brand: var(--ghost-accent-color);
   --color-text-primary: #222129;
   --color-text-secondary: #222129;
   --color-border: var(--color-brand);
 }
 .c-post-card{
-  
+  margin-left:0em;
 }
 .c-post-card__image-wrap {
   height: 200px;
@@ -289,9 +297,7 @@ video {
   /*border-radius: 16px 16px 0px 0px !important;
   overflow: hidden;*/
 }
-.c-btn {
-  width:100%;
-}
+
 
 .c-title-bar__divider {
   display: none;
@@ -303,15 +309,14 @@ video {
 
 }
 .c-post-card {
-  grid-template-areas: ". . . . meta meta meta meta . . . . "
+  grid-template-areas: ". . . . meta meta meta meta media media media media"
       				   "content content content content content content content content media media media media";																						
   margin-top: 0px !important;
   margin-bottom: 0px !important;
-  
 }
 
 .c-post-card__content {
-    margin-bottom: 0px;
+    margin-bottom: 80px;
 }
 .c-post-card__title {
   font-size: 30px;
@@ -322,7 +327,7 @@ video {
 .c-post-card__meta {
   display: flex;
   position: inherit;
-  
+  background: #fff;
   justify-content: center;
   align-items: center;
   border-radius: 8px;
@@ -355,7 +360,16 @@ video {
     justify-items: center;
   }
 }
-
+.c-tags a {
+  padding: 0.5em 1em !important;
+  line-height: 10px;
+  margin:0.5em 1em 0.5em 0em;
+  background: var(--ghost-accent-color);
+  color: #000;
+  border-radius: 16px;
+  font-weight: 700;
+  border: 0px;
+}
 
 @media screen and (min-width:640px) {
   .c-home__content {
@@ -366,6 +380,7 @@ video {
   .c-post-card__media {
     grid-area: media;
     aspect-ratio: 3/2;
+    align-self: center;
   }
 }
 @media screen and (min-width:639px) {
@@ -378,9 +393,6 @@ video {
     padding: 10px 0px;
     margin-top: 20px;
     height: max-content;
-  }
-  .c-btn{
-    width:320px !important;
   }
   .c-post-card__date {
     font-weight: 700;
@@ -410,14 +422,12 @@ video {
   margin-top: 0px;
 }
 .c-post-card__meta {
-  top: -40px;
+  top: -60px;
 }
-.c-post-card__content {
-  margin-bottom: 0px;
-}
-.c-post-card {
+  .c-post-card {
   margin-left:1em;
 }
+  
 }
 
 .c-post-card__date {
@@ -484,17 +494,19 @@ video {
 }
 
 .c-nav__item__icon {
-  --color-text-primary: #000000;
+  /* --color-text-primary: color: var(--ghost-accent-color); */
+  --color-text-primary: color: #000;
 }
 
 .c-nav-wrap {
   #padding: 9px;
   #background: #000000;
-  color: #000000;
+  /* color: var(--ghost-accent-color); */
+  color: #fff;
 }
 
 .c-btn {
-  background-color: #007AFF;
+  background-color: var(--ghost-accent-color);
   border-radius: 16px;
   color: #ffffff;
   box-shadow: 0 4px 6px rgba(3, 27, 78, 5%);
@@ -511,8 +523,10 @@ video {
 }
 
 .c-nav__link {
-  color: #000000;
-  #--color-text-primary: var(--color-brand);
+  color: #000 !important;
+  /* color: var(--ghost-accent-color); */
+  /* --color-text-primary: var(--color-brand); */
+  font-weight: 700;
 }
 
 .c-post-card {
@@ -654,7 +668,7 @@ p code {
 
 
 
-<style>:root {--ghost-accent-color: #002bff;}</style>
+<style>:root {--ghost-accent-color: #6EFFA8;}</style>
 </head>
 <body class='post-template tag-build tag-coding tag-hash-import-2024-02-23-22-57'>
   <a href='#main-content' class='c-skip-to-content'>Skip to content</a>
@@ -663,7 +677,7 @@ p code {
     <header class='c-header'>
   <div class='o-grid'>
     <div class='o-grid__col'>
-      <div class='c-header__inner'>
+      <div class='c-header__inner' style="background: linear-gradient(to left, #fff 40%,rgba(255,255,255,0) 100%);">
         <div class='c-logo'>
             <a href='https://cadenkraft.com'>
               <img class='c-logo__img' src='https://cadenkraft.com/content/images/2022/02/black-logo-1.png' alt='Caden Kraft' width='' height=''>
@@ -715,6 +729,7 @@ p code {
   <div class='o-grid__col o-grid__col--center o-grid__col--9-10-m o-grid__col--2-3-l'>
     <article class='c-post tag-build tag-coding tag-hash-import-2024-02-23-22-57 featured'>
       <header class='c-post-header'>
+  
   <h1 class='c-post-header__title'>The NTPixie, A WiFi Nixie Tube Clock</h1>
 
     <div class='c-post-header__meta'>
@@ -986,9 +1001,21 @@ while True:
     <div class='o-grid'>
       <div class='o-grid__col o-grid__col--center o-grid__col--9-10-m o-grid__col--2-3-l'>
           <div class='c-post-card js-post-card post featured  '>
-  <div class='c-post-card__meta'>
-    <time class='c-post-card__date' datetime='2024-02-22' title='22 February 2024'>22 Feb 2024</time>
+<div style="background: conic-gradient(from 160deg at 50% 50%,#6EFFA8 0deg,#6EFFA8 1turn);
+  -webkit-filter: blur(600px);
+  filter: blur(600px);
+  height: 200px;
+  opacity: 50%;
+  position: absolute;
+  top: 50px;
+  width: 25%;
+  left: 70%;
+  z-index: -1;">
 
+  </div>
+  <div class='c-post-card__meta'>
+    
+    <time class='c-post-card__date' datetime='2024-02-22' title='22 February 2024'>22 Feb 2024</time>
     <div class='is-membership
                 c-post-card__visibility
                 c-post-card__visibility--public
@@ -1003,9 +1030,13 @@ while True:
     <h2 class='c-post-card__title'>
       <a href='/3d-printed-dual-cycloidal-actuator/' class='c-post-card__url'>3D Printed Dual Cycloidal Actuator</a>
     </h2>
+    <div class="c-post-card__tags">
+                  <section class='c-tags'>
+                      
+                  </section>
+                </div>
     <p class='c-post-card__excerpt'>This project builds on my previous axial flux motor. To improve the torque output of the motor I designed a cycloidal gearbox that integrates into the current motor design allowing for more torque.</p>
   </div>
-
     <div class='c-post-card__media'>
       <div class='c-post-card__image-wrap'>
         <img
@@ -1020,9 +1051,21 @@ while True:
       </div>
     </div>
 </div>          <div class='c-post-card js-post-card post featured  '>
-  <div class='c-post-card__meta'>
-    <time class='c-post-card__date' datetime='2023-07-12' title='12 July 2023'>12 Jul 2023</time>
+<div style="background: conic-gradient(from 160deg at 50% 50%,#6EFFA8 0deg,#6EFFA8 1turn);
+  -webkit-filter: blur(600px);
+  filter: blur(600px);
+  height: 200px;
+  opacity: 50%;
+  position: absolute;
+  top: 50px;
+  width: 25%;
+  left: 70%;
+  z-index: -1;">
 
+  </div>
+  <div class='c-post-card__meta'>
+    
+    <time class='c-post-card__date' datetime='2023-07-12' title='12 July 2023'>12 Jul 2023</time>
     <div class='is-membership
                 c-post-card__visibility
                 c-post-card__visibility--public
@@ -1037,9 +1080,13 @@ while True:
     <h2 class='c-post-card__title'>
       <a href='/solar-car-hv-bus-bar-distribution/' class='c-post-card__url'>Solar Car HV Bus Bar Distribution</a>
     </h2>
+    <div class="c-post-card__tags">
+                  <section class='c-tags'>
+                      
+                  </section>
+                </div>
     <p class='c-post-card__excerpt'>I designed a high voltage distribution assembly for the solar car that centralizes all of our high voltage connections, contactors, and fuses into a centralized location.</p>
   </div>
-
     <div class='c-post-card__media'>
       <div class='c-post-card__image-wrap'>
         <img
@@ -1054,9 +1101,21 @@ while True:
       </div>
     </div>
 </div>          <div class='c-post-card js-post-card post featured  '>
-  <div class='c-post-card__meta'>
-    <time class='c-post-card__date' datetime='2022-09-08' title='08 September 2022'>08 Sep 2022</time>
+<div style="background: conic-gradient(from 160deg at 50% 50%,#6EFFA8 0deg,#6EFFA8 1turn);
+  -webkit-filter: blur(600px);
+  filter: blur(600px);
+  height: 200px;
+  opacity: 50%;
+  position: absolute;
+  top: 50px;
+  width: 25%;
+  left: 70%;
+  z-index: -1;">
 
+  </div>
+  <div class='c-post-card__meta'>
+    
+    <time class='c-post-card__date' datetime='2022-09-08' title='08 September 2022'>08 Sep 2022</time>
     <div class='is-membership
                 c-post-card__visibility
                 c-post-card__visibility--public
@@ -1071,9 +1130,13 @@ while True:
     <h2 class='c-post-card__title'>
       <a href='/designing-a-coreless-axial-flux-motor-part-1/' class='c-post-card__url'>Ironless Axial Flux Motor</a>
     </h2>
+    <div class="c-post-card__tags">
+                  <section class='c-tags'>
+                      
+                  </section>
+                </div>
     <p class='c-post-card__excerpt'>Building off my first motor project, I designed and tested an axial flux motor by mathematically calculating all of the motor parameters needed to meet the design requirements that I set.</p>
   </div>
-
     <div class='c-post-card__media'>
       <div class='c-post-card__image-wrap'>
         <img
@@ -1113,7 +1176,7 @@ while True:
   </div>
 </footer>  </div>
 
-  <script src='/assets/js/app.min.js?v=e004ed37f9'></script>
+  <script src='/assets/js/app.min.js?v=18f876031c'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js" integrity="sha512-9khQRAUBYEJDCDVP2yw3LRUQvjJ0Pjx0EShmaQjcHa6AXiOv6qHQu9lCAIR8O+/D8FtaCoJ2c0Tf9Xo7hYH01Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-fTl/qcO1VgvKtOMApX2PdZzkziyr2stM65GYPLGuYMnuMm1z2JLJG6XVU7C/mR+E7xBUqCivykuhlzfqxXBXbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
