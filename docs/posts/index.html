@@ -261,7 +261,8 @@ video {
 
 }
 .c-post-card {
-  grid-template-areas: ". . . . . meta meta media media media media media"
+  grid-template-areas: ". . . . meta meta meta meta . . . ."
+                       "content content content content content content content media media media media media"
       				   "content content content content content content content media media media media media";																						
   margin-top: 0px !important;
   margin-bottom: 0px !important;
@@ -302,6 +303,7 @@ video {
     align-items: center;
     justify-items: center;
     margin-bottom: 0px;
+    margin: auto;
   }
 
   .c-home__image {
@@ -348,9 +350,11 @@ video {
     border-radius: 16px !important;
     /* writing-mode: vertical-rl; */
     border: 1px solid #E5EFF5 !important;
-    padding: 10px 0px;
+    padding: 10px 2em;
     margin-top: 20px;
     height: max-content;
+    width: max-content;
+    margin:auto;
   }
   .c-post-card__date {
     font-weight: 700;
@@ -388,7 +392,6 @@ video {
   
     .c-post-card__content {
     direction: ltr;	
-    margin-bottom: 80px;
 }
 .c-post-card__title {
   direction: rtl;
@@ -397,7 +400,7 @@ video {
   margin-top: 0px;
 }
 .c-post-card__meta {
-  top: -60px;
+  top: -40px;
 }
   #caden-kraft {
   font-size: 72px !important;
@@ -410,9 +413,7 @@ video {
   .c-post-card {
   margin-left:1em;
 }
-  .c-post-card__content {
-    margin-bottom: 64px;
-}
+
   .bg-gradients {
     display: inline;
   }
@@ -751,7 +752,6 @@ p code {
       <span class='public'>Public</span>
     </div>
   </div>
-
   <div class='c-post-card__content'>
     <h2 class='c-post-card__title'>
       <a href='/3d-printed-dual-cycloidal-actuator/' class='c-post-card__url'>3D Printed Dual Cycloidal Actuator</a>
@@ -807,7 +807,6 @@ p code {
       <span class='public'>Public</span>
     </div>
   </div>
-
   <div class='c-post-card__content'>
     <h2 class='c-post-card__title'>
       <a href='/solar-car-hv-bus-bar-distribution/' class='c-post-card__url'>Solar Car HV Bus Bar Distribution</a>
@@ -863,7 +862,6 @@ p code {
       <span class='public'>Public</span>
     </div>
   </div>
-
   <div class='c-post-card__content'>
     <h2 class='c-post-card__title'>
       <a href='/the-ntpixie-a-wifi-connected-nixie-tube-clock/' class='c-post-card__url'>The NTPixie, A WiFi Nixie Tube Clock</a>
@@ -919,7 +917,6 @@ p code {
       <span class='public'>Public</span>
     </div>
   </div>
-
   <div class='c-post-card__content'>
     <h2 class='c-post-card__title'>
       <a href='/designing-a-coreless-axial-flux-motor-part-1/' class='c-post-card__url'>Ironless Axial Flux Motor</a>
@@ -975,7 +972,6 @@ p code {
       <span class='public'>Public</span>
     </div>
   </div>
-
   <div class='c-post-card__content'>
     <h2 class='c-post-card__title'>
       <a href='/solar-car-gps-tracker/' class='c-post-card__url'>Solar Car GPS Tracker</a>
@@ -1031,7 +1027,6 @@ p code {
       <span class='public'>Public</span>
     </div>
   </div>
-
   <div class='c-post-card__content'>
     <h2 class='c-post-card__title'>
       <a href='/creating-a-3d-printed-brushless-motor/' class='c-post-card__url'>Creating a 3D Printed Brushless Motor</a>
@@ -1087,7 +1082,6 @@ p code {
       <span class='public'>Public</span>
     </div>
   </div>
-
   <div class='c-post-card__content'>
     <h2 class='c-post-card__title'>
       <a href='/designing-solar-car-steering-wheel/' class='c-post-card__url'>Solar Car Steering Wheel</a>
@@ -1143,7 +1137,6 @@ p code {
       <span class='public'>Public</span>
     </div>
   </div>
-
   <div class='c-post-card__content'>
     <h2 class='c-post-card__title'>
       <a href='/creating-a-ghost-blog-with-free-webhosting/' class='c-post-card__url'>Ghost Blog with Free Webhosting</a>
@@ -1199,7 +1192,6 @@ p code {
       <span class='public'>Public</span>
     </div>
   </div>
-
   <div class='c-post-card__content'>
     <h2 class='c-post-card__title'>
       <a href='/creating-a-single-part-tool-less/' class='c-post-card__url'>Single Part Raspberry Pi Compute Cluster</a>
