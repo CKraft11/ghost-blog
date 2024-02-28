@@ -40,7 +40,7 @@
     <meta property="og:url" content="https://cadenkraft.com/designing-a-coreless-axial-flux-motor-part-1/">
     <meta property="og:image" content="https://cadenkraft.com/content/images/2022/09/title-page-render-axial-flux-motor.16.jpg">
     <meta property="article:published_time" content="2022-09-09T04:39:12.000Z">
-    <meta property="article:modified_time" content="2024-02-26T17:40:09.000Z">
+    <meta property="article:modified_time" content="2024-02-28T17:35:44.000Z">
     <meta property="article:tag" content="Build">
     <meta property="article:tag" content="Motors">
     
@@ -80,7 +80,7 @@
     "headline": "Ironless Axial Flux Motor",
     "url": "https://cadenkraft.com/designing-a-coreless-axial-flux-motor-part-1/",
     "datePublished": "2022-09-09T04:39:12.000Z",
-    "dateModified": "2024-02-26T17:40:09.000Z",
+    "dateModified": "2024-02-28T17:35:44.000Z",
     "image": {
         "@type": "ImageObject",
         "url": "https://cadenkraft.com/content/images/2022/09/title-page-render-axial-flux-motor.16.jpg",
@@ -180,12 +180,12 @@ a:hover {
   background:none;
 }
 .c-content h2 {
-  font-size: 48px;
-  line-height: 48px;
+  font-size: 32px;
+  line-height: 32px;
 }
 #caden-kraft {
-  font-size: 60px !important;
-  line-height: 60px !important;
+  font-size: 45px !important;
+  line-height: 45px !important;
 }
 #mechanical-engineer {
   margin-top: 0px;
@@ -434,6 +434,10 @@ video {
     direction: ltr;
     text-align: right;
 }
+.c-post-card:nth-child(even) .c-post-card__readtime {
+    direction: ltr;
+    text-align: right;
+}
   
     .c-post-card__content {
     direction: ltr;	
@@ -451,6 +455,10 @@ video {
   #caden-kraft {
   font-size: 72px !important;
   line-height: 72px !important;
+}
+.c-content h2 {
+  font-size: 48px;
+  line-height: 48px;
 }
   .c-post-card {
   margin-left:1em;
@@ -842,17 +850,17 @@ p code {
 </tr>
 </tbody>
 </table>
-<p>I chose for the motor to have 12 poles and 18 coils as it has an efficient high winding factor.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://cadenkraft.com/content/images/2022/09/motor-winding.png" class="kg-image" alt loading="lazy" width="696" height="838" thisisbuggedatm="https://cadenkraft.com/content/images/size/w600/2022/09/motor-winding.png 600w, https://cadenkraft.com/content/images/2022/09/motor-winding.png 696w"><figcaption><span style="white-space: pre-wrap;">Winding Factor from Bavaria Direct Online Calculator</span></figcaption></figure><h2 id="calculating-parameters">Calculating Parameters</h2><p></p><p>The first step in defining the coil turns needed is calculating the area of the motor that is covered by the coils.</p><p>$$A_{rotor}=\pi (({r_0}^{2})-({r_i}{r_i}))$$</p>
-<p>Next, I needed to define an optimal outer to inner radius ratio in order to maximize the efficiency of the motor. As the paper above says, an optimal ratio for this is around 0.5. This allowed me to define the inner and outer radius based on the 36mm*6mm*6mm magnets that I found online.</p><p>$$\alpha=\frac{r_i}{r_o}$$</p>
-<p>Then I had to calculate the peak flux density using the equation below as well as the recommended mean air gap flux density of 0.5 Tesla from the paper above.</p><p>$$\tau=\frac{F}{A_{rotor}}=\frac{Bli}{lw}=\frac{Bi}{w}=BZ$$</p>
-<p>$$B=\frac{2B_m}{\pi}$$</p>
-<p>After using these two equations I arrived at a mean air gap flux density of 0.785 Tesla. Using the next couple equations I was able to use this value combined with others above to figure out the final number of coil turns. </p><p>$$e_{ph}=N_{ph}A_{coil}\frac{dB(\theta)}{dt}$$</p>
-<p>$$B(\theta)=B_m\sin{{(\omega}_et)}$$</p>
-<p>$$e_{ph}=N_{ph}A_{coil}\omega_eB_m\cos{(\omega_et)}$$</p>
-<p>$$N_{ph}=\frac{e_{ph}}{A_{coil}\omega_eB_m}$$</p>
-<p>The electrical frequency of the stator voltage can be determined using the shaft speed and number of pole pairs.</p><p>$${\omega_e}=\frac{700\ rpm}{60\ s}\cdot2\pi\cdot6$$</p>
-<p>Plugging in the final numbers into the equation below equates to about ~87 coils per phase of the motor.</p><p>$$N_{ph}=\frac{\frac{24\ V}{\sqrt3}}{4.92\cdot{10}^{-4}\cdot\frac{700\ rpm}{60\ s}{2\pi}\cdot{6}\cdot{0.785\ T}}$$</p>
-<p>$$N_{ph}=81.57$$</p>
+<p>I chose for the motor to have 12 poles and 18 coils as it has an efficient high winding factor.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://cadenkraft.com/content/images/2022/09/motor-winding.png" class="kg-image" alt loading="lazy" width="696" height="838" thisisbuggedatm="https://cadenkraft.com/content/images/size/w600/2022/09/motor-winding.png 600w, https://cadenkraft.com/content/images/2022/09/motor-winding.png 696w"><figcaption><span style="white-space: pre-wrap;">Winding Factor from Bavaria Direct Online Calculator</span></figcaption></figure><h2 id="calculating-parameters">Calculating Parameters</h2><p></p><p>The first step in defining the coil turns needed is calculating the area of the motor that is covered by the coils.</p><p>$$\small{A_{rotor}=\pi (({r_0}^{2})-({r_i}{r_i}))}$$</p>
+<p>Next, I needed to define an optimal outer to inner radius ratio in order to maximize the efficiency of the motor. As the paper above says, an optimal ratio for this is around 0.5. This allowed me to define the inner and outer radius based on the 36mm*6mm*6mm magnets that I found online.</p><p>$$\small{\alpha=\frac{r_i}{r_o}}$$</p>
+<p>Then I had to calculate the peak flux density using the equation below as well as the recommended mean air gap flux density of 0.5 Tesla from the paper above.</p><p>$$\small{\tau=\frac{F}{A_{rotor}}=\frac{Bli}{lw}=\frac{Bi}{w}=BZ}$$</p>
+<p>$$\small{B=\frac{2B_m}{\pi}}$$</p>
+<p>After using these two equations I arrived at a mean air gap flux density of 0.785 Tesla. Using the next couple equations I was able to use this value combined with others above to figure out the final number of coil turns. </p><p>$$\small{e_{ph}=N_{ph}A_{coil}\frac{dB(\theta)}{dt}}$$</p>
+<p>$$\small{B(\theta)=B_m\sin{{(\omega}_et)}}$$</p>
+<p>$$\small{e_{ph}=N_{ph}A_{coil}\omega_eB_m\cos{(\omega_et)}}$$</p>
+<p>$$\small{N_{ph}=\frac{e_{ph}}{A_{coil}\omega_eB_m}}$$</p>
+<p>The electrical frequency of the stator voltage can be determined using the shaft speed and number of pole pairs.</p><p>$$\small{{\omega_e}=\frac{700\ rpm}{60\ s}\cdot2\pi\cdot6}$$</p>
+<p>Plugging in the final numbers into the equation below equates to about ~87 coils per phase of the motor.</p><p>$$\small{N_{ph}=\frac{\frac{24\ V}{\sqrt3}}{4.92\cdot{10}^{-4}\cdot\frac{700\ rpm}{60\ s}{2\pi}\cdot{6}\cdot{0.785\ T}}}$$</p>
+<p>$$\small{N_{ph}=81.57}$$</p>
 <p>Dividing this by six as there are 6 coils per phase it equates to around 14 turns per coil.</p><h2 id="finalizing-the-design">Finalizing the Design</h2><p></p><p>Now that I had the parameters defined I started work on creating the final design. The final design will consist of mostly 3D printed parts and a 62mm*40mm*12mm unsealed roller bearing. This bearing has significantly more rigidity than the 608 skateboard bearing I used in my first design.</p><p>Here are a few renders of the final motor design that I decided on. The white/clear parts are printed in PLA while the base stator is made of PETG for the extra temperature resistance as the coils heat up.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://cadenkraft.com/content/images/2022/09/completed-assembly.17.jpg" class="kg-image" alt loading="lazy" width="2000" height="1409" thisisbuggedatm="https://cadenkraft.com/content/images/size/w600/2022/09/completed-assembly.17.jpg 600w, https://cadenkraft.com/content/images/size/w1000/2022/09/completed-assembly.17.jpg 1000w, https://cadenkraft.com/content/images/size/w1600/2022/09/completed-assembly.17.jpg 1600w, https://cadenkraft.com/content/images/2022/09/completed-assembly.17.jpg 2000w" sizes="(min-width: 720px) 720px"><figcaption><span style="white-space: pre-wrap;">Completed assembly</span></figcaption></figure><figure class="kg-card kg-image-card kg-width-wide kg-card-hascaption"><img src="https://cadenkraft.com/content/images/2022/09/title-page-render-axial-flux-motor.16-1.jpg" class="kg-image" alt loading="lazy" width="2000" height="1409" thisisbuggedatm="https://cadenkraft.com/content/images/size/w600/2022/09/title-page-render-axial-flux-motor.16-1.jpg 600w, https://cadenkraft.com/content/images/size/w1000/2022/09/title-page-render-axial-flux-motor.16-1.jpg 1000w, https://cadenkraft.com/content/images/size/w1600/2022/09/title-page-render-axial-flux-motor.16-1.jpg 1600w, https://cadenkraft.com/content/images/2022/09/title-page-render-axial-flux-motor.16-1.jpg 2000w" sizes="(min-width: 1200px) 1200px"><figcaption><span style="white-space: pre-wrap;">View of the magnets and coils with the rotor hidden</span></figcaption></figure><p>Below is a draggable render where you can see the final explosion view of the design from multiple angles.</p>
 <!--kg-card-begin: html-->
 <div style="max-width: 1746px; max-height: 1230px;">
@@ -999,7 +1007,7 @@ p code {
 
     <div class='o-grid'>
       <div class='o-grid__col o-grid__col--center o-grid__col--9-10-m o-grid__col--2-3-l'>
-            <div class='c-post-card js-post-card post featured  '>
+            <div class='c-post-card js-post-card post tag-solar-car tag-build tag-hash-import-2024-02-23-22-57 featured  '>
 <div class="bg-gradients" style="background: conic-gradient(from 160deg at 50% 50%,#6EFFA8 0deg,#6EFFA8 1turn);
   -webkit-filter: blur(600px);
   filter: blur(600px);
@@ -1007,58 +1015,11 @@ p code {
   opacity: 50%;
   position: absolute;
   top: 50px;
-  width: 25%;
-  left: 50%;
-  z-index: -1;">
-
-  </div>
-  <div class='c-post-card__meta'>
-    
-    <time class='c-post-card__date' datetime='2024-02-22' title='22 February 2024'>22 Feb 2024</time>
-    <div class='is-membership
-                c-post-card__visibility
-                c-post-card__visibility--public
-'>
-      <span class='paid'>Paid</span>
-      <span class='members'>Members</span>
-      <span class='public'>Public</span>
-    </div>
-  </div>
-
-  <div class='c-post-card__content'>
-    <h2 class='c-post-card__title'>
-      <a href='/3d-printed-dual-cycloidal-actuator/' class='c-post-card__url'>3D Printed Dual Cycloidal Actuator</a>
-    </h2>
-    <div class="c-post-card__tags">
-                  <section class='c-tags'>
-                      
-                  </section>
-                </div>
-    <p class='c-post-card__excerpt'>This project builds on my previous axial flux motor. To improve the torque output of the motor I designed a cycloidal gearbox that integrates into the current motor design allowing for more torque.</p>
-  </div>
-    <div class='c-post-card__media'>
-      <div class='c-post-card__image-wrap'>
-        <img
-          alt='3D Printed Dual Cycloidal Actuator'
-          class='c-post-card__image lazyload'
-          data-thisisbuggedatm='
-            /content/images/size/w612/2024/02/Title-Image.jpg 612w,
-            /content/images/size/w1462/2024/02/Title-Image.jpg 1462w'
-          sizes='(min-width: 1280px) 153px, (min-width: 1040px) 12.27vw, (min-width: 640px) calc(22.37vw - 44px), calc(100vw - 32px)'
-          data-src='/content/images/size/w1462/2024/02/Title-Image.jpg'
-        >
-      </div>
-    </div>
-</div>            <div class='c-post-card js-post-card post featured  '>
-<div class="bg-gradients" style="background: conic-gradient(from 160deg at 50% 50%,#6EFFA8 0deg,#6EFFA8 1turn);
-  -webkit-filter: blur(600px);
-  filter: blur(600px);
-  height: 200px;
-  opacity: 50%;
-  position: absolute;
-  top: 50px;
-  width: 25%;
-  left: 50%;
+  width: 45%;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
   z-index: -1;">
 
   </div>
@@ -1081,10 +1042,13 @@ p code {
     </h2>
     <div class="c-post-card__tags">
                   <section class='c-tags'>
-                      
+                      <a href="/tag/solar-car/">Solar Car</a><a href="/tag/build/">Build</a>
                   </section>
                 </div>
     <p class='c-post-card__excerpt'>I designed a high voltage distribution assembly for the solar car that centralizes all of our high voltage connections, contactors, and fuses into a centralized location.</p>
+    <div class="c-post-card__readtime">
+      4 min read
+    </div>
   </div>
     <div class='c-post-card__media'>
       <div class='c-post-card__image-wrap'>
@@ -1099,7 +1063,7 @@ p code {
         >
       </div>
     </div>
-</div>            <div class='c-post-card js-post-card post featured  '>
+</div>            <div class='c-post-card js-post-card post tag-build tag-coding tag-hash-import-2024-02-23-22-57 featured  '>
 <div class="bg-gradients" style="background: conic-gradient(from 160deg at 50% 50%,#6EFFA8 0deg,#6EFFA8 1turn);
   -webkit-filter: blur(600px);
   filter: blur(600px);
@@ -1107,8 +1071,11 @@ p code {
   opacity: 50%;
   position: absolute;
   top: 50px;
-  width: 25%;
-  left: 50%;
+  width: 45%;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
   z-index: -1;">
 
   </div>
@@ -1131,10 +1098,13 @@ p code {
     </h2>
     <div class="c-post-card__tags">
                   <section class='c-tags'>
-                      
+                      <a href="/tag/build/">Build</a><a href="/tag/coding/">Coding</a>
                   </section>
                 </div>
     <p class='c-post-card__excerpt'>I&#39;ve always wanted to make a nixie tube clock but wanted to make one that I could trust was accurate. This was done through syncing the time with NTP servers the same way phones and computers do.</p>
+    <div class="c-post-card__readtime">
+      6 min read
+    </div>
   </div>
     <div class='c-post-card__media'>
       <div class='c-post-card__image-wrap'>
@@ -1146,6 +1116,62 @@ p code {
             /content/images/size/w1462/2023/06/nixie-tube-clock-render.3.png 1462w'
           sizes='(min-width: 1280px) 153px, (min-width: 1040px) 12.27vw, (min-width: 640px) calc(22.37vw - 44px), calc(100vw - 32px)'
           data-src='/content/images/size/w1462/2023/06/nixie-tube-clock-render.3.png'
+        >
+      </div>
+    </div>
+</div>            <div class='c-post-card js-post-card post tag-build tag-motors tag-hash-import-2024-02-23-22-57 featured  '>
+<div class="bg-gradients" style="background: conic-gradient(from 160deg at 50% 50%,#6EFFA8 0deg,#6EFFA8 1turn);
+  -webkit-filter: blur(600px);
+  filter: blur(600px);
+  height: 200px;
+  opacity: 50%;
+  position: absolute;
+  top: 50px;
+  width: 45%;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+  z-index: -1;">
+
+  </div>
+  <div class='c-post-card__meta'>
+    
+    <time class='c-post-card__date' datetime='2022-07-07' title='07 July 2022'>07 Jul 2022</time>
+    <div class='is-membership
+                c-post-card__visibility
+                c-post-card__visibility--public
+'>
+      <span class='paid'>Paid</span>
+      <span class='members'>Members</span>
+      <span class='public'>Public</span>
+    </div>
+  </div>
+
+  <div class='c-post-card__content'>
+    <h2 class='c-post-card__title'>
+      <a href='/creating-a-3d-printed-brushless-motor/' class='c-post-card__url'>Creating a 3D Printed Brushless Motor</a>
+    </h2>
+    <div class="c-post-card__tags">
+                  <section class='c-tags'>
+                      <a href="/tag/build/">Build</a><a href="/tag/motors/">Motors</a>
+                  </section>
+                </div>
+    <p class='c-post-card__excerpt'>This was my first attempt at making a motor from scratch. This design is a simple brushless motor made with components I had on hand at the time and taught me quite a lot about motor design and magnetics.</p>
+    <div class="c-post-card__readtime">
+      5 min read
+    </div>
+  </div>
+    <div class='c-post-card__media'>
+      <div class='c-post-card__image-wrap'>
+        <img
+          alt='Creating a 3D Printed Brushless Motor'
+          class='c-post-card__image lazyload'
+          data-thisisbuggedatm='
+            /content/images/size/w612/2022/07/motor-title-render.14.jpg 612w,
+            /content/images/size/w1462/2022/07/motor-title-render.14.jpg 1462w'
+          sizes='(min-width: 1280px) 153px, (min-width: 1040px) 12.27vw, (min-width: 640px) calc(22.37vw - 44px), calc(100vw - 32px)'
+          data-src='/content/images/size/w1462/2022/07/motor-title-render.14.jpg'
         >
       </div>
     </div>
