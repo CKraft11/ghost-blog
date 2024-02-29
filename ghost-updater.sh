@@ -9,6 +9,7 @@ PNG="png"
 JPG="jpg"
 JPEG="jpeg"
 WEBP="webp"
+AVIF="avif"
 
 git pull origin master
 rm -r docs
@@ -37,6 +38,16 @@ while getopts ":o:" opt; do
         grep -lR ".$PNG" docs/ | xargs sed -i "s/\.$PNG/\.$WEBP/g"
         echo 'Conversion to webp has completed'
         IMGMSG="Images converted to webp"
+      elif [ $arg_o = "avif" ]; then
+        echo 'Conversion to avif has started'
+        sleep 1
+        find docs/content/images/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" | xargs -0 -n8 mogrify -format avif -depth 10 -define heic:speed=8 {}  \; -print
+        find docs/content/images/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec rm {}  \; -print
+        grep -lR ".$JPG" docs/ | xargs sed -i "s/\.$JPG/\.$AVIF/g"
+        grep -lR ".$JPEG" docs/ | xargs sed -i "s/\.$JPEG/\.$AVIF/g"
+        grep -lR ".$PNG" docs/ | xargs sed -i "s/\.$PNG/\.$AVIF/g"
+        echo 'Conversion to avif has completed'
+        IMGMSG="Images converted to avif"
       else
         echo 'Standard image optimization has started'
         sleep 1
