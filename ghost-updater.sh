@@ -1,17 +1,20 @@
 #!/bin/bash
 date=$(date)
+
+URL="cadenkraft.com" #Change this to your url
+SERVERIP="10.0.0.222" #Change this to your server ip if ghost is on another machine
+
 git pull origin master
 rm -r docs
 mkdir docs
 cp no-border-light-ghost.css docs/
 cd docs
-echo "cadenkraft.com" > CNAME
+echo $URL > CNAME
 cd -
-ECTO1_SOURCE=http://10.0.0.222:2368 ECTO1_TARGET=https://cadenkraft.com python3 ecto1.py
+ECTO1_SOURCE=http://$SERVERIP:2368 ECTO1_TARGET=https://$URL python3 ecto1.py
 cd docs
 cp -r /helium/ghost/ghost-backup/content/images/. content/images
 cd -
-grep -lR "srcset=" docs/ | xargs sed -i 's/srcset=/thisisbuggedatm=/g'
 IMGMSG="No image optimization was used"
 while getopts ":o:" opt; do
   case $opt in
