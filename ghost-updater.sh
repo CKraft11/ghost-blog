@@ -41,7 +41,7 @@ while getopts ":o:" opt; do
       elif [ $arg_o = "avif" ]; then
         echo 'Conversion to avif has started'
         sleep 1
-        find docs/content/images/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" | xargs -0 -n8 mogrify -format avif -depth 10 -define heic:speed=8 {}  \; -print
+        find docs/content/images/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec mogrify -format avif -depth 10 -define heic:speed=8 {}  \; -print
         find docs/content/images/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec rm {}  \; -print
         grep -lR ".$JPG" docs/ | xargs sed -i "s/\.$JPG/\.$AVIF/g"
         grep -lR ".$JPEG" docs/ | xargs sed -i "s/\.$JPEG/\.$AVIF/g"
