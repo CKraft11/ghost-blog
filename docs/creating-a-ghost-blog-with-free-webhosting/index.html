@@ -40,7 +40,7 @@
     <meta property="og:url" content="https://cadenkraft.com/creating-a-ghost-blog-with-free-webhosting/">
     <meta property="og:image" content="https://cadenkraft.com/content/images/2022/02/ghost-blog.webp">
     <meta property="article:published_time" content="2022-02-23T04:58:02.000Z">
-    <meta property="article:modified_time" content="2024-02-29T19:56:23.000Z">
+    <meta property="article:modified_time" content="2024-02-29T21:19:40.000Z">
     <meta property="article:tag" content="Tutorial">
     <meta property="article:tag" content="Coding">
     
@@ -80,7 +80,7 @@
     "headline": "Ghost Blog with Free Webhosting",
     "url": "https://cadenkraft.com/creating-a-ghost-blog-with-free-webhosting/",
     "datePublished": "2022-02-23T04:58:02.000Z",
-    "dateModified": "2024-02-29T19:56:23.000Z",
+    "dateModified": "2024-02-29T21:19:40.000Z",
     "image": {
         "@type": "ImageObject",
         "url": "https://cadenkraft.com/content/images/2022/02/ghost-blog.webp",
@@ -483,6 +483,7 @@ video {
   margin-top: 40px;
   font-size: 20px;
   line-height: 40px;
+  overflow-y: clip;
 }
 
 .c-home__content {
@@ -848,6 +849,12 @@ git config --global credential.helper store
 URL="cadenkraft.com" #Change this to your url
 SERVERIP="localhost" #Change this to your server ip if Ghost is on another machine
 
+# this is needed or me running the script on my own website for this very page will break the script by replacing all the filetypes.
+PNG="png"
+JPG="jpg"
+JPEG="jpeg"
+WEBP="webp"
+
 date=$(date)
 git pull origin master
 rm -r docs
@@ -868,20 +875,20 @@ while getopts ":o:" opt; do
       if [ $arg_o = "webp" ]; then
         echo 'Conversion to webp has started'
         sleep 1
-        find docs/content/images/. -type f -regex ".*\.\(jpg\|jpeg\|png\)" -exec mogrify -format webp {}  \; -print
-        find docs/content/images/. -type f -regex ".*\.\(jpg\|jpeg\|png\)" -exec rm {}  \; -print
-        grep -lR ".webp" docs/ | xargs sed -i 's/.webp/.webp/g'
-        grep -lR ".webp" docs/ | xargs sed -i 's/.webp/.webp/g'
-        grep -lR ".webp" docs/ | xargs sed -i 's/.webp/.webp/g'
+        find docs/content/images/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec mogrify -format webp {}  \; -print
+        find docs/content/images/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec rm {}  \; -print
+        grep -lR ".$JPG" docs/ | xargs sed -i 's/\.$JPG/\.$WEBP/g'
+        grep -lR ".$JPEG" docs/ | xargs sed -i 's/\.$JPEG/\.$WEBP/g'
+        grep -lR ".$PNG" docs/ | xargs sed -i 's/\.$PNG/\.$WEBP/g'
         echo 'Conversion to webp has completed'
         IMGMSG="Images converted to webp"
       else
         echo 'Standard image optimization has started'
         sleep 1
         #credit goes to julianxhokaxhiu for these commands 
-        find . -type f -iname "*.webp" -exec optipng -nb -nc {} \;
-        find . -type f -iname "*.webp" -exec pngcrush -rem gAMA -rem alla -rem cHRM -rem iCCP -rem sRGB -rem time -ow {} \;
-        find . -type f \( -iname "*.webp" -o -iname "*.webp" \) -exec jpegoptim -f --strip-all {} \;
+        find . -type f -iname "*.$PNG" -exec optipng -nb -nc {} \;
+        find . -type f -iname "*.$PNG" -exec pngcrush -rem gAMA -rem alla -rem cHRM -rem iCCP -rem sRGB -rem time -ow {} \;
+        find . -type f \( -iname "*.$JPG" -o -iname "*.$JPEG" \) -exec jpegoptim -f --strip-all {} \;
         echo 'Standard image optimization has completed'
         IMGMSG="Standard image optimization was used"
       fi
