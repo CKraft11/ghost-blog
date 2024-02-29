@@ -4,6 +4,12 @@ date=$(date)
 URL="cadenkraft.com" #Change this to your url
 SERVERIP="10.0.0.222" #Change this to your server ip if ghost is on another machine
 
+# this is needed or the find and replace script will ruin the filetypes inside the script shown in my documentation
+PNG="png"
+JPG="jpg"
+JPEG="jpeg"
+WEBP="webp"
+
 git pull origin master
 rm -r docs
 mkdir docs
@@ -24,20 +30,20 @@ while getopts ":o:" opt; do
       if [ $arg_o = "webp" ]; then
         echo 'Conversion to webp has started'
         sleep 1
-        find docs/content/images/. -type f -regex ".*\.\(jpg\|jpeg\|png\)" -exec mogrify -format webp {}  \; -print
-        find docs/content/images/. -type f -regex ".*\.\(jpg\|jpeg\|png\)" -exec rm {}  \; -print
-        grep -lR ".jpg" docs/ | xargs sed -i 's/.jpg/.webp/g'
-        grep -lR ".jpeg" docs/ | xargs sed -i 's/.jpeg/.webp/g'
-        grep -lR ".png" docs/ | xargs sed -i 's/.png/.webp/g'
+        find docs/content/images/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec mogrify -format webp {}  \; -print
+        find docs/content/images/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec rm {}  \; -print
+        grep -lR ".$JPG" docs/ | xargs sed -i "s/\.$JPG/\.$WEBP/g"
+        grep -lR ".$JPEG" docs/ | xargs sed -i "s/\.$JPEG/\.$WEBP/g"
+        grep -lR ".$PNG" docs/ | xargs sed -i "s/\.$PNG/\.$WEBP/g"
         echo 'Conversion to webp has completed'
         IMGMSG="Images converted to webp"
       else
         echo 'Standard image optimization has started'
         sleep 1
         #credit goes to julianxhokaxhiu for these commands 
-        find . -type f -iname "*.png" -exec optipng -nb -nc {} \;
-        find . -type f -iname "*.png" -exec pngcrush -rem gAMA -rem alla -rem cHRM -rem iCCP -rem sRGB -rem time -ow {} \;
-        find . -type f \( -iname "*.jpg" -o -iname "*.jpeg" \) -exec jpegoptim -f --strip-all {} \;
+        find . -type f -iname "*.$PNG" -exec optipng -nb -nc {} \;
+        find . -type f -iname "*.$PNG" -exec pngcrush -rem gAMA -rem alla -rem cHRM -rem iCCP -rem sRGB -rem time -ow {} \;
+        find . -type f \( -iname "*.$JPG" -o -iname "*.$JPEG" \) -exec jpegoptim -f --strip-all {} \;
         echo 'Standard image optimization has completed'
         IMGMSG="Standard image optimization was used"
       fi
