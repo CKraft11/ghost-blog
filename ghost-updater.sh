@@ -14,12 +14,12 @@ AVIF="avif"
 WWW="public"
 
 git pull origin master
-rm -r $WWW
-mkdir $WWW
-cp no-border-light-ghost.css $WWW/
-cd $WWW
-echo $URL > CNAME
-cd -
+# rm -r $WWW
+# mkdir $WWW
+# cp no-border-light-ghost.css $WWW/
+# cd $WWW
+# echo $URL > CNAME
+# cd -
 ECTO1_SOURCE=http://$SERVERIP:2368 ECTO1_TARGET=https://$URL python3 ecto1.py
 cd $WWW
 cp -r /helium/ghost/ghost-backup/content/images/. content/images
