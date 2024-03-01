@@ -22,7 +22,7 @@ git pull origin master
 # cd -
 ECTO1_SOURCE=http://$SERVERIP:2368 ECTO1_TARGET=https://$URL python3 ecto1.py
 cd $WWW
-cp -r /helium/ghost/ghost-backup/content/images/. content/images
+echo n | cp -vipr /helium/ghost/ghost-backup/content/images/. content/images
 cd -
 IMGMSG="No image optimization was used"
 while getopts ":o:" opt; do
