@@ -114,6 +114,8 @@ class Downloader:
 			data = self.modify_data_simple(data)
 		pathlib.Path(target_directory).mkdir(parents=True, exist_ok=True)
 		with open(target_file, 'wb') as file:
+      if file.read() == data:
+        print('File is the same as the latest version')
 			file.write(data)
 
 	def get_urls_for_retrieval_from_html(self, data):
