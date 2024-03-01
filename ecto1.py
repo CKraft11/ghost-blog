@@ -113,9 +113,9 @@ class Downloader:
 		if self.is_html(content_type, norm_url) or self.is_css(content_type, norm_url) or self.is_xml(content_type, norm_url) or path == 'robots.txt':
 			data = self.modify_data_simple(data)
 		pathlib.Path(target_directory).mkdir(parents=True, exist_ok=True)
-		with open(target_file, 'wb') as file:
-      if file.read() == data:
-        print('File is the same as the latest version')
+		with open(target_file, 'wb+') as file:
+			if file.read() == data:
+				print('File on disk is the same as online')
 			file.write(data)
 
 	def get_urls_for_retrieval_from_html(self, data):
