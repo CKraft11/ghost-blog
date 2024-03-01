@@ -31,7 +31,7 @@ class Downloader:
 
 		self.rss_re_pattern = re.compile(re.escape(self.source_url_root) + 'rss/?([\'"\\)]{1})')
 		self.downloaded_urls = []
-		self.target_path_root = pathlib.Path(os.getcwd()) / 'docs'
+		self.target_path_root = pathlib.Path(os.getcwd()) / 'public'
 		self.private_site_password = None
 		self.rss_override_url = None
 		self.preauth_url = None
@@ -128,8 +128,8 @@ class Downloader:
 		for link in soup.findAll('img'):
 			if link.has_attr('src'):
 				urls.append(self.normalize_url(link['src']))
-			if link.has_attr('thisisbuggedatm'):
-				urls = urls + self.get_urls_for_retrieval_from_img_thisisbuggedatm(link['thisisbuggedatm'])
+			if link.has_attr('srcset'):
+				urls = urls + self.get_urls_for_retrieval_from_img_srcset(link['srcset'])
 		for link in soup.findAll('script'):
 			if link.has_attr('src'):
 				urls.append(self.normalize_url(link['src']))
@@ -137,9 +137,9 @@ class Downloader:
 			urls = urls + self.get_urls_for_retrieval_from_css(style.string.encode('utf-8'))
 		return urls
 
-	def get_urls_for_retrieval_from_img_thisisbuggedatm(self, thisisbuggedatm):
+	def get_urls_for_retrieval_from_img_srcset(self, srcset):
 		urls = []
-		sources = thisisbuggedatm.split(',')
+		sources = srcset.split(',')
 		for src in sources:
 			url = re.split('\\s', src.strip())[0]
 			urls.append(url)
@@ -260,4 +260,4 @@ else:
 
 d.go()
 
-print('Done. Contents have been downloaded into:', pathlib.Path(os.getcwd()) / 'docs')
+print('Done. Contents have been downloaded into:', pathlib.Path(os.getcwd()) / 'public')

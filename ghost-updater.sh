@@ -14,6 +14,7 @@ AVIF="avif"
 git pull origin master
 rm -r docs
 mkdir docs
+mkdir public
 cp no-border-light-ghost.css docs/
 cd docs
 echo $URL > CNAME
@@ -69,7 +70,7 @@ cd docs
 cp -r /helium/ghost/ghost-backup/content/renders/. content/renders
 cd -
 git add .
-git commit -m "Compiled Changes - $date | $IMGMSG" ghost-updater.sh ecto1.py requirements.txt README.md serve.py docs/.
+git commit -m "Compiled Changes - $date | $IMGMSG" ghost-updater.sh ecto1.py requirements.txt README.md serve.py docs/. public/.
 git config --global credential.helper store
 git push -u origin master
 
