@@ -118,7 +118,7 @@ class Downloader:
 				print('File unchanged')
 			else:
 				with open(target_file, 'wb') as file:
-					file.write(data)
+					#file.write(data)
 
 	def get_urls_for_retrieval_from_html(self, data):
 		urls = []
