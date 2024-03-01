@@ -11,16 +11,17 @@ JPEG="jpeg"
 WEBP="webp"
 AVIF="avif"
 
+WWW="public"
+
 git pull origin master
-rm -r docs
-mkdir docs
-mkdir public
-cp no-border-light-ghost.css docs/
-cd docs
+rm -r $WWW
+mkdir $WWW
+cp no-border-light-ghost.css $WWW/
+cd $WWW
 echo $URL > CNAME
 cd -
 ECTO1_SOURCE=http://$SERVERIP:2368 ECTO1_TARGET=https://$URL python3 ecto1.py
-cd docs
+cd $WWW
 cp -r /helium/ghost/ghost-backup/content/images/. content/images
 cd -
 IMGMSG="No image optimization was used"
@@ -32,21 +33,21 @@ while getopts ":o:" opt; do
       if [ $arg_o = "webp" ]; then
         echo 'Conversion to webp has started'
         sleep 1
-        find docs/content/images/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec mogrify -format webp {}  \; -print
-        find docs/content/images/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec rm {}  \; -print
-        grep -lR ".$JPG" docs/ | xargs sed -i "s/\.$JPG/\.$WEBP/g"
-        grep -lR ".$JPEG" docs/ | xargs sed -i "s/\.$JPEG/\.$WEBP/g"
-        grep -lR ".$PNG" docs/ | xargs sed -i "s/\.$PNG/\.$WEBP/g"
+        find $WWW/content/images/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec mogrify -format webp {}  \; -print
+        find $WWW/content/images/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec rm {}  \; -print
+        grep -lR ".$JPG" $WWW/ | xargs sed -i "s/\.$JPG/\.$WEBP/g"
+        grep -lR ".$JPEG" $WWW/ | xargs sed -i "s/\.$JPEG/\.$WEBP/g"
+        grep -lR ".$PNG" $WWW/ | xargs sed -i "s/\.$PNG/\.$WEBP/g"
         echo 'Conversion to webp has completed'
         IMGMSG="Images converted to webp"
       elif [ $arg_o = "avif" ]; then
         echo 'Conversion to avif has started'
         sleep 1
-        find docs/content/images/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec mogrify -format avif -depth 10 -define heic:speed=8 {}  \; -print
-        find docs/content/images/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec rm {}  \; -print
-        grep -lR ".$JPG" docs/ | xargs sed -i "s/\.$JPG/\.$AVIF/g"
-        grep -lR ".$JPEG" docs/ | xargs sed -i "s/\.$JPEG/\.$AVIF/g"
-        grep -lR ".$PNG" docs/ | xargs sed -i "s/\.$PNG/\.$AVIF/g"
+        find $WWW/content/images/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec mogrify -format avif -depth 10 -define heic:speed=8 {}  \; -print
+        find $WWW/content/images/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec rm {}  \; -print
+        grep -lR ".$JPG" $WWW/ | xargs sed -i "s/\.$JPG/\.$AVIF/g"
+        grep -lR ".$JPEG" $WWW/ | xargs sed -i "s/\.$JPEG/\.$AVIF/g"
+        grep -lR ".$PNG" $WWW/ | xargs sed -i "s/\.$PNG/\.$AVIF/g"
         echo 'Conversion to avif has completed'
         IMGMSG="Images converted to avif"
       else
@@ -66,11 +67,11 @@ while getopts ":o:" opt; do
       ;;
   esac
 done
-cd docs
+cd $WWW
 cp -r /helium/ghost/ghost-backup/content/renders/. content/renders
 cd -
 git add .
-git commit -m "Compiled Changes - $date | $IMGMSG" ghost-updater.sh ecto1.py requirements.txt README.md serve.py docs/. public/.
+git commit -m "Compiled Changes - $date | $IMGMSG" ghost-updater.sh ecto1.py requirements.txt README.md serve.py $WWW/.
 git config --global credential.helper store
 git push -u origin master
 
