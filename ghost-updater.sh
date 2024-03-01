@@ -22,7 +22,7 @@ git pull origin master
 # cd -
 ECTO1_SOURCE=http://$SERVERIP:2368 ECTO1_TARGET=https://$URL python3 ecto1.py
 cd $WWW
-echo n | cp -vipr /helium/ghost/ghost-backup/content/images/. content/images
+echo n | cp -ipr /helium/ghost/ghost-backup/content/images/. content/images
 cd -
 IMGMSG="No image optimization was used"
 while getopts ":o:" opt; do
@@ -74,6 +74,7 @@ git add .
 git commit -m "Compiled Changes - $date | $IMGMSG" ghost-updater.sh ecto1.py requirements.txt README.md serve.py $WWW/.
 git config --global credential.helper store
 git push -u origin master
+touch $WWW/content/images/optimg.flag
 
 
 
