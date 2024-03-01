@@ -33,23 +33,27 @@ while getopts ":o:" opt; do
       if [ $arg_o = "webp" ]; then
         echo 'Conversion to webp has started'
         sleep 1
-        find $WWW/content/images/. -newer $WWW/content/images/optimg.flag -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec mogrify -format webp {}  \; -print
+        find $WWW/content/images/. -newer $WWW/content/images/optimg-webp.flag -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec mogrify -format webp {}  \; -print
         #find $WWW/content/images/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec rm {}  \; -print
         grep -lR ".$JPG" $WWW/ | xargs sed -i "s/\.$JPG/\.$WEBP/g"
         grep -lR ".$JPEG" $WWW/ | xargs sed -i "s/\.$JPEG/\.$WEBP/g"
         grep -lR ".$PNG" $WWW/ | xargs sed -i "s/\.$PNG/\.$WEBP/g"
         echo 'Conversion to webp has completed'
         IMGMSG="Images converted to webp"
+        touch $WWW/content/images/optimg-webp.flag
       elif [ $arg_o = "avif" ]; then
         echo 'Conversion to avif has started'
         sleep 1
+        #find $WWW/content/images/. -newer $WWW/content/images/optimg-avif.flag -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec mogrify -format avif -depth 10 -define heic:speed=8 {}  \; -print
         find $WWW/content/images/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec mogrify -format avif -depth 10 -define heic:speed=8 {}  \; -print
-        find $WWW/content/images/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec rm {}  \; -print
+        find $WWW/content/images/. -name "*.webp" -type f -delete
+        #find $WWW/content/images/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec rm {}  \; -print
         grep -lR ".$JPG" $WWW/ | xargs sed -i "s/\.$JPG/\.$AVIF/g"
         grep -lR ".$JPEG" $WWW/ | xargs sed -i "s/\.$JPEG/\.$AVIF/g"
         grep -lR ".$PNG" $WWW/ | xargs sed -i "s/\.$PNG/\.$AVIF/g"
         echo 'Conversion to avif has completed'
         IMGMSG="Images converted to avif"
+        touch $WWW/content/images/optimg-avif.flag
       else
         echo 'Standard image optimization has started'
         sleep 1
@@ -74,7 +78,7 @@ git add .
 git commit -m "Compiled Changes - $date | $IMGMSG" ghost-updater.sh ecto1.py requirements.txt README.md serve.py $WWW/.
 git config --global credential.helper store
 git push -u origin master
-touch $WWW/content/images/optimg.flag
+
 
 
 
