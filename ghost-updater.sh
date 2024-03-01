@@ -44,7 +44,7 @@ while getopts ":o:" opt; do
       elif [ $arg_o = "avif" ]; then
         echo 'Conversion to avif has started'
         sleep 1
-        find $WWW/content/images/. -newer $WWW/content/images/optimg-avif.flag -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec mogrify -format avif -depth 10 -alpha transparent -define heic:speed=8 {}  \; -print
+        find $WWW/content/images/. -newer $WWW/content/images/optimg-avif.flag -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec mogrify -format avif -depth 10 -alpha off -define heic:speed=8 {}  \; -print
         #find $WWW/content/images/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec mogrify -format avif -depth 10 -alpha on -define heic:speed=8 {}  \; -print
         find $WWW/content/images/. -name "*.webp" -type f -delete
         #find $WWW/content/images/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec rm {}  \; -print
