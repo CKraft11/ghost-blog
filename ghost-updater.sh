@@ -77,7 +77,7 @@ while getopts ":o:" opt; do
   esac
 done
 git add .
-git commit -m "Compiled Changes - $date | $IMGMSG" ghost-updater.sh ecto1.py requirements.txt README.md serve.py $WWW/.
+git commit -m "Compiled Changes - $date | $IMGMSG" .gitignore ghost-updater.sh ecto1.py requirements.txt README.md serve.py $WWW/.
 git config --global credential.helper store
 git push -u origin master
 
