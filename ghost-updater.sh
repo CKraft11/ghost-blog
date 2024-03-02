@@ -50,6 +50,7 @@ while getopts ":o:" opt; do
         grep -lR ".$JPG" $WWW/ | xargs sed -i "s/\.$JPG/\.$AVIF/g"
         grep -lR ".$JPEG" $WWW/ | xargs sed -i "s/\.$JPEG/\.$AVIF/g"
         grep -lR ".$PNG" $WWW/ | xargs sed -i "s/\.$PNG/\.$AVIF/g"
+        grep -lR ".$AVIF" $WWW/ | xargs sed -i "s/_o\.$AVIF/\.$AVIF/g"
         echo 'Conversion to avif has completed'
         IMGMSG="Images converted to avif"
         touch $WWW/content/images/optimg-avif.flag
