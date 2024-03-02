@@ -25,7 +25,7 @@ cd $WWW
 echo n | cp -ipr /helium/ghost/ghost-backup/content/images/. content/images
 cd -
 cd $WWW
-cp -r /helium/ghost/ghost-backup/content/renders/. content/renders
+echo n | cp -ipr /helium/ghost/ghost-backup/content/renders/. content/renders
 cd -
 chown -R helium:helium public/content/renders
 IMGMSG="No image optimization was used"
