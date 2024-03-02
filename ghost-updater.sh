@@ -24,6 +24,10 @@ ECTO1_SOURCE=http://$SERVERIP:2368 ECTO1_TARGET=https://$URL python3 ecto1.py
 cd $WWW
 echo n | cp -ipr /helium/ghost/ghost-backup/content/images/. content/images
 cd -
+cd $WWW
+cp -r /helium/ghost/ghost-backup/content/renders/. content/renders
+cd -
+chown -R helium:helium public/content/renders
 IMGMSG="No image optimization was used"
 while getopts ":o:" opt; do
   case $opt in
@@ -45,6 +49,7 @@ while getopts ":o:" opt; do
         echo 'Conversion to avif has started'
         sleep 1
         find $WWW/content/images/. -newer $WWW/content/images/optimg-avif.flag -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec mogrify -format avif -depth 10 -alpha on -define heic:speed=8 {}  \; -print
+        find $WWW/content/renders/. -newer $WWW/content/images/optimg-avif.flag -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec mogrify -format avif -depth 10 -alpha on -define heic:speed=8 {}  \; -print
         #find $WWW/content/images/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec mogrify -format avif -depth 10 -alpha on -define heic:speed=8 {}  \; -print
         #find $WWW/content/images/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec rm {}  \; -print
         grep -lR ".$JPG" $WWW/ | xargs sed -i "s/\.$JPG/\.$AVIF/g"
@@ -71,9 +76,6 @@ while getopts ":o:" opt; do
       ;;
   esac
 done
-cd $WWW
-cp -r /helium/ghost/ghost-backup/content/renders/. content/renders
-cd -
 git add .
 git commit -m "Compiled Changes - $date | $IMGMSG" ghost-updater.sh ecto1.py requirements.txt README.md serve.py $WWW/.
 git config --global credential.helper store
