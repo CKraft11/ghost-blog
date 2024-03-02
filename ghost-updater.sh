@@ -46,11 +46,10 @@ while getopts ":o:" opt; do
         sleep 1
         find $WWW/content/images/. -newer $WWW/content/images/optimg-avif.flag -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec mogrify -format avif -depth 10 -alpha on -define heic:speed=8 {}  \; -print
         #find $WWW/content/images/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec mogrify -format avif -depth 10 -alpha on -define heic:speed=8 {}  \; -print
-        find $WWW/content/images/. -name "*.webp" -type f -delete
         #find $WWW/content/images/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec rm {}  \; -print
-        grep -lR ".$JPG" $WWW/ | xargs sed -i "s/\.$JPG/\.$AVIF/g"
-        grep -lR ".$JPEG" $WWW/ | xargs sed -i "s/\.$JPEG/\.$AVIF/g"
-        grep -lR ".$PNG" $WWW/ | xargs sed -i "s/\.$PNG/\.$AVIF/g"
+        grep -lR ".$JPG" $WWW/ | xargs sed -i "s/\.$JPG/\_o.$AVIF/g"
+        grep -lR ".$JPEG" $WWW/ | xargs sed -i "s/\.$JPEG/\_o.$AVIF/g"
+        grep -lR ".$PNG" $WWW/ | xargs sed -i "s/\.$PNG/\_o.$AVIF/g"
         echo 'Conversion to avif has completed'
         IMGMSG="Images converted to avif"
         touch $WWW/content/images/optimg-avif.flag
