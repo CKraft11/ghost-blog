@@ -29,7 +29,7 @@
   </script>
 
   <meta name="description" content="This is an in depth guide on how I made this very website through locally developing the website and pushing changes to Github pages. This allows me to host this site while paying $0 in hosting.">
-    <link rel="icon" href="https://cadenkraft.com/content/images/size/w256h256/2024/03/favicon.avif" type="image/png">
+    <link rel="icon" href="https://cadenkraft.com/content/images/size/w256h256/2024/03/favicon.webp" type="image/png">
     <link rel="canonical" href="https://cadenkraft.com/creating-a-ghost-blog-with-free-webhosting/">
     <meta name="referrer" content="no-referrer-when-downgrade">
     
@@ -38,7 +38,7 @@
     <meta property="og:title" content="Ghost Blog with Free Webhosting">
     <meta property="og:description" content="This is an in depth guide on how I made this very website through locally developing the website and pushing changes to Github pages. This allows me to host this site while paying $0 in hosting.">
     <meta property="og:url" content="https://cadenkraft.com/creating-a-ghost-blog-with-free-webhosting/">
-    <meta property="og:image" content="https://cadenkraft.com/content/images/2022/02/ghost-blog.avif">
+    <meta property="og:image" content="https://cadenkraft.com/content/images/2022/02/ghost-blog.webp">
     <meta property="article:published_time" content="2022-02-23T04:58:02.000Z">
     <meta property="article:modified_time" content="2024-02-29T21:19:40.000Z">
     <meta property="article:tag" content="Tutorial">
@@ -48,7 +48,7 @@
     <meta name="twitter:title" content="Ghost Blog with Free Webhosting">
     <meta name="twitter:description" content="This is an in depth guide on how I made this very website through locally developing the website and pushing changes to Github pages. This allows me to host this site while paying $0 in hosting.">
     <meta name="twitter:url" content="https://cadenkraft.com/creating-a-ghost-blog-with-free-webhosting/">
-    <meta name="twitter:image" content="https://cadenkraft.com/content/images/2022/02/ghost-blog.avif">
+    <meta name="twitter:image" content="https://cadenkraft.com/content/images/2022/02/ghost-blog.webp">
     <meta name="twitter:label1" content="Written by">
     <meta name="twitter:data1" content="Caden Kraft">
     <meta name="twitter:label2" content="Filed under">
@@ -66,7 +66,7 @@
         "url": "https://cadenkraft.com/",
         "logo": {
             "@type": "ImageObject",
-            "url": "https://cadenkraft.com/content/images/2024/03/Caden-Personal-Monogram-Trans.avif",
+            "url": "https://cadenkraft.com/content/images/2024/03/Caden-Personal-Monogram-Trans.webp",
             "width": 60,
             "height": 60
         }
@@ -83,7 +83,7 @@
     "dateModified": "2024-02-29T21:19:40.000Z",
     "image": {
         "@type": "ImageObject",
-        "url": "https://cadenkraft.com/content/images/2022/02/ghost-blog.avif",
+        "url": "https://cadenkraft.com/content/images/2022/02/ghost-blog.webp",
         "width": 1200,
         "height": 660
     },
@@ -725,7 +725,7 @@ p code {
       <div class='c-header__inner' style="background: linear-gradient(to left, #fff 40%,rgba(255,255,255,0) 100%);">
         <div class='c-logo'>
             <a href='https://cadenkraft.com'>
-              <img class='c-logo__img' src='https://cadenkraft.com/content/images/2024/03/Caden-Personal-Monogram-Trans.avif' alt='Caden Kraft' width='' height=''>
+              <img class='c-logo__img' src='https://cadenkraft.com/content/images/2024/03/Caden-Personal-Monogram-Trans.webp' alt='Caden Kraft' width='' height=''>
             </a>
         </div>
 
@@ -792,10 +792,10 @@ p code {
         alt='Ghost Blog with Free Webhosting'
         class='c-post-image lazyload'
         data-srcset='
-          /content/images/size/w612/2022/02/ghost-blog.avif 612w,
-          /content/images/size/w1462/2022/02/ghost-blog.avif 1462w'
+          /content/images/size/w612/2022/02/ghost-blog.webp 612w,
+          /content/images/size/w1462/2022/02/ghost-blog.webp 1462w'
         sizes='(min-width: 1300px) 731px, (min-width: 1040px) calc(44.58vw + 160px), (min-width: 640px) calc(90vw - 61px), calc(100vw - 32px)'
-        data-src='/content/images/size/w1462/2022/02/ghost-blog.avif'
+        data-src='/content/images/size/w1462/2022/02/ghost-blog.webp'
       >
     </figure>
 </header>
@@ -837,9 +837,9 @@ services:
       PUID: 1000 # change these to your linux account with "id -u" and "id -g"
       PGID: 100
     volumes: # allows you to easier develop backup/manage your database
-      - /PATH/ON/LOCAL/MACHINE/ghost/mysql:/var/lib/mysql</code></pre><figcaption><p><span style="white-space: pre-wrap;">docker-compose.yml</span></p></figcaption></figure><p>Press <code>Ctrl-X</code> to exit and <code>Y</code> to save your changes. Before we start the container, we also want to add your current user to the Docker group on your computer so you will be able to run all of these commands without using sudo.</p><figure class="kg-card kg-code-card"><pre><code class="language-bash">sudo groupadd docker</code></pre><figcaption><p><span style="white-space: pre-wrap;">Create the Docker group</span></p></figcaption></figure><figure class="kg-card kg-code-card"><pre><code class="language-bash">sudo usermod -aG docker $USER</code></pre><figcaption><p><span style="white-space: pre-wrap;">Add the current user to the Docker group</span></p></figcaption></figure><p>You will likely have to log out and log in for these changes to be implemented.</p><p>Finally, we can get into actually starting up the Ghost blog. If you are not running this on a server and are on a laptop or desktop, I recommend using <a href="https://code.visualstudio.com/?ref=10.0.0.222">VSCode</a> with the Docker extension. The workflow is very nice for managing Docker containers and images.</p><figure class="kg-card kg-image-card"><img src="https://cadenkraft.com/content/images/2022/02/docker-3.avif" class="kg-image" alt loading="lazy" width="666" height="176" srcset="https://cadenkraft.com/content/images/size/w600/2022/02/docker-3.avif 600w, https://cadenkraft.com/content/images/2022/02/docker-3.avif 666w"></figure><p>Now we need to load up the Docker container we created earlier. Navigate to the directory that you created the docker-compose.yml file in and run</p><pre><code class="language-bash">docker-compose up -d</code></pre><p>This should take a while as it has to download and set up the Ghost Docker image but after it says the website is finished loading you should be able to navigate in your browser to <code>http://localhost:2368</code> or <code>http://serverip:2368</code> depending on your setup. You should see a nice-looking blog template with all the images loaded properly. Then you can add <code>/ghost</code> to the end of your URL to access the admin dashboard. </p><figure class="kg-card kg-image-card"><img src="https://cadenkraft.com/content/images/2022/02/ghost-default.avif" class="kg-image" alt loading="lazy" width="1400" height="1123" srcset="https://cadenkraft.com/content/images/size/w600/2022/02/ghost-default.avif 600w, https://cadenkraft.com/content/images/size/w1000/2022/02/ghost-default.avif 1000w, https://cadenkraft.com/content/images/2022/02/ghost-default.avif 1400w" sizes="(min-width: 720px) 720px"></figure><p>Here it will prompt you to set up an account and parts of your blog. I'm not going to go too much more in-depth on that side of things as that is more up to the user but if you have everything up to here working we should be good to set up the GitHub pages integration.</p><h2 id="setting-up-github-pages"><strong>Setting up Github Pages</strong></h2><p></p><p>Now that we have our local Ghost blog up and running, we want configure a static site to be generated and sent to Github Pages. The tool we will be using is called Ecto1. A big thanks to <a href="https://github.com/arktronic?ref=10.0.0.222" rel="author">arktronic</a> for making it and all of the useful documentation. To install it, we just run </p><figure class="kg-card kg-bookmark-card"><a class="kg-bookmark-container" href="https://github.com/arktronic/ecto1?ref=10.0.0.222"><div class="kg-bookmark-content"><div class="kg-bookmark-title">GitHub - arktronic/ecto1: Ghost blog downloader/scraper/static-site-maker</div><div class="kg-bookmark-description">Ghost blog downloader/scraper/static-site-maker. Contribute to arktronic/ecto1 development by creating an account on GitHub.</div><div class="kg-bookmark-metadata"><img class="kg-bookmark-icon" src="https://github.com/fluidicon.avif" alt><span class="kg-bookmark-author">GitHub</span><span class="kg-bookmark-publisher">arktronic</span></div></div><div class="kg-bookmark-thumbnail"><img src="https://opengraph.githubassets.com/2f21f11350247dd18a9b06e189effe53e4cd46f89f5bf410db8d7cff7ecad6dc/arktronic/ecto1" alt></div></a></figure><pre><code class="language-bash">git clone https://github.com/arktronic/ecto1</code></pre><p>Next, we need to prepare our git repository on our personal machine. To start, create a folder you want the repository to be in and initialize it. </p><pre><code class="language-bash">mkdir ghost
+      - /PATH/ON/LOCAL/MACHINE/ghost/mysql:/var/lib/mysql</code></pre><figcaption><p><span style="white-space: pre-wrap;">docker-compose.yml</span></p></figcaption></figure><p>Press <code>Ctrl-X</code> to exit and <code>Y</code> to save your changes. Before we start the container, we also want to add your current user to the Docker group on your computer so you will be able to run all of these commands without using sudo.</p><figure class="kg-card kg-code-card"><pre><code class="language-bash">sudo groupadd docker</code></pre><figcaption><p><span style="white-space: pre-wrap;">Create the Docker group</span></p></figcaption></figure><figure class="kg-card kg-code-card"><pre><code class="language-bash">sudo usermod -aG docker $USER</code></pre><figcaption><p><span style="white-space: pre-wrap;">Add the current user to the Docker group</span></p></figcaption></figure><p>You will likely have to log out and log in for these changes to be implemented.</p><p>Finally, we can get into actually starting up the Ghost blog. If you are not running this on a server and are on a laptop or desktop, I recommend using <a href="https://code.visualstudio.com/?ref=10.0.0.222">VSCode</a> with the Docker extension. The workflow is very nice for managing Docker containers and images.</p><figure class="kg-card kg-image-card"><img src="https://cadenkraft.com/content/images/2022/02/docker-3.webp" class="kg-image" alt loading="lazy" width="666" height="176" srcset="https://cadenkraft.com/content/images/size/w600/2022/02/docker-3.webp 600w, https://cadenkraft.com/content/images/2022/02/docker-3.webp 666w"></figure><p>Now we need to load up the Docker container we created earlier. Navigate to the directory that you created the docker-compose.yml file in and run</p><pre><code class="language-bash">docker-compose up -d</code></pre><p>This should take a while as it has to download and set up the Ghost Docker image but after it says the website is finished loading you should be able to navigate in your browser to <code>http://localhost:2368</code> or <code>http://serverip:2368</code> depending on your setup. You should see a nice-looking blog template with all the images loaded properly. Then you can add <code>/ghost</code> to the end of your URL to access the admin dashboard. </p><figure class="kg-card kg-image-card"><img src="https://cadenkraft.com/content/images/2022/02/ghost-default.webp" class="kg-image" alt loading="lazy" width="1400" height="1123" srcset="https://cadenkraft.com/content/images/size/w600/2022/02/ghost-default.webp 600w, https://cadenkraft.com/content/images/size/w1000/2022/02/ghost-default.webp 1000w, https://cadenkraft.com/content/images/2022/02/ghost-default.webp 1400w" sizes="(min-width: 720px) 720px"></figure><p>Here it will prompt you to set up an account and parts of your blog. I'm not going to go too much more in-depth on that side of things as that is more up to the user but if you have everything up to here working we should be good to set up the GitHub pages integration.</p><h2 id="setting-up-github-pages"><strong>Setting up Github Pages</strong></h2><p></p><p>Now that we have our local Ghost blog up and running, we want configure a static site to be generated and sent to Github Pages. The tool we will be using is called Ecto1. A big thanks to <a href="https://github.com/arktronic?ref=10.0.0.222" rel="author">arktronic</a> for making it and all of the useful documentation. To install it, we just run </p><figure class="kg-card kg-bookmark-card"><a class="kg-bookmark-container" href="https://github.com/arktronic/ecto1?ref=10.0.0.222"><div class="kg-bookmark-content"><div class="kg-bookmark-title">GitHub - arktronic/ecto1: Ghost blog downloader/scraper/static-site-maker</div><div class="kg-bookmark-description">Ghost blog downloader/scraper/static-site-maker. Contribute to arktronic/ecto1 development by creating an account on GitHub.</div><div class="kg-bookmark-metadata"><img class="kg-bookmark-icon" src="https://github.com/fluidicon.webp" alt><span class="kg-bookmark-author">GitHub</span><span class="kg-bookmark-publisher">arktronic</span></div></div><div class="kg-bookmark-thumbnail"><img src="https://opengraph.githubassets.com/2f21f11350247dd18a9b06e189effe53e4cd46f89f5bf410db8d7cff7ecad6dc/arktronic/ecto1" alt></div></a></figure><pre><code class="language-bash">git clone https://github.com/arktronic/ecto1</code></pre><p>Next, we need to prepare our git repository on our personal machine. To start, create a folder you want the repository to be in and initialize it. </p><pre><code class="language-bash">mkdir ghost
 cd ghost/
-git init </code></pre><p>Then move all of the files cloned from the ecto1 repository into your ghost folder. After that, we need to install the required dependencies to run ecto1.</p><pre><code class="language-bash">pip install -r requirements.txt -t .</code></pre><p>In order for ecto1 to work, we are going to need to change a few things in the ecto1.py script</p><figure class="kg-card kg-code-card"><pre><code class="language-python">		self.target_path_root = pathlib.Path(os.getcwd()) / 'docs'</code></pre><figcaption><p><span style="white-space: pre-wrap;">Change line 34 to this</span></p></figcaption></figure><figure class="kg-card kg-code-card"><pre><code class="language-python">print('Done. Contents have been downloaded into:', pathlib.Path(os.getcwd()) / 'docs')</code></pre><figcaption><p><span style="white-space: pre-wrap;">Change line 263 to this</span></p></figcaption></figure><p>Then we have to go online to Github and create a few things. Starting with the repository, create a repository with any name you like and copy the URL under the "code" dropdown.</p><div class="kg-card kg-callout-card kg-callout-card-blue"><div class="kg-callout-emoji">⚠️</div><div class="kg-callout-text">If your do not have a custom domain the name of your Github repo should be your Github username or the static site generator will not work!</div></div><p></p><figure class="kg-card kg-image-card"><img src="https://cadenkraft.com/content/images/2022/02/image-13.avif" class="kg-image" alt loading="lazy" width="373" height="252"></figure><p>We want to add this repository as a remote repository location for git to push the files. We can do this by running </p><pre><code class="language-bash">git remote add origin https://github.com/yourlinkhere.git</code></pre><p>We need to go back to Github and generate a personal access token that ecto1 can use when creating the site to push files to your repo. Go to this <a href="https://github.com/settings/tokens?ref=10.0.0.222">link here</a> and create a new token with a name of your choice and give it repo permissions. Copy this link and keep it somewhere safe (e.g., not in your git repository folder). Next, we can run the following commands to test everything working.</p><figure class="kg-card kg-code-card"><pre><code class="language-bash">touch test
+git init </code></pre><p>Then move all of the files cloned from the ecto1 repository into your ghost folder. After that, we need to install the required dependencies to run ecto1.</p><pre><code class="language-bash">pip install -r requirements.txt -t .</code></pre><p>In order for ecto1 to work, we are going to need to change a few things in the ecto1.py script</p><figure class="kg-card kg-code-card"><pre><code class="language-python">		self.target_path_root = pathlib.Path(os.getcwd()) / 'docs'</code></pre><figcaption><p><span style="white-space: pre-wrap;">Change line 34 to this</span></p></figcaption></figure><figure class="kg-card kg-code-card"><pre><code class="language-python">print('Done. Contents have been downloaded into:', pathlib.Path(os.getcwd()) / 'docs')</code></pre><figcaption><p><span style="white-space: pre-wrap;">Change line 263 to this</span></p></figcaption></figure><p>Then we have to go online to Github and create a few things. Starting with the repository, create a repository with any name you like and copy the URL under the "code" dropdown.</p><div class="kg-card kg-callout-card kg-callout-card-blue"><div class="kg-callout-emoji">⚠️</div><div class="kg-callout-text">If your do not have a custom domain the name of your Github repo should be your Github username or the static site generator will not work!</div></div><p></p><figure class="kg-card kg-image-card"><img src="https://cadenkraft.com/content/images/2022/02/image-13.webp" class="kg-image" alt loading="lazy" width="373" height="252"></figure><p>We want to add this repository as a remote repository location for git to push the files. We can do this by running </p><pre><code class="language-bash">git remote add origin https://github.com/yourlinkhere.git</code></pre><p>We need to go back to Github and generate a personal access token that ecto1 can use when creating the site to push files to your repo. Go to this <a href="https://github.com/settings/tokens?ref=10.0.0.222">link here</a> and create a new token with a name of your choice and give it repo permissions. Copy this link and keep it somewhere safe (e.g., not in your git repository folder). Next, we can run the following commands to test everything working.</p><figure class="kg-card kg-code-card"><pre><code class="language-bash">touch test
 git add .
 git commit -m "first commit"
 git push -u origin master
@@ -956,7 +956,7 @@ git push -u origin master</code></pre><figcaption><p><span style="white-space: p
     <a class='c-share__link'
        title='Share on Pinterest'
        aria-label='Share on Pinterest'
-       href="https://pinterest.com/pin/create/button/?url=https://cadenkraft.com/creating-a-ghost-blog-with-free-webhosting/&media=https://cadenkraft.com/content/images/2022/02/ghost-blog.avif&description=Ghost%20Blog%20with%20Free%20Webhosting"
+       href="https://pinterest.com/pin/create/button/?url=https://cadenkraft.com/creating-a-ghost-blog-with-free-webhosting/&media=https://cadenkraft.com/content/images/2022/02/ghost-blog.webp&description=Ghost%20Blog%20with%20Free%20Webhosting"
        onclick="window.open(this.href, 'pinterest-share', 'width=580, height=296'); return false;">
       <span data-icon='ei-sc-pinterest' data-size='s' class='c-share__icon'></span>
     </a>
@@ -1070,10 +1070,10 @@ git push -u origin master</code></pre><figcaption><p><span style="white-space: p
           alt='The NTPixie, A WiFi Nixie Tube Clock'
           class='c-post-card__image lazyload'
           data-srcset='
-            /content/images/size/w612/2023/06/nixie-tube-clock-render.3.avif 612w,
-            /content/images/size/w1462/2023/06/nixie-tube-clock-render.3.avif 1462w'
+            /content/images/size/w612/2023/06/nixie-tube-clock-render.3.webp 612w,
+            /content/images/size/w1462/2023/06/nixie-tube-clock-render.3.webp 1462w'
           sizes='(min-width: 1280px) 153px, (min-width: 1040px) 12.27vw, (min-width: 640px) calc(22.37vw - 44px), calc(100vw - 32px)'
-          data-src='/content/images/size/w1462/2023/06/nixie-tube-clock-render.3.avif'
+          data-src='/content/images/size/w1462/2023/06/nixie-tube-clock-render.3.webp'
         >
       </div>
     </div>
@@ -1125,10 +1125,10 @@ git push -u origin master</code></pre><figcaption><p><span style="white-space: p
           alt='Solar Car GPS Tracker'
           class='c-post-card__image lazyload'
           data-srcset='
-            /content/images/size/w612/2022/09/solar-car-tracker-image.avif 612w,
-            /content/images/size/w1462/2022/09/solar-car-tracker-image.avif 1462w'
+            /content/images/size/w612/2022/09/solar-car-tracker-image.webp 612w,
+            /content/images/size/w1462/2022/09/solar-car-tracker-image.webp 1462w'
           sizes='(min-width: 1280px) 153px, (min-width: 1040px) 12.27vw, (min-width: 640px) calc(22.37vw - 44px), calc(100vw - 32px)'
-          data-src='/content/images/size/w1462/2022/09/solar-car-tracker-image.avif'
+          data-src='/content/images/size/w1462/2022/09/solar-car-tracker-image.webp'
         >
       </div>
     </div>
@@ -1180,10 +1180,10 @@ git push -u origin master</code></pre><figcaption><p><span style="white-space: p
           alt='Single Part Raspberry Pi Compute Cluster'
           class='c-post-card__image lazyload'
           data-srcset='
-            /content/images/size/w612/2023/07/rpi-cluster.11.avif 612w,
-            /content/images/size/w1462/2023/07/rpi-cluster.11.avif 1462w'
+            /content/images/size/w612/2023/07/rpi-cluster.11.webp 612w,
+            /content/images/size/w1462/2023/07/rpi-cluster.11.webp 1462w'
           sizes='(min-width: 1280px) 153px, (min-width: 1040px) 12.27vw, (min-width: 640px) calc(22.37vw - 44px), calc(100vw - 32px)'
-          data-src='/content/images/size/w1462/2023/07/rpi-cluster.11.avif'
+          data-src='/content/images/size/w1462/2023/07/rpi-cluster.11.webp'
         >
       </div>
     </div>

@@ -38,6 +38,7 @@ while getopts ":o:" opt; do
         echo 'Conversion to webp has started'
         sleep 1
         find $WWW/content/images/. -newer $WWW/content/images/optimg-webp.flag -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec mogrify -format webp {}  \; -print
+        #find $WWW/content/images/. -newer $WWW/content/images/optimg-webp.flag -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec mogrify -format webp {}  \; -print
         #find $WWW/content/images/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec rm {}  \; -print
         grep -lR ".$JPG" $WWW/ | xargs sed -i "s/\.$JPG/\.$WEBP/g"
         grep -lR ".$JPEG" $WWW/ | xargs sed -i "s/\.$JPEG/\.$WEBP/g"
