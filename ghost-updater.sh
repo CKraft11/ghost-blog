@@ -37,7 +37,8 @@ while getopts ":o:" opt; do
       if [ $arg_o = "webp" ]; then
         echo 'Conversion to webp has started'
         sleep 1
-        find $WWW/content/images/. -newer $WWW/content/images/optimg-webp.flag -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec mogrify -format webp {}  \; -print
+        find $WWW/content/images/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec mogrify -format webp {}  \; -print
+        find $WWW/content/renders/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec mogrify -format webp {}  \; -print
         #find $WWW/content/images/. -newer $WWW/content/images/optimg-webp.flag -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec mogrify -format webp {}  \; -print
         #find $WWW/content/images/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec rm {}  \; -print
         grep -lR ".$JPG" $WWW/ | xargs sed -i "s/\.$JPG/\.$WEBP/g"
@@ -81,8 +82,3 @@ git add .
 git commit -m "Compiled Changes - $date | $IMGMSG" #.gitignore ghost-updater.sh ecto1.py requirements.txt README.md serve.py $WWW/.
 git config --global credential.helper store
 git push -u origin master
-
-
-
-
-
