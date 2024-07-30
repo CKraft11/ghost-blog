@@ -40,7 +40,7 @@
     <meta property="og:url" content="https://cadenkraft.com/designing-a-coreless-axial-flux-motor-part-1/">
     <meta property="og:image" content="https://cadenkraft.com/content/images/2022/09/title-page-render-axial-flux-motor.16.webp">
     <meta property="article:published_time" content="2022-09-09T04:39:12.000Z">
-    <meta property="article:modified_time" content="2024-02-28T17:35:44.000Z">
+    <meta property="article:modified_time" content="2024-07-30T04:57:47.000Z">
     <meta property="article:tag" content="Motors">
     <meta property="article:tag" content="Build">
     
@@ -80,7 +80,7 @@
     "headline": "Ironless Axial Flux Motor",
     "url": "https://cadenkraft.com/designing-a-coreless-axial-flux-motor-part-1/",
     "datePublished": "2022-09-09T04:39:12.000Z",
-    "dateModified": "2024-02-28T17:35:44.000Z",
+    "dateModified": "2024-07-30T04:57:47.000Z",
     "image": {
         "@type": "ImageObject",
         "url": "https://cadenkraft.com/content/images/2022/09/title-page-render-axial-flux-motor.16.webp",
@@ -99,8 +99,8 @@
     <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/sodo-search.min.js" data-key="3e74f414b63324d66c09dfed49" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/main.css" data-sodo-search="https://cadenkraft.com/" crossorigin="anonymous"></script>
     
     <link href="https://cadenkraft.com/webmentions/receive/" rel="webmention">
-    <script defer src="/public/cards.min.js?v=c8b009762f"></script>
-    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=c8b009762f">
+    <script defer src="/public/cards.min.js?v=275494c3cc"></script>
+    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=275494c3cc">
     
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Z51SVJ5W4"></script>
@@ -713,7 +713,7 @@ p code {
 
 
 
-<style>:root {--ghost-accent-color: #6EFFA8;}</style>
+<style>:root {--ghost-accent-color: #72c7ff;}</style>
 </head>
 <body class='post-template tag-motors tag-build'>
   <a href='#main-content' class='c-skip-to-content'>Skip to content</a>
@@ -800,7 +800,7 @@ p code {
     </figure>
 </header>
       <section class='c-content'>
-        <p>After my first custom brushless motor I felt confident enough with the basic theory of how they work to make a second design with significantly more thought and math defining the design. </p><figure class="kg-card kg-bookmark-card"><a class="kg-bookmark-container" href="https://cadenkraft.com/creating-a-3d-printed-brushless-motor/?ref=10.0.0.222"><div class="kg-bookmark-content"><div class="kg-bookmark-title">Creating a 3D Printed Brushless Motor</div><div class="kg-bookmark-description">With my work in the Iowa State Solar Car club I have learned so many things about so many different technologies that I have not had the chance of working with before. One of the things that has come to interest me the most are motors. Getting the chance to</div><div class="kg-bookmark-metadata"><img class="kg-bookmark-icon" src="https://cadenkraft.com/content/images/size/w256h256/2022/02/portfolio-circle.webp" alt><span class="kg-bookmark-author">Caden Kraft</span><span class="kg-bookmark-publisher">Caden Kraft</span></div></div><div class="kg-bookmark-thumbnail"><img src="https://cadenkraft.com/content/images/2022/07/motor-title-render.14.webp" alt></div></a></figure><p>As my first design was made by looking at images online and implementing dimensions based on what looked right I found that there were some serious inefficiencies that could be remedied with a bit of math.</p><h2 id="why-axial-flux">Why Axial Flux?</h2><p></p><p>One of the main reasons that I chose to use an axial flux motor design was because the air gap between the magnets and the coils is more or less two dimensional. As opposed to a traditional radial flux motor this allows me to adjust the air gap with shims instead of redesigning the rotor every time to adjust it.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://cadenkraft.com/content/images/2022/09/radial-flux-vs-axial-flux.webp" class="kg-image" alt loading="lazy" width="658" height="343" srcset="https://cadenkraft.com/content/images/size/w600/2022/09/radial-flux-vs-axial-flux.webp 600w, https://cadenkraft.com/content/images/2022/09/radial-flux-vs-axial-flux.webp 658w"><figcaption><span style="white-space: pre-wrap;">Axial Flux (left), Radial Flux (right)</span></figcaption></figure><p>Another benefit to this design is that because this is a DIY project I do not have the budget to order the custom magnets with a bend for a radial flux rotor.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://cadenkraft.com/content/images/2022/09/radial-flux-magnets.webp" class="kg-image" alt loading="lazy" width="800" height="600" srcset="https://cadenkraft.com/content/images/size/w600/2022/09/radial-flux-magnets.webp 600w, https://cadenkraft.com/content/images/2022/09/radial-flux-magnets.webp 800w" sizes="(min-width: 720px) 720px"><figcaption><span style="white-space: pre-wrap;">Magnets traditionally used in radial flux motor</span></figcaption></figure><p>The flat nature of an axial flux motor allows me to use traditional rectangular bar magnets that can be found cheaply online in large quantities without the need to have them custom made.</p><h2 id="coreless-design-and-halbach-array">Coreless Design and Halbach Array</h2><p></p><p>Similarly to the magnets, due to cost constraints for this project and the manufacturing capability that I currently have in my college apartment, I am not able to custom make ferrite or steel laminate ferrous cores inside the coils. </p><p>As a ferrous core is extremely important in shaping the magnetic field around the coils, I had to research a different solution to remedy this and came across the Halbach magnet array. This works by alternating the magnet poles by 90 degrees at a time instead of 180 degrees like normal designs.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://cadenkraft.com/content/images/2022/09/Halbach-Array-vs-Alt-Pol.webp" class="kg-image" alt loading="lazy" width="400" height="414"><figcaption><span style="white-space: pre-wrap;">Halbach Array (top), Alternating Array (bottom)</span></figcaption></figure><p>This uses extra magnets to shape the magnetic field as a iron core traditionally would. As there are very little designs on the internet that I could find the utilize a Halbach pattern I chose to implement it into my design to hopefully contribute some experience implementing it into a motor once the design is completed.</p><p>This means that while the rotor of my motor has 12 poles it actually utilizes 24 magnets to implement the Halbach design.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://cadenkraft.com/content/images/2022/09/halbach-array.webp" class="kg-image" alt loading="lazy" width="400" height="253"><figcaption><span style="white-space: pre-wrap;">Example of Halbach array pattern</span></figcaption></figure><h2 id="defining-specifications">Defining Specifications</h2><p></p><p>Next I had to define a few specifications around various aspects of the motor needed to calculate the number of coil turns needed for the final design. </p><p>I found an excellent research paper online that outlined the mathematical parameters needed to successfully create a Halbach axial flux design.</p><figure class="kg-card kg-bookmark-card kg-card-hascaption"><a class="kg-bookmark-container" href="https://www.semanticscholar.org/paper/Paper-088-%2C-ENG-xxx-Design-and-Test-of-an-Ironless-Batzel-Skraba/96e7cbb78f65cbfa8df6c1b3a050aeac3c1bbd05?ref=10.0.0.222"><div class="kg-bookmark-content"><div class="kg-bookmark-title">[PDF] Paper 088 , ENG-xxx Design and Test of an Ironless Axial Flux Permanent Magnet Machine using Halbach Array | Semantic Scholar</div><div class="kg-bookmark-description">Conventional permanent magnet electric machines utilize ferromagnetic cores of high permeability. The high core permeability relative to the surrounding material helps to concentrate the magnetic flux in the core, and guide the flux across the airgap of the machine. An ironless machine design remove…</div><div class="kg-bookmark-metadata"><img class="kg-bookmark-icon" src="https://cdn.semanticscholar.org/953b8efbde4e5220/img/mstile-310x310.webp" alt><span class="kg-bookmark-author">Semantic ScholarSemantic Scholar's Logo</span><span class="kg-bookmark-publisher">T. Batzel</span></div></div><div class="kg-bookmark-thumbnail"><img src="https://www.semanticscholar.org/img/semantic_scholar_og.webp" alt></div></a><figcaption><p><span style="white-space: pre-wrap;">Design and Test of an Ironless Axial Flux Permanent Magnet Machine using Halbach Array</span></p></figcaption></figure><p>Through this paper and some preliminary CAD design as well as a quick inventory of all of the motor controllers and bearings that I had already, I was able to define certain parameters needed to calculate the coil turns below.</p><table>
+        <p>After my first custom brushless motor I felt confident enough with the basic theory of how they work to make a second design with significantly more thought and math defining the design. </p><figure class="kg-card kg-bookmark-card"><a class="kg-bookmark-container" href="https://cadenkraft.com/creating-a-3d-printed-brushless-motor/?ref=10.0.0.222"><div class="kg-bookmark-content"><div class="kg-bookmark-title">Creating a 3D Printed Brushless Motor</div><div class="kg-bookmark-description">With my work in the Iowa State Solar Car club I have learned so many things about so many different technologies that I have not had the chance of working with before. One of the things that has come to interest me the most are motors. Getting the chance to</div><div class="kg-bookmark-metadata"><img class="kg-bookmark-icon" src="https://cadenkraft.com/content/images/size/w256h256/2022/02/portfolio-circle.webp" alt><span class="kg-bookmark-author">Caden Kraft</span><span class="kg-bookmark-publisher">Caden Kraft</span></div></div><div class="kg-bookmark-thumbnail"><img src="https://cadenkraft.com/content/images/2022/07/motor-title-render.14.webp" alt></div></a></figure><p>As my first design was made by looking at images online and implementing dimensions based on what looked right I found that there were some serious inefficiencies that could be remedied with a bit of math.</p><h2 id="why-axial-flux">Why Axial Flux?</h2><p></p><p>One of the main reasons that I chose to use an axial flux motor design was because the air gap between the magnets and the coils is more or less two dimensional. As opposed to a traditional radial flux motor this allows me to adjust the air gap with shims instead of redesigning the rotor every time to adjust it.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://cadenkraft.com/content/images/2022/09/radial-flux-vs-axial-flux.webp" class="kg-image" alt loading="lazy" width="658" height="343" srcset="https://cadenkraft.com/content/images/size/w600/2022/09/radial-flux-vs-axial-flux.webp 600w, https://cadenkraft.com/content/images/2022/09/radial-flux-vs-axial-flux.webp 658w"><figcaption><span style="white-space: pre-wrap;">Axial Flux (left), Radial Flux (right)</span></figcaption></figure><p>Another benefit to this design is that because this is a DIY project I do not have the budget to order the custom magnets with a bend for a radial flux rotor.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://cadenkraft.com/content/images/2022/09/radial-flux-magnets.webp" class="kg-image" alt loading="lazy" width="800" height="600" srcset="https://cadenkraft.com/content/images/size/w600/2022/09/radial-flux-magnets.webp 600w, https://cadenkraft.com/content/images/2022/09/radial-flux-magnets.webp 800w" sizes="(min-width: 720px) 720px"><figcaption><span style="white-space: pre-wrap;">Magnets traditionally used in radial flux motor</span></figcaption></figure><p>The flat nature of an axial flux motor allows me to use traditional rectangular bar magnets that can be found cheaply online in large quantities without the need to have them custom made.</p><h2 id="coreless-design-and-halbach-array">Coreless Design and Halbach Array</h2><p></p><p>Similarly to the magnets, due to cost constraints for this project and the manufacturing capability that I currently have in my college apartment, I am not able to custom make ferrite or steel laminate ferrous cores inside the coils. </p><p>As a ferrous core is extremely important in shaping the magnetic field around the coils, I had to research a different solution to remedy this and came across the Halbach magnet array. This works by alternating the magnet poles by 90 degrees at a time instead of 180 degrees like normal designs.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://cadenkraft.com/content/images/2022/09/Halbach-Array-vs-Alt-Pol.webp" class="kg-image" alt loading="lazy" width="400" height="414"><figcaption><span style="white-space: pre-wrap;">Halbach Array (top), Alternating Array (bottom)</span></figcaption></figure><p>This uses extra magnets to shape the magnetic field as a iron core traditionally would. As there are very little designs on the internet that I could find the utilize a Halbach pattern I chose to implement it into my design to hopefully contribute some experience implementing it into a motor once the design is completed.</p><p>This means that while the rotor of my motor has 12 poles it actually utilizes 24 magnets to implement the Halbach design.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://cadenkraft.com/content/images/2022/09/halbach-array.webp" class="kg-image" alt loading="lazy" width="400" height="253"><figcaption><span style="white-space: pre-wrap;">Example of Halbach array pattern</span></figcaption></figure><h2 id="defining-specifications">Defining Specifications</h2><p></p><p>Next I had to define a few specifications around various aspects of the motor needed to calculate the number of coil turns needed for the final design. </p><p>I found an excellent research paper online that outlined the mathematical parameters needed to successfully create a Halbach axial flux design.</p><figure class="kg-card kg-bookmark-card kg-card-hascaption"><a class="kg-bookmark-container" href="https://www.semanticscholar.org/paper/Paper-088-%2C-ENG-xxx-Design-and-Test-of-an-Ironless-Batzel-Skraba/96e7cbb78f65cbfa8df6c1b3a050aeac3c1bbd05?ref=10.0.0.222"><div class="kg-bookmark-content"><div class="kg-bookmark-title">[PDF] Paper 088 , ENG-xxx Design and Test of an Ironless Axial Flux Permanent Magnet Machine using Halbach Array | Semantic Scholar</div><div class="kg-bookmark-description">Conventional permanent magnet electric machines utilize ferromagnetic cores of high permeability. The high core permeability relative to the surrounding material helps to concentrate the magnetic flux in the core, and guide the flux across the airgap of the machine. An ironless machine design remove…</div><div class="kg-bookmark-metadata"><img class="kg-bookmark-icon" src="https://cdn.semanticscholar.org/953b8efbde4e5220/img/mstile-310x310.webp" alt><span class="kg-bookmark-author">Semantic ScholarSemantic Scholar's Logo</span><span class="kg-bookmark-publisher">T. Batzel</span></div></div><div class="kg-bookmark-thumbnail"><img src="https://www.semanticscholar.org/img/semantic_scholar_og.webp" alt></div></a><figcaption><p><span style="white-space: pre-wrap;">Design and Test of an Ironless Axial Flux Permanent Magnet Machine using Halbach Array</span></p></figcaption></figure><p>Through this paper and some preliminary CAD design as well as a quick inventory of all of the motor controllers and bearings that I had already, I was able to define certain parameters needed to calculate the coil turns below. The coil area was calculated by taking the approximate area enveloped by the outer perimeter of copper of a single coil.</p><table>
 <thead>
 <tr>
 <th>Parameter</th>
@@ -825,11 +825,11 @@ p code {
 <td>0.65 mm</td>
 </tr>
 <tr>
-<td>Poles</td>
+<td>Poles ($p$)</td>
 <td>12</td>
 </tr>
 <tr>
-<td>Coils</td>
+<td>Coils ($c$)</td>
 <td>18</td>
 </tr>
 <tr>
@@ -839,6 +839,10 @@ p code {
 <tr>
 <td>Coil Area ($A_{coil}$)</td>
 <td>4.92*10<sup>-4</sup> m<sup>2</sup></td>
+</tr>
+<tr>
+<td>Rotor Area ($A_{rotor}$)</td>
+<td>9.42*10<sup>-3</sup> m<sup>2</sup></td>
 </tr>
 <tr>
 <td>Outer Radius ($r_o$)</td>
@@ -854,8 +858,7 @@ p code {
 </tr>
 </tbody>
 </table>
-<p>I chose for the motor to have 12 poles and 18 coils as it has an efficient high winding factor.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://cadenkraft.com/content/images/2022/09/motor-winding.webp" class="kg-image" alt loading="lazy" width="696" height="838" srcset="https://cadenkraft.com/content/images/size/w600/2022/09/motor-winding.webp 600w, https://cadenkraft.com/content/images/2022/09/motor-winding.webp 696w"><figcaption><span style="white-space: pre-wrap;">Winding Factor from Bavaria Direct Online Calculator</span></figcaption></figure><h2 id="calculating-parameters">Calculating Parameters</h2><p></p><p>The first step in defining the coil turns needed is calculating the area of the motor that is covered by the coils.</p><p>$$\small{A_{rotor}=\pi (({r_0}^{2})-({r_i}{r_i}))}$$</p>
-<p>Next, I needed to define an optimal outer to inner radius ratio in order to maximize the efficiency of the motor. As the paper above says, an optimal ratio for this is around 0.5. This allowed me to define the inner and outer radius based on the 36mm*6mm*6mm magnets that I found online.</p><p>$$\small{\alpha=\frac{r_i}{r_o}}$$</p>
+<p>I chose for the motor to have 12 poles and 18 coils as it has an efficient high winding factor.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="https://cadenkraft.com/content/images/2022/09/motor-winding.webp" class="kg-image" alt loading="lazy" width="696" height="838" srcset="https://cadenkraft.com/content/images/size/w600/2022/09/motor-winding.webp 600w, https://cadenkraft.com/content/images/2022/09/motor-winding.webp 696w"><figcaption><span style="white-space: pre-wrap;">Winding Factor from Bavaria Direct Online Calculator</span></figcaption></figure><h2 id="calculating-parameters">Calculating Parameters</h2><p></p><p>The first step in defining the coil turns needed is calculating the area of the motor that is covered by the magnets on the rotor.</p><p>$$\small{A_{\text{rotor}} = (p \cdot 2) \cdot (0.036 m \cdot 0.006 m)}$$</p><p>Next, I needed to define an optimal outer to inner radius ratio in order to maximize the efficiency of the motor. As the paper above says, an optimal ratio for this is around 0.5. This allowed me to define the inner and outer radius based on the 36mm*6mm*6mm magnets that I found online.</p><p>$$\small{\alpha=\frac{r_i}{r_o}}$$</p>
 <p>Then I had to calculate the peak flux density using the equation below as well as the recommended mean air gap flux density of 0.5 Tesla from the paper above.</p><p>$$\small{\tau=\frac{F}{A_{rotor}}=\frac{Bli}{lw}=\frac{Bi}{w}=BZ}$$</p>
 <p>$$\small{B=\frac{2B_m}{\pi}}$$</p>
 <p>After using these two equations I arrived at a mean air gap flux density of 0.785 Tesla. Using the next couple equations I was able to use this value combined with others above to figure out the final number of coil turns. </p><p>$$\small{e_{ph}=N_{ph}A_{coil}\frac{dB(\theta)}{dt}}$$</p>
@@ -1012,7 +1015,7 @@ p code {
     <div class='o-grid'>
       <div class='o-grid__col o-grid__col--center o-grid__col--9-10-m o-grid__col--2-3-l'>
             <div style="align-items:center;"class='c-post-card js-post-card post tag-motors tag-build featured  '>
-<div class="bg-gradients" style="background: conic-gradient(from 160deg at 50% 50%,#6EFFA8 0deg,#6EFFA8 1turn);
+<div class="bg-gradients" style="background: conic-gradient(from 160deg at 50% 50%,var(--ghost-accent-color) 0deg,var(--ghost-accent-color) 1turn);
   -webkit-filter: blur(600px);
   filter: blur(100px);
   height: 200px;
@@ -1067,7 +1070,7 @@ p code {
       </div>
     </div>
 </div>            <div style="align-items:center;"class='c-post-card js-post-card post tag-solar-car tag-build featured  '>
-<div class="bg-gradients" style="background: conic-gradient(from 160deg at 50% 50%,#6EFFA8 0deg,#6EFFA8 1turn);
+<div class="bg-gradients" style="background: conic-gradient(from 160deg at 50% 50%,var(--ghost-accent-color) 0deg,var(--ghost-accent-color) 1turn);
   -webkit-filter: blur(600px);
   filter: blur(100px);
   height: 200px;
@@ -1122,7 +1125,7 @@ p code {
       </div>
     </div>
 </div>            <div style="align-items:center;"class='c-post-card js-post-card post tag-coding tag-build featured  '>
-<div class="bg-gradients" style="background: conic-gradient(from 160deg at 50% 50%,#6EFFA8 0deg,#6EFFA8 1turn);
+<div class="bg-gradients" style="background: conic-gradient(from 160deg at 50% 50%,var(--ghost-accent-color) 0deg,var(--ghost-accent-color) 1turn);
   -webkit-filter: blur(600px);
   filter: blur(100px);
   height: 200px;
@@ -1202,7 +1205,7 @@ p code {
   </div>
 </footer>  </div>
 
-  <script src='/assets/js/app.min.js?v=c8b009762f'></script>
+  <script src='/assets/js/app.min.js?v=275494c3cc'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js" integrity="sha512-9khQRAUBYEJDCDVP2yw3LRUQvjJ0Pjx0EShmaQjcHa6AXiOv6qHQu9lCAIR8O+/D8FtaCoJ2c0Tf9Xo7hYH01Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-fTl/qcO1VgvKtOMApX2PdZzkziyr2stM65GYPLGuYMnuMm1z2JLJG6XVU7C/mR+E7xBUqCivykuhlzfqxXBXbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
