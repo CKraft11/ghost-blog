@@ -35,16 +35,16 @@
     <meta property="og:site_name" content="Caden Kraft">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Resume">
-    <meta property="og:description" content="Caden Kraft ResumeCurrent 2023 ResumeKraftCaden.pdf128 KBdownload-circle">
+    <meta property="og:description" content="Caden Kraft ResumeCurrent 2024 ResumeKraftCaden.pdf129 KBdownload-circle">
     <meta property="og:url" content="https://cadenkraft.com/resume/">
-    <meta property="og:image" content="https://cadenkraft.com/content/images/2024/02/KraftCaden-1.webp">
+    <meta property="og:image" content="https://cadenkraft.com/content/images/2024/09/KraftCaden.webp">
     <meta property="article:published_time" content="2022-02-23T20:47:54.000Z">
-    <meta property="article:modified_time" content="2024-02-29T23:28:07.000Z">
+    <meta property="article:modified_time" content="2024-09-03T18:58:09.000Z">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Resume">
-    <meta name="twitter:description" content="Caden Kraft ResumeCurrent 2023 ResumeKraftCaden.pdf128 KBdownload-circle">
+    <meta name="twitter:description" content="Caden Kraft ResumeCurrent 2024 ResumeKraftCaden.pdf129 KBdownload-circle">
     <meta name="twitter:url" content="https://cadenkraft.com/resume/">
-    <meta name="twitter:image" content="https://cadenkraft.com/content/images/2024/02/KraftCaden-1.webp">
+    <meta name="twitter:image" content="https://cadenkraft.com/content/images/2024/09/KraftCaden.webp">
     <meta name="twitter:label1" content="Written by">
     <meta name="twitter:data1" content="Caden Kraft">
     <meta property="og:image:width" content="1200">
@@ -74,14 +74,14 @@
     "headline": "Resume",
     "url": "https://cadenkraft.com/resume/",
     "datePublished": "2022-02-23T20:47:54.000Z",
-    "dateModified": "2024-02-29T23:28:07.000Z",
+    "dateModified": "2024-09-03T18:58:09.000Z",
     "image": {
         "@type": "ImageObject",
-        "url": "https://cadenkraft.com/content/images/2024/02/KraftCaden-1.webp",
+        "url": "https://cadenkraft.com/content/images/2024/09/KraftCaden.webp",
         "width": 1200,
         "height": 1553
     },
-    "description": "Caden Kraft ResumeCurrent 2023 ResumeKraftCaden.pdf128 KBdownload-circle",
+    "description": "Caden Kraft ResumeCurrent 2024 ResumeKraftCaden.pdf129 KBdownload-circle",
     "mainEntityOfPage": "https://cadenkraft.com/resume/"
 }
     </script>
@@ -92,8 +92,8 @@
     <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/sodo-search.min.js" data-key="3e74f414b63324d66c09dfed49" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/main.css" data-sodo-search="https://cadenkraft.com/" crossorigin="anonymous"></script>
     
     <link href="https://cadenkraft.com/webmentions/receive/" rel="webmention">
-    <script defer src="/public/cards.min.js?v=afeff4a543"></script>
-    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=afeff4a543">
+    <script defer src="/public/cards.min.js?v=f71aa9a192"></script>
+    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=f71aa9a192">
     
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Z51SVJ5W4"></script>
@@ -222,8 +222,8 @@ a:hover {
 .c-post-card__media {
   border-radius: 16px !important;
 }
-.company_card:hover{
-  box-shadow: 0 15px 23px rgba(3, 27, 78, 8%), 0 3px 6px rgba(0, 0, 0, 2%);
+.company_card_inside:hover{
+  box-shadow: 0 6px 15px rgba(3, 27, 78, 8%), 0 2px 5px rgba(0, 0, 0, 2%);
   transition: all .2s ease-in-out;
 }
 .o-grid__col--2-3-l {
@@ -360,6 +360,27 @@ video {
     display: flex;
     align-items: center;
     justify-items: center;
+  }
+  .carousel-wrapper {
+    --width: 95% !important;
+    --num-items: 4;
+    --ani-offset: calc(var(--width) * var(--num-items) * -1) !important;
+    --ani-speed: 16s !important;
+    
+    width: 100%;
+    position:relative;
+    overflow: hidden;
+  }
+  .company_card{
+  flex: 1 0 var(--width) !important;
+  text-align: center;
+  padding:1rem;
+  }
+  
+  @keyframes slide {
+    100% {
+      transform: translateX(var(--ani-offset)) !important;
+    }
   }
 }
 .c-tags a {
@@ -686,6 +707,55 @@ pre:hover {
   display: none;
 }
 
+.carousel-wrapper {
+  --width: 40%;
+  --gap: 1rem;
+  --num-items: 4;
+  --ani-offset: calc(var(--width) * var(--num-items) * -1);
+  --ani-speed: 16s;
+  
+  width: 100%;
+  position:relative;
+  overflow: hidden;
+}
+.carousel-wrapper::before,
+.carousel-wrapper::after{
+  content: '';
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  z-index: 1;
+  top: 0;
+}
+.carousel-wrapper::before{
+  left: 0;
+  background-image: linear-gradient(to right,var(--background-primary) 0%,transparent 50%);
+}
+.carousel-wrapper::after{
+  right: 0;
+  background-image: linear-gradient(to left,var(--background-primary) 0%,transparent 50%);
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  animation: slide var(--ani-speed) linear infinite;
+}
+.company_card{
+  flex: 1 0 var(--width);
+  text-align: center;
+  padding:1rem;
+}
+.company_card:last-child{
+  /*background: red;*/
+}
+
+@keyframes slide {
+  100% {
+    transform: translateX(var(--ani-offset));
+  }
+}
+  
 li code,
 p code {
   background: #e5eff5;
@@ -775,15 +845,15 @@ p code {
         alt='Resume'
         class='c-post-image lazyload'
         data-srcset='
-          /content/images/size/w612/2024/02/KraftCaden-1.webp 612w,
-          /content/images/size/w1462/2024/02/KraftCaden-1.webp 1462w'
+          /content/images/size/w612/2024/09/KraftCaden.webp 612w,
+          /content/images/size/w1462/2024/09/KraftCaden.webp 1462w'
         sizes='(min-width: 1300px) 731px, (min-width: 1040px) calc(44.58vw + 160px), (min-width: 640px) calc(90vw - 61px), calc(100vw - 32px)'
-        data-src='/content/images/size/w1462/2024/02/KraftCaden-1.webp'
+        data-src='/content/images/size/w1462/2024/09/KraftCaden.webp'
       >
     </figure>
 </header>
       <section class='c-content'>
-        <div class="kg-card kg-file-card"><a class="kg-file-card-container" href="https://cadenkraft.com/content/files/2023/09/KraftCaden.pdf" title="Download" download><div class="kg-file-card-contents"><div class="kg-file-card-title">Caden Kraft Resume</div><div class="kg-file-card-caption">Current 2023 Resume</div><div class="kg-file-card-metadata"><div class="kg-file-card-filename">KraftCaden.pdf</div><div class="kg-file-card-filesize">128 KB</div></div></div><div class="kg-file-card-icon"><svg viewbox="0 0 24 24"><defs><style>.a{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><title>download-circle</title><polyline class="a" points="8.25 14.25 12 18 15.75 14.25"/><line class="a" x1="12" y1="6.75" x2="12" y2="18"/><circle class="a" cx="12" cy="12" r="11.25"/></svg></div></a></div>
+        <div class="kg-card kg-file-card"><a class="kg-file-card-container" href="https://cadenkraft.com/content/files/2024/09/KraftCaden.pdf" title="Download" download><div class="kg-file-card-contents"><div class="kg-file-card-title">Caden Kraft Resume</div><div class="kg-file-card-caption">Current 2024 Resume</div><div class="kg-file-card-metadata"><div class="kg-file-card-filename">KraftCaden.pdf</div><div class="kg-file-card-filesize">129 KB</div></div></div><div class="kg-file-card-icon"><svg viewbox="0 0 24 24"><defs><style>.a{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px;}</style></defs><title>download-circle</title><polyline class="a" points="8.25 14.25 12 18 15.75 14.25"/><line class="a" x1="12" y1="6.75" x2="12" y2="18"/><circle class="a" cx="12" cy="12" r="11.25"/></svg></div></a></div>
       </section>
 
       <hr>
@@ -814,7 +884,7 @@ p code {
   </div>
 </footer>  </div>
 
-  <script src='/assets/js/app.min.js?v=afeff4a543'></script>
+  <script src='/assets/js/app.min.js?v=f71aa9a192'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js" integrity="sha512-9khQRAUBYEJDCDVP2yw3LRUQvjJ0Pjx0EShmaQjcHa6AXiOv6qHQu9lCAIR8O+/D8FtaCoJ2c0Tf9Xo7hYH01Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-fTl/qcO1VgvKtOMApX2PdZzkziyr2stM65GYPLGuYMnuMm1z2JLJG6XVU7C/mR+E7xBUqCivykuhlzfqxXBXbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 

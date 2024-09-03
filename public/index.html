@@ -83,8 +83,8 @@
     <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/sodo-search.min.js" data-key="3e74f414b63324d66c09dfed49" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.1/umd/main.css" data-sodo-search="https://cadenkraft.com/" crossorigin="anonymous"></script>
     
     <link href="https://cadenkraft.com/webmentions/receive/" rel="webmention">
-    <script defer src="/public/cards.min.js?v=afeff4a543"></script>
-    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=afeff4a543">
+    <script defer src="/public/cards.min.js?v=f71aa9a192"></script>
+    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=f71aa9a192">
     
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Z51SVJ5W4"></script>
@@ -213,8 +213,8 @@ a:hover {
 .c-post-card__media {
   border-radius: 16px !important;
 }
-.company_card:hover{
-  box-shadow: 0 15px 23px rgba(3, 27, 78, 8%), 0 3px 6px rgba(0, 0, 0, 2%);
+.company_card_inside:hover{
+  box-shadow: 0 6px 15px rgba(3, 27, 78, 8%), 0 2px 5px rgba(0, 0, 0, 2%);
   transition: all .2s ease-in-out;
 }
 .o-grid__col--2-3-l {
@@ -351,6 +351,27 @@ video {
     display: flex;
     align-items: center;
     justify-items: center;
+  }
+  .carousel-wrapper {
+    --width: 95% !important;
+    --num-items: 4;
+    --ani-offset: calc(var(--width) * var(--num-items) * -1) !important;
+    --ani-speed: 16s !important;
+    
+    width: 100%;
+    position:relative;
+    overflow: hidden;
+  }
+  .company_card{
+  flex: 1 0 var(--width) !important;
+  text-align: center;
+  padding:1rem;
+  }
+  
+  @keyframes slide {
+    100% {
+      transform: translateX(var(--ani-offset)) !important;
+    }
   }
 }
 .c-tags a {
@@ -677,6 +698,55 @@ pre:hover {
   display: none;
 }
 
+.carousel-wrapper {
+  --width: 40%;
+  --gap: 1rem;
+  --num-items: 4;
+  --ani-offset: calc(var(--width) * var(--num-items) * -1);
+  --ani-speed: 16s;
+  
+  width: 100%;
+  position:relative;
+  overflow: hidden;
+}
+.carousel-wrapper::before,
+.carousel-wrapper::after{
+  content: '';
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  z-index: 1;
+  top: 0;
+}
+.carousel-wrapper::before{
+  left: 0;
+  background-image: linear-gradient(to right,var(--background-primary) 0%,transparent 50%);
+}
+.carousel-wrapper::after{
+  right: 0;
+  background-image: linear-gradient(to left,var(--background-primary) 0%,transparent 50%);
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  animation: slide var(--ani-speed) linear infinite;
+}
+.company_card{
+  flex: 1 0 var(--width);
+  text-align: center;
+  padding:1rem;
+}
+.company_card:last-child{
+  /*background: red;*/
+}
+
+@keyframes slide {
+  100% {
+    transform: translateX(var(--ani-offset));
+  }
+}
+  
 li code,
 p code {
   background: #e5eff5;
@@ -779,57 +849,138 @@ p code {
         </div>
       </div>
       <h3 style="text-align:center;display:grid;margin:1em;align-items:center;justify-content:center;">Work Experience</h3> 
-      <div style="z-index: 3;align-items:center;grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));margin-bottom:1em;text-align: center;display:grid;grid-column-gap: 1em;grid-row-gap: 1em;">
-        <section class="company_card" style="background: linear-gradient(to bottom, rgba(255,255,255,1) 45%,rgba(255,255,255,0) 100%);border-radius:16px;">
-            <div style="padding:1em;border: 1px solid #E5EFF5;justify-items:center;align-items:center;display: grid;grid-template-columns: 1fr;grid-template-rows: 2fr 0.4fr 1fr 0.5fr;grid-column-gap: 0px;grid-row-gap: 0px;box-shadow: 0 15px 23px rgba(3, 27, 78, 8%), 0 3px 6px rgba(0, 0, 0, 2%);border-radius:16px;width:100%;height:100%;">
-              <div style="grid-area: 1 / 1 / 2 / 2;">
-                  <img style="height: 10em;object-fit: scale-down;" src="https://cadenkraft.com/content/images/2024/02/kcnsc-crop.webp">
+      <div class="carousel-wrapper" style="">
+        <div class="carousel"style="z-index: 3;">
+          <section class="company_card">
+              <div class="company_card_inside" style="background: linear-gradient(to bottom, rgba(255,255,255,1) 45%,rgba(255,255,255,0) 100%);padding:1em;border: 1px solid #E5EFF5;justify-items:center;align-items:center;display: grid;grid-template-columns: 1fr;grid-template-rows: 2fr 0.4fr 1fr 0.5fr;grid-column-gap: 0px;grid-row-gap: 0px;border-radius:16px;width:100%;height:100%;">
+                <div style="grid-area: 1 / 1 / 2 / 2;">
+                    <img style="height: 10em;object-fit: scale-down;" src="https://cadenkraft.com/content/images/2024/09/SpaceX_logo_black.svg.webp">
+                </div>
+                <div style="grid-area: 2 / 1 / 3 / 2;">
+                    <p style="font-weight: bold;">Responsible Engineer</p>
+                </div>
+                <div style="grid-area: 3 / 1 / 4 / 2;">
+                    <p>Developed Dragon latch qualification test that increased latch capability for AMS mission. Qualified solar adhesive saving 560k per year</p>
+                </div>
+                <div style="width:100%;padding:0.5em;border-radius:8px;background:var(--ghost-accent-color);grid-area: 4 / 1 / 5 / 2;">
+                    <h6>May 2024 - Aug 2024</h6>
+                </div>
               </div>
-              <div style="grid-area: 2 / 1 / 3 / 2;">
-                  <p style="font-weight: bold;">Product Design Engineer</p>
+            </section>
+          <section class="company_card">
+              <div class="company_card_inside" style="background: linear-gradient(to bottom, rgba(255,255,255,1) 45%,rgba(255,255,255,0) 100%);padding:1em;border: 1px solid #E5EFF5;justify-items:center;align-items:center;display: grid;grid-template-columns: 1fr;grid-template-rows: 2fr 0.4fr 1fr 0.5fr;grid-column-gap: 0px;grid-row-gap: 0px;border-radius:16px;width:100%;height:100%;">
+                <div style="grid-area: 1 / 1 / 2 / 2;">
+                    <img style="height: 10em;object-fit: scale-down;" src="https://cadenkraft.com/content/images/2024/09/kcnsc-crop.webp">
+                </div>
+                <div style="grid-area: 2 / 1 / 3 / 2;">
+                    <p style="font-weight: bold;">Product Design Engineer</p>
+                </div>
+                <div style="grid-area: 3 / 1 / 4 / 2;">
+                    <p>Engineered fixtures using SolidWorks that both constrained and electrically connected components to a plasma chamber</p>
+                </div>
+                <div style="width:100%;padding:0.5em;border-radius:8px;background:var(--ghost-accent-color);grid-area: 4 / 1 / 5 / 2;">
+                    <h6>May 2023 - Aug 2023</h6>
+                </div>
               </div>
-              <div style="grid-area: 3 / 1 / 4 / 2;">
-                  <p>Engineered fixtures using SolidWorks that both constrained and electrically connected components to a plasma chamber</p>
+            </section>
+          <section class="company_card">
+              <div class="company_card_inside" style="background: linear-gradient(to bottom, rgba(255,255,255,1) 45%,rgba(255,255,255,0) 100%);padding:1em;border: 1px solid #E5EFF5;justify-items:center;align-items:center;display: grid;grid-template-columns: 1fr;grid-template-rows: 2fr 0.4fr 1fr 0.5fr;grid-column-gap: 0px;grid-row-gap: 0px;border-radius:16px;width:100%;height:100%;">
+                <div style="grid-area: 1 / 1 / 2 / 2;">
+                    <img style="height: 10em;object-fit: scale-down;" src="https://cadenkraft.com/content/images/2024/09/Tesla_logo-2.webp">
+                </div>
+                <div style="grid-area: 2 / 1 / 3 / 2;">
+                    <p style="font-weight: bold;">Mechanical Design Engineer</p>
+                </div>
+                <div style="grid-area: 3 / 1 / 4 / 2;">
+                    <p>Self led development of a new high voltage connector that reduced part count by 350% and cut costs by 42 million dollars per year</p>
+                </div>
+                <div style="width:100%;padding:0.5em;border-radius:8px;background:var(--ghost-accent-color);grid-area: 4 / 1 / 5 / 2;">
+                    <h6>Jan 2023 - May 2023</h6>
+                </div>
               </div>
-              <div style="width:100%;padding:0.5em;border-radius:8px;background:var(--ghost-accent-color);grid-area: 4 / 1 / 5 / 2;">
-                  <h6>May 2023 - Aug 2023</h6>
+            </section>
+          <section class="company_card">
+              <div class="company_card_inside" style="background: linear-gradient(to bottom, rgba(255,255,255,1) 45%,rgba(255,255,255,0) 100%);padding:1em;border: 1px solid #E5EFF5;justify-items:center;align-items:center;display: grid;grid-template-columns: 1fr;grid-template-rows: 2fr 0.4fr 1fr 0.5fr;grid-column-gap: 0px;grid-row-gap: 0px;border-radius:16px;width:100%;height:100%;">
+                <div style="grid-area: 1 / 1 / 2 / 2;">
+                    <img style="height: 10em;object-fit: scale-down;" src="https://cadenkraft.com/content/images/2024/09/husco_international_logo-1.webp">
+                </div>
+                <div style="grid-area: 2 / 1 / 3 / 2;">
+                    <p style="font-weight: bold;">Mechanical Design Engineer</p>
+                </div>
+                <div style="grid-area: 3 / 1 / 4 / 2;">
+                    <p>Identified and solved issue plaguing solenoid production for over 6 years. Created a fixture to rework lost yield saving $120,000</p>
+                </div>
+                <div style="width:100%;padding:0.5em;border-radius:8px;background:var(--ghost-accent-color);grid-area: 4 / 1 / 5 / 2;">
+                    <h6>May 2022 - Aug 2022</h6>
+                </div>
               </div>
-            </div>
-          </section>
-        <section class="company_card" style="background: linear-gradient(to bottom, rgba(255,255,255,1) 45%,rgba(255,255,255,0) 100%);border-radius:16px;">
-            <div style="padding:1em;border: 1px solid #E5EFF5;justify-items:center;align-items:center;display: grid;grid-template-columns: 1fr;grid-template-rows: 2fr 0.4fr 1fr 0.5fr;grid-column-gap: 0px;grid-row-gap: 0px;box-shadow: 0 15px 23px rgba(3, 27, 78, 8%), 0 3px 6px rgba(0, 0, 0, 2%);border-radius:16px;width:100%;height:100%;">
-              <div style="grid-area: 1 / 1 / 2 / 2;">
-                  <img style="height: 10em;object-fit: scale-down;" src="https://cadenkraft.com/content/images/2024/02/Tesla_logo-2.webp">
+            </section>
+          <section class="company_card">
+              <div class="company_card_inside" style="background: linear-gradient(to bottom, rgba(255,255,255,1) 45%,rgba(255,255,255,0) 100%);padding:1em;border: 1px solid #E5EFF5;justify-items:center;align-items:center;display: grid;grid-template-columns: 1fr;grid-template-rows: 2fr 0.4fr 1fr 0.5fr;grid-column-gap: 0px;grid-row-gap: 0px;border-radius:16px;width:100%;height:100%;">
+                <div style="grid-area: 1 / 1 / 2 / 2;">
+                    <img style="height: 10em;object-fit: scale-down;" src="https://cadenkraft.com/content/images/2024/09/SpaceX_logo_black.svg.webp">
+                </div>
+                <div style="grid-area: 2 / 1 / 3 / 2;">
+                    <p style="font-weight: bold;">Responsible Engineer</p>
+                </div>
+                <div style="grid-area: 3 / 1 / 4 / 2;">
+                    <p>Developed Dragon latch qualification test that increased latch capability for AMS mission. Qualified solar adhesive saving 560k per year</p>
+                </div>
+                <div style="width:100%;padding:0.5em;border-radius:8px;background:var(--ghost-accent-color);grid-area: 4 / 1 / 5 / 2;">
+                    <h6>May 2024 - Aug 2024</h6>
+                </div>
               </div>
-              <div style="grid-area: 2 / 1 / 3 / 2;">
-                  <p style="font-weight: bold;">Mechanical Design Engineer</p>
+            </section>
+          <section class="company_card">
+              <div class="company_card_inside" style="background: linear-gradient(to bottom, rgba(255,255,255,1) 45%,rgba(255,255,255,0) 100%);padding:1em;border: 1px solid #E5EFF5;justify-items:center;align-items:center;display: grid;grid-template-columns: 1fr;grid-template-rows: 2fr 0.4fr 1fr 0.5fr;grid-column-gap: 0px;grid-row-gap: 0px;border-radius:16px;width:100%;height:100%;">
+                <div style="grid-area: 1 / 1 / 2 / 2;">
+                    <img style="height: 10em;object-fit: scale-down;" src="https://cadenkraft.com/content/images/2024/09/kcnsc-crop.webp">
+                </div>
+                <div style="grid-area: 2 / 1 / 3 / 2;">
+                    <p style="font-weight: bold;">Product Design Engineer</p>
+                </div>
+                <div style="grid-area: 3 / 1 / 4 / 2;">
+                    <p>Engineered fixtures using SolidWorks that both constrained and electrically connected components to a plasma chamber</p>
+                </div>
+                <div style="width:100%;padding:0.5em;border-radius:8px;background:var(--ghost-accent-color);grid-area: 4 / 1 / 5 / 2;">
+                    <h6>May 2023 - Aug 2023</h6>
+                </div>
               </div>
-              <div style="grid-area: 3 / 1 / 4 / 2;">
-                  <p>Self led development of a new high voltage connector that reduced part count by 350% and cut costs by 42 million dollars per year</p>
+            </section>
+          <section class="company_card">
+              <div class="company_card_inside" style="background: linear-gradient(to bottom, rgba(255,255,255,1) 45%,rgba(255,255,255,0) 100%);padding:1em;border: 1px solid #E5EFF5;justify-items:center;align-items:center;display: grid;grid-template-columns: 1fr;grid-template-rows: 2fr 0.4fr 1fr 0.5fr;grid-column-gap: 0px;grid-row-gap: 0px;border-radius:16px;width:100%;height:100%;">
+                <div style="grid-area: 1 / 1 / 2 / 2;">
+                    <img style="height: 10em;object-fit: scale-down;" src="https://cadenkraft.com/content/images/2024/09/Tesla_logo-2.webp">
+                </div>
+                <div style="grid-area: 2 / 1 / 3 / 2;">
+                    <p style="font-weight: bold;">Mechanical Design Engineer</p>
+                </div>
+                <div style="grid-area: 3 / 1 / 4 / 2;">
+                    <p>Self led development of a new high voltage connector that reduced part count by 350% and cut costs by 42 million dollars per year</p>
+                </div>
+                <div style="width:100%;padding:0.5em;border-radius:8px;background:var(--ghost-accent-color);grid-area: 4 / 1 / 5 / 2;">
+                    <h6>Jan 2023 - May 2023</h6>
+                </div>
               </div>
-              <div style="width:100%;padding:0.5em;border-radius:8px;background:var(--ghost-accent-color);grid-area: 4 / 1 / 5 / 2;">
-                  <h6>Jan 2023 - May 2023</h6>
+            </section>
+          <section class="company_card">
+              <div class="company_card_inside" style="background: linear-gradient(to bottom, rgba(255,255,255,1) 45%,rgba(255,255,255,0) 100%);padding:1em;border: 1px solid #E5EFF5;justify-items:center;align-items:center;display: grid;grid-template-columns: 1fr;grid-template-rows: 2fr 0.4fr 1fr 0.5fr;grid-column-gap: 0px;grid-row-gap: 0px;border-radius:16px;width:100%;height:100%;">
+                <div style="grid-area: 1 / 1 / 2 / 2;">
+                    <img style="height: 10em;object-fit: scale-down;" src="https://cadenkraft.com/content/images/2024/09/husco_international_logo-1.webp">
+                </div>
+                <div style="grid-area: 2 / 1 / 3 / 2;">
+                    <p style="font-weight: bold;">Mechanical Design Engineer</p>
+                </div>
+                <div style="grid-area: 3 / 1 / 4 / 2;">
+                    <p>Identified and solved issue plaguing solenoid production for over 6 years. Created a fixture to rework lost yield saving $120,000</p>
+                </div>
+                <div style="width:100%;padding:0.5em;border-radius:8px;background:var(--ghost-accent-color);grid-area: 4 / 1 / 5 / 2;">
+                    <h6>May 2022 - Aug 2022</h6>
+                </div>
               </div>
-            </div>
-          </section>
-        <section class="company_card" style="background: linear-gradient(to bottom, rgba(255,255,255,1) 45%,rgba(255,255,255,0) 100%);border-radius:16px;">
-            <div style="padding:1em;border: 1px solid #E5EFF5;justify-items:center;align-items:center;display: grid;grid-template-columns: 1fr;grid-template-rows: 2fr 0.4fr 1fr 0.5fr;grid-column-gap: 0px;grid-row-gap: 0px;box-shadow: 0 15px 23px rgba(3, 27, 78, 8%), 0 3px 6px rgba(0, 0, 0, 2%);border-radius:16px;width:100%;height:100%;">
-              <div style="grid-area: 1 / 1 / 2 / 2;">
-                  <img style="height: 10em;object-fit: scale-down;" src="https://cadenkraft.com/content/images/2024/02/husco_international_logo-1.webp">
-              </div>
-              <div style="grid-area: 2 / 1 / 3 / 2;">
-                  <p style="font-weight: bold;">Mechanical Design Engineer</p>
-              </div>
-              <div style="grid-area: 3 / 1 / 4 / 2;">
-                  <p>Identified and solved issue plaguing solenoid production for over 6 years. Created a fixture to rework lost yield saving $120,000</p>
-              </div>
-              <div style="width:100%;padding:0.5em;border-radius:8px;background:var(--ghost-accent-color);grid-area: 4 / 1 / 5 / 2;">
-                  <h6>May 2022 - Aug 2022</h6>
-              </div>
-            </div>
-          </section>
+            </section>
+        </div>
       </div>
-      
       <h3 style="text-align:center;display:grid;margin:1em;align-items:center;justify-content:center;">Featured Projects</h3>
   </div>
   <div class="bg-gradients" style="background: conic-gradient(from 140deg at 40% 60%,var(--ghost-accent-color) 0deg,var(--ghost-accent-color) 1turn);
@@ -839,7 +990,7 @@ p code {
   opacity: 70%;
   position: absolute;
   top: 750px;
-  width: 50%;
+  width: 35%;
   z-index: -1;
   left:0;
   right:0;
@@ -1383,7 +1534,7 @@ p code {
   </div>
 </footer>  </div>
 
-  <script src='/assets/js/app.min.js?v=afeff4a543'></script>
+  <script src='/assets/js/app.min.js?v=f71aa9a192'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-core.min.js" integrity="sha512-9khQRAUBYEJDCDVP2yw3LRUQvjJ0Pjx0EShmaQjcHa6AXiOv6qHQu9lCAIR8O+/D8FtaCoJ2c0Tf9Xo7hYH01Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-fTl/qcO1VgvKtOMApX2PdZzkziyr2stM65GYPLGuYMnuMm1z2JLJG6XVU7C/mR+E7xBUqCivykuhlzfqxXBXbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
