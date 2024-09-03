@@ -15,6 +15,7 @@ WWW="public"
 
 git pull origin master
 rm -r $WWW/content/renders
+rm -r $WWW/content/images
 # mkdir $WWW
 # cp no-border-light-ghost.css $WWW/
 # cd $WWW
@@ -46,11 +47,10 @@ while getopts ":o:" opt; do
         grep -lR ".$PNG" $WWW/ | xargs sed -i "s/\.$PNG/\.$WEBP/g"
         echo 'Conversion to webp has completed'
         IMGMSG="Images converted to webp"
-        touch $WWW/content/images/optimg-webp.flag
       elif [ $arg_o = "avif" ]; then
         echo 'Conversion to avif has started'
         sleep 1
-        find $WWW/content/images/. -newer $WWW/content/images/optimg-avif.flag -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec mogrify -format avif -depth 10 -alpha on -define heic:speed=8 {}  \; -print
+        find $WWW/content/images/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec mogrify -format avif -depth 10 -alpha on -define heic:speed=8 {}  \; -print
         find $WWW/content/renders/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec mogrify -format avif -depth 10 -alpha on -define heic:speed=8 {}  \; -print
         #find $WWW/content/images/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec mogrify -format avif -depth 10 -alpha on -define heic:speed=8 {}  \; -print
         #find $WWW/content/images/. -type f -regex ".*\.\($JPG\|$JPEG\|$PNG\)" -exec rm {}  \; -print
@@ -60,7 +60,6 @@ while getopts ":o:" opt; do
         grep -lR ".$AVIF" $WWW/ | xargs sed -i "s/_o\.$AVIF/\.$AVIF/g"
         echo 'Conversion to avif has completed'
         IMGMSG="Images converted to avif"
-        touch $WWW/content/images/optimg-avif.flag
       else
         echo 'Standard image optimization has started'
         sleep 1
@@ -79,6 +78,6 @@ while getopts ":o:" opt; do
   esac
 done
 git add .
-git commit -m "Compiled Changes - $date | $IMGMSG" #.gitignore ghost-updater.sh ecto1.py requirements.txt README.md serve.py $WWW/.
+git commit -m "Compiled Changes - $date | $IMGMSG" .gitignore ghost-updater.sh ecto1.py requirements.txt README.md serve.py $WWW/.
 git config --global credential.helper store
 git push -u origin master
