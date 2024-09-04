@@ -60,7 +60,7 @@ while getopts ":o:" opt; do
         grep -lR ".$AVIF" $WWW/ | xargs sed -i "s/_o\.$AVIF/\.$AVIF/g"
         echo 'Conversion to avif has completed'
         IMGMSG="Images converted to avif"
-      else
+      elif [ $arg_o = "img" ]; then
         echo 'Standard image optimization has started'
         sleep 1
         #credit goes to julianxhokaxhiu for these commands 
