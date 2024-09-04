@@ -3,7 +3,7 @@
     "pages-plugin-asset-negotiation": "^0.1.3"
   },
   "scripts": {
-		"build": "npx wrangler pages functions build --outfile static/_worker.js",
-		"start": "npx wrangler pages dev static"
+		"build": "npx wrangler pages functions build --outfile public/_worker.js",
+		"start": "npx wrangler pages dev public"
 	}
 }
